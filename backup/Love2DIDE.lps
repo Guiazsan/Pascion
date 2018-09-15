@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="10"/>
+    <BuildModes Active="Default"/>
+    <Units Count="9">
+      <Unit0>
+        <Filename Value="Love2DIDE.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="2"/>
+        <CursorPos Y="12"/>
+        <UsageCount Value="221"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Desktop"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitDesktop"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="31"/>
+        <CursorPos X="5" Y="47"/>
+        <UsageCount Value="221"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="src\forms\unitsplash.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="SplashForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitSplash"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="34"/>
+        <CursorPos X="11" Y="45"/>
+        <UsageCount Value="221"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="src\forms\unitstart.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="StartForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitStart"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="7"/>
+        <CursorPos X="20" Y="19"/>
+        <UsageCount Value="221"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="LuaEditor"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitLuaEditor"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="120"/>
+        <CursorPos X="52" Y="140"/>
+        <UsageCount Value="183"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="src\units\unitvariaveisglobais.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UnitVariaveisGlobais"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="25"/>
+        <CursorPos X="46" Y="58"/>
+        <UsageCount Value="103"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\Libs\lzRichEdit\tcustomrichbox.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="33"/>
+        <CursorPos X="10" Y="52"/>
+        <UsageCount Value="35"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="src\units\variaveisglobais.pas"/>
+        <UnitName Value="VariaveisGlobais"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="6"/>
+        <UsageCount Value="14"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="..\..\..\..\usr\share\fpcsrc\3.0.2\rtl\unix\sysunixh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="30"/>
+        <CursorPos X="9" Y="55"/>
+        <UsageCount Value="5"/>
+      </Unit8>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="77" Column="67" TopLine="57"/>
+      </Position1>
+      <Position2>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="76" Column="18" TopLine="57"/>
+      </Position2>
+      <Position3>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="84" Column="25" TopLine="64"/>
+      </Position3>
+      <Position4>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="77" Column="36" TopLine="64"/>
+      </Position4>
+      <Position5>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="84" Column="25" TopLine="64"/>
+      </Position5>
+      <Position6>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="81" Column="38" TopLine="61"/>
+      </Position6>
+      <Position7>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="78" Column="15" TopLine="61"/>
+      </Position7>
+      <Position8>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="80" Column="26" TopLine="62"/>
+      </Position8>
+      <Position9>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="77" Column="36" TopLine="63"/>
+      </Position9>
+      <Position10>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="90" Column="12" TopLine="64"/>
+      </Position10>
+      <Position11>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="86" Column="85" TopLine="59"/>
+      </Position11>
+      <Position12>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="113" Column="7" TopLine="76"/>
+      </Position12>
+      <Position13>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="111" Column="21" TopLine="81"/>
+      </Position13>
+      <Position14>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="113" Column="18" TopLine="81"/>
+      </Position14>
+      <Position15>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="112" Column="57" TopLine="82"/>
+      </Position15>
+      <Position16>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="119" Column="32" TopLine="82"/>
+      </Position16>
+      <Position17>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="24" Column="21"/>
+      </Position17>
+      <Position18>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="86" Column="5" TopLine="73"/>
+      </Position18>
+      <Position19>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="24" Column="27"/>
+      </Position19>
+      <Position20>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="126" Column="7" TopLine="99"/>
+      </Position20>
+      <Position21>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="127" Column="9" TopLine="107"/>
+      </Position21>
+      <Position22>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="119" Column="63" TopLine="98"/>
+      </Position22>
+      <Position23>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="135" Column="48" TopLine="116"/>
+      </Position23>
+      <Position24>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="125" Column="38" TopLine="106"/>
+      </Position24>
+      <Position25>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="135" Column="71" TopLine="106"/>
+      </Position25>
+      <Position26>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="132" Column="32" TopLine="104"/>
+      </Position26>
+      <Position27>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="135" Column="43" TopLine="114"/>
+      </Position27>
+      <Position28>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="155" TopLine="139"/>
+      </Position28>
+      <Position29>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="51" Column="10" TopLine="41"/>
+      </Position29>
+      <Position30>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="71" TopLine="53"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

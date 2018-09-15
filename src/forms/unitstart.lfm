@@ -1,0 +1,248 @@
+object StartForm: TStartForm
+  Left = 0
+  Height = 524
+  Top = 0
+  Width = 1047
+  ActiveControl = EdtCaminho
+  ClientHeight = 524
+  ClientWidth = 1047
+  Color = 11251751
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '1.8.0.4'
+  object Panel1: TPanel
+    Left = -1
+    Height = 524
+    Top = 0
+    Width = 1048
+    BevelOuter = bvNone
+    ClientHeight = 524
+    ClientWidth = 1048
+    Color = 11251751
+    ParentColor = False
+    TabOrder = 0
+    object Pn1: TPanel
+      Left = 0
+      Height = 524
+      Top = 0
+      Width = 522
+      Align = alLeft
+      BevelOuter = bvNone
+      ClientHeight = 524
+      ClientWidth = 522
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 36
+        Height = 51
+        Top = 40
+        Width = 439
+        Caption = 'BEM VINDO AO PASCIÖN'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -37
+        Font.Name = 'Century Gothic'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object PnNewProject: TPanel
+        Cursor = crHandPoint
+        Left = 176
+        Height = 50
+        Top = 225
+        Width = 170
+        BevelColor = clWhite
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        Caption = 'Novo Projeto'
+        Color = 11251751
+        Font.Color = clWhite
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+        OnClick = PnNewProjectClick
+      end
+      object PnOpenProject: TPanel
+        Cursor = crHandPoint
+        Left = 176
+        Height = 50
+        Top = 352
+        Width = 170
+        BevelColor = clWhite
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        Caption = 'Carregar Projeto'
+        Color = 11251751
+        Font.Color = clWhite
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 1
+        OnClick = PnOpenProjectClick
+      end
+      object Label2: TLabel
+        Cursor = crHandPoint
+        Left = 243
+        Height = 15
+        Top = 455
+        Width = 31
+        Caption = 'Sobre'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -11
+        Font.Name = '@Microsoft JhengHei UI Light'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsUnderline]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object Pn2: TPanel
+      Left = 522
+      Height = 524
+      Top = 0
+      Width = 522
+      Align = alLeft
+      BevelOuter = bvNone
+      ClientHeight = 524
+      ClientWidth = 522
+      TabOrder = 1
+      object PnCaminho: TPanel
+        Left = 72
+        Height = 88
+        Top = 272
+        Width = 430
+        BevelOuter = bvNone
+        ClientHeight = 88
+        ClientWidth = 430
+        TabOrder = 0
+        object Label3: TLabel
+          Left = 8
+          Height = 18
+          Top = 8
+          Width = 170
+          Caption = 'Digite o diretório do projeto:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clWhite
+          Font.Height = -13
+          Font.Name = 'Century Gothic'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object EdtCaminho: TEdit
+          Left = 8
+          Height = 29
+          Top = 27
+          Width = 304
+          Color = 11251751
+          Font.Color = clWhite
+          ParentFont = False
+          TabOrder = 0
+        end
+        object Panel3: TPanel
+          Cursor = crHandPoint
+          Left = 312
+          Height = 22
+          Top = 27
+          Width = 26
+          BevelColor = clBtnFace
+          BevelInner = bvRaised
+          Caption = '...'
+          Font.Color = clWhite
+          ParentFont = False
+          TabOrder = 1
+          OnClick = Panel3Click
+        end
+      end
+      object PnNome: TPanel
+        Left = 72
+        Height = 74
+        Top = 168
+        Width = 430
+        BevelOuter = bvNone
+        ClientHeight = 74
+        ClientWidth = 430
+        TabOrder = 1
+        object EdtNome: TEdit
+          Left = 8
+          Height = 29
+          Top = 37
+          Width = 330
+          Color = 11251751
+          Font.Color = clWhite
+          ParentFont = False
+          TabOrder = 0
+        end
+        object Label4: TLabel
+          Left = 8
+          Height = 18
+          Top = 18
+          Width = 153
+          Caption = 'Digite o nome do projeto:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clWhite
+          Font.Height = -13
+          Font.Name = 'Century Gothic'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+      object Panel2: TPanel
+        Cursor = crHandPoint
+        Left = 8
+        Height = 90
+        Top = 0
+        Width = 90
+        BevelOuter = bvNone
+        Caption = 'f'
+        Font.CharSet = SYMBOL_CHARSET
+        Font.Color = clWhite
+        Font.Height = -48
+        Font.Name = 'Wingdings 3'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentFont = False
+        TabOrder = 2
+        OnClick = Panel2Click
+      end
+      object PnCriarProjeto: TPanel
+        Cursor = crHandPoint
+        Left = 344
+        Height = 50
+        Top = 464
+        Width = 170
+        BevelColor = clWhite
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        Caption = 'Criar Projeto'
+        Color = 11251751
+        Font.Color = clWhite
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 3
+        OnClick = PnCriarProjetoClick
+      end
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    DefaultExt = '.pgp'
+    Filter = 'pgp'
+    left = 464
+    top = 152
+  end
+  object SelectDirectoryDialog1: TSelectDirectoryDialog
+    left = 392
+    top = 152
+  end
+  object Timer1: TTimer
+    Interval = 1
+    OnTimer = Timer1Timer
+    left = 304
+    top = 152
+  end
+end
