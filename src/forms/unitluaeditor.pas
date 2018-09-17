@@ -23,8 +23,10 @@ type
     procedure RMEditorChange(Sender: TObject);
     procedure RMEditorKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
       );
+    procedure RMEditorKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure Timer1Timer(Sender: TObject);
   private
+    KShift : Boolean;
     procedure ColorirPalavrasReservadas(palavra : String; cor : TColor);
     procedure ColorirNumeros(cor : TColor);
     procedure ColorirComentarios(cor : TColor);
@@ -73,11 +75,24 @@ end;
 procedure TLuaEditor.RMEditorKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
+  if key = VK_SHIFT then
+    KShift := True;
+
   if key = VK_TAB then
   begin
-    RMEditor.SelText := '  '+ ReplaceStr(RMEditor.SelText,sLineBreak,sLineBreak + '  ');
+    if not KShift then
+      RMEditor.SelText := '  '+ ReplaceStr(RMEditor.SelText,sLineBreak,sLineBreak + '  ')
+    else
+      RMEditor.SelText := ReplaceStr(RMEditor.SelText,sLineBreak + ' ', sLineBreak);
     key := 0;
   end;
+end;
+
+procedure TLuaEditor.RMEditorKeyUp(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if key = VK_SHIFT then
+    KShift := False;
 end;
 
 procedure TLuaEditor.FormCreate(Sender: TObject);
@@ -165,6 +180,20 @@ var
   final : String;
   indexFinal : integer;
 begin
+  texto := RMEditor.Text;
+  while PosEx('--[[', texto) > 0 do
+  begin
+    texto := texto.Substring(PosEx('--[[',Texto));
+
+    if PosEx(']]--', texto) = 0 then
+      indexFinal := Length(texto) - 1
+    else
+      indexFinal := PosEx('--]]', texto);
+
+    RMEditor.SetRangeColor((PosEx(texto, RMEditor.Text) - 2), indexFinal + 1, cor);
+    texto := texto.Substring(PosEx('--]]',Texto) + 4);
+  end;
+
   texto := RMEditor.Text;
   While (PosEx('--', texto) <> 0) do
     begin

@@ -27,6 +27,7 @@ object LuaEditor: TLuaEditor
     )
     OnChange = RMEditorChange
     OnKeyDown = RMEditorKeyDown
+    OnKeyUp = RMEditorKeyUp
     ParentFont = False
     TabOrder = 0
     ZoomFactor = 1
