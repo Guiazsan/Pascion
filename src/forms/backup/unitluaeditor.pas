@@ -13,10 +13,11 @@ type
   { TLuaEditor }
 
   TLuaEditor = class(TForm)
-    Edit1: TEdit;
+    GridLinhas: TDrawGrid;
     RMEditor: TRichMemo;
-    StringGrid1: TStringGrid;
     Timer1: TTimer;
+    procedure FormCreate(Sender: TObject);
+    procedure GridLinhasDblClick(Sender: TObject);
     procedure RMEditorChange(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
   private
@@ -24,7 +25,7 @@ type
     procedure ColorirNumeros(cor : TColor);
     procedure ColorirComentarios(cor : TColor);
     procedure ColorirStrings(cor : TColor);
-    procedure ContarLinhas;
+    function ContarLinhas : Integer;
 
   public
 
@@ -60,8 +61,26 @@ begin
 end;
 
 procedure TLuaEditor.RMEditorChange(Sender: TObject);
+var i : Integer;
 begin
   Timer1.Enabled := True;
+  GridLinhas.RowCount := ContarLinhas;
+  for i := 1 to GridLinhas.RowCount do
+   begin
+     GridLinhas.Canvas.TextOut(GridLinhas.CellRect(0,i).Left + 10,GridLinhas.CellRect(0,i).Top -3, IntToStr(i + 1));
+   end;
+end;
+
+procedure TLuaEditor.FormCreate(Sender: TObject);
+begin
+  RMEditor.Text := '';
+  GridLinhas.DefaultRowHeight := RMEditor.Font.Size + 6;
+end;
+
+procedure TLuaEditor.GridLinhasDblClick(Sender: TObject);
+begin
+//
+  GridLinhas.
 end;
 
 procedure TLuaEditor.ColorirPalavrasReservadas(palavra : String; cor : TColor);
@@ -161,7 +180,7 @@ begin
   end;
 end;
 
-procedure TLuaEditor.ContarLinhas;
+function TLuaEditor.ContarLinhas : Integer;
 var
   linha : array of String;
   i,n : Integer;
@@ -179,7 +198,7 @@ begin
     end;
 
   end;
-  Edit1.Text := IntToStr(n + 1);
+  result := n + 1;
 
 end;
 
