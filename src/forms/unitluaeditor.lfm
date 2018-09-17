@@ -26,6 +26,7 @@ object LuaEditor: TLuaEditor
       'RMEditor'
     )
     OnChange = RMEditorChange
+    OnKeyDown = RMEditorKeyDown
     ParentFont = False
     TabOrder = 0
     ZoomFactor = 1
@@ -44,6 +45,7 @@ object LuaEditor: TLuaEditor
     ScrollBars = ssNone
     TabOrder = 1
     OnDblClick = GridLinhasDblClick
+    OnDrawCell = GridLinhasDrawCell
   end
   object Timer1: TTimer
     Enabled = False

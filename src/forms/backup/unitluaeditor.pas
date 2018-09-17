@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  Menus, Grids, ExtCtrls, RichMemo;
+  Menus, Grids, ExtCtrls, RichMemo, Types;
 
 type
 
@@ -18,7 +18,11 @@ type
     Timer1: TTimer;
     procedure FormCreate(Sender: TObject);
     procedure GridLinhasDblClick(Sender: TObject);
+    procedure GridLinhasDrawCell(Sender: TObject; aCol, aRow: Integer;
+      aRect: TRect; aState: TGridDrawState);
     procedure RMEditorChange(Sender: TObject);
+    procedure RMEditorKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState
+      );
     procedure Timer1Timer(Sender: TObject);
   private
     procedure ColorirPalavrasReservadas(palavra : String; cor : TColor);
@@ -61,14 +65,19 @@ begin
 end;
 
 procedure TLuaEditor.RMEditorChange(Sender: TObject);
-var i : Integer;
 begin
   Timer1.Enabled := True;
   GridLinhas.RowCount := ContarLinhas;
-  for i := 1 to GridLinhas.RowCount do
-   begin
-     GridLinhas.Canvas.TextOut(GridLinhas.CellRect(0,i).Left + 10,GridLinhas.CellRect(0,i).Top -3, IntToStr(i + 1));
-   end;
+end;
+
+procedure TLuaEditor.RMEditorKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if key = VK_TAB then
+  begin
+    RMEditor.SelText := '  '+ ReplaceStr(RMEditor.SelText,sLineBreak,sLineBreak + '  ');
+    key := 0;
+  end;
 end;
 
 procedure TLuaEditor.FormCreate(Sender: TObject);
@@ -79,8 +88,20 @@ end;
 
 procedure TLuaEditor.GridLinhasDblClick(Sender: TObject);
 begin
-//
-  GridLinhas.
+  //GridLinhas.Canvas.Draw();
+end;
+
+procedure TLuaEditor.GridLinhasDrawCell(Sender: TObject; aCol, aRow: Integer;
+  aRect: TRect; aState: TGridDrawState);
+var i : Integer;
+begin
+  GridLinhas.Canvas.Font.Size := 8;
+  GridLinhas.Canvas.TextOut(GridLinhas.CellRect(0,0).Left + 20,GridLinhas.CellRect(0,0).Top -1, IntToStr(1));
+  for i := 1 to GridLinhas.RowCount do
+  begin
+     GridLinhas.Canvas.TextOut(GridLinhas.CellRect(0,i).Left + 26 - (Length(IntToStr(i + 1)) * 6),
+                               GridLinhas.CellRect(0,i).Top -1, IntToStr(i + 1));
+  end;
 end;
 
 procedure TLuaEditor.ColorirPalavrasReservadas(palavra : String; cor : TColor);
@@ -91,7 +112,13 @@ begin
     while PosEx(palavra, texto) <> 0 do
     begin
       if ((texto[PosEx(palavra, texto) + palavra.Length] = ' ') or
-          (texto[PosEx(palavra, texto) + palavra.Length] = LineEnding)) and   //Depois da Palavra
+          (texto[PosEx(palavra, texto) + palavra.Length] = '') or
+          (texto[PosEx(palavra, texto) + palavra.Length] = LineEnding) or
+          (texto[PosEx(palavra, texto) + palavra.Length] = sLineBreak) or
+          (texto[PosEx(palavra, texto) + palavra.Length] = '(') or
+          (texto[PosEx(palavra, texto) + palavra.Length] = ')') or
+          (texto[PosEx(palavra, texto) + palavra.Length] = ',') or
+          (texto[PosEx(palavra, texto) + palavra.Length] = '.')) and   //Depois da Palavra
 
          ((texto[PosEx(palavra, texto) - 1] = ' ') or
           (texto[PosEx(palavra, texto) - 1] = LineEnding) or
@@ -190,7 +217,7 @@ begin
   n := 0;
   for i := 0 to Length(RMEditor.Text) -1 do
   begin
-    if RMEditor.Text[i] = LineEnding then
+    if (RMEditor.Text[i] = LineEnding) or (RMEditor.Text[i] = sLineBreak) then
     begin
       SetLength(linha, Length(linha) + 1);
       linha[n] := Texto.Substring(n,i);
