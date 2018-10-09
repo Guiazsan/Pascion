@@ -1,7 +1,7 @@
 object StartForm: TStartForm
-  Left = 0
+  Left = 157
   Height = 524
-  Top = 0
+  Top = 103
   Width = 1047
   ActiveControl = EdtCaminho
   ClientHeight = 524
@@ -35,7 +35,7 @@ object StartForm: TStartForm
         Left = 36
         Height = 51
         Top = 40
-        Width = 439
+        Width = 437
         Caption = 'BEM VINDO AO PASCIÖN'
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
@@ -79,23 +79,6 @@ object StartForm: TStartForm
         ParentFont = False
         TabOrder = 1
         OnClick = PnOpenProjectClick
-      end
-      object Label2: TLabel
-        Cursor = crHandPoint
-        Left = 243
-        Height = 15
-        Top = 455
-        Width = 31
-        Caption = 'Sobre'
-        Font.CharSet = ANSI_CHARSET
-        Font.Color = clWhite
-        Font.Height = -11
-        Font.Name = '@Microsoft JhengHei UI Light'
-        Font.Pitch = fpVariable
-        Font.Quality = fqDraft
-        Font.Style = [fsUnderline]
-        ParentColor = False
-        ParentFont = False
       end
     end
     object Pn2: TPanel
@@ -240,7 +223,7 @@ object StartForm: TStartForm
     top = 152
   end
   object Timer1: TTimer
-    Interval = 1
+    Interval = 10
     OnTimer = Timer1Timer
     left = 304
     top = 152

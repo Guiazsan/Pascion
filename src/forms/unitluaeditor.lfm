@@ -1,5 +1,5 @@
 object LuaEditor: TLuaEditor
-  Left = 326
+  Left = 324
   Height = 579
   Top = 48
   Width = 803
@@ -14,6 +14,7 @@ object LuaEditor: TLuaEditor
     Top = 0
     Width = 763
     Align = alClient
+    BorderStyle = bsNone
     Color = clBlack
     Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite
@@ -23,13 +24,14 @@ object LuaEditor: TLuaEditor
     Font.Quality = fqDraft
     HideSelection = False
     Lines.Strings = (
-      'RMEditor'
+      ''
     )
     OnChange = RMEditorChange
-    OnKeyDown = RMEditorKeyDown
-    OnKeyUp = RMEditorKeyUp
     ParentFont = False
+    ScrollBars = ssAutoHorizontal
     TabOrder = 0
+    WantTabs = True
+    WordWrap = False
     ZoomFactor = 1
   end
   object GridLinhas: TDrawGrid
@@ -38,13 +40,20 @@ object LuaEditor: TLuaEditor
     Top = 0
     Width = 40
     Align = alLeft
+    BorderStyle = bsNone
+    Color = clWindowText
     ColCount = 1
     DefaultColWidth = 40
     DefaultRowHeight = 17
     ExtendedSelect = False
+    FixedColor = clWindowText
+    Font.Color = clWhite
+    ParentFont = False
     RowCount = 1
     ScrollBars = ssNone
+    TabAdvance = aaNone
     TabOrder = 1
+    TitleFont.Color = clWhite
     OnDblClick = GridLinhasDblClick
     OnDrawCell = GridLinhasDrawCell
   end

@@ -14,14 +14,18 @@ type
 
   TStartForm = class(TForm)
     EdtCaminho: TEdit;
+    EdtCaminhoLove: TEdit;
     EdtNome: TEdit;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
+    Label5: TLabel;
     OpenDialog1: TOpenDialog;
     Panel1: TPanel;
-    Panel2: TPanel;
+    Panel4: TPanel;
+    PnCaminho1: TPanel;
+    PnPastaLove: TPanel;
     PnCriarProjeto: TPanel;
     PnNome: TPanel;
     Panel3: TPanel;

@@ -33,7 +33,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="6">
+    <Units Count="7">
       <Unit0>
         <Filename Value="Love2DIDE.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -75,6 +75,11 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnitVariaveisGlobais"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="src\units\unitfuncoes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UnitFuncoes"/>
+      </Unit6>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

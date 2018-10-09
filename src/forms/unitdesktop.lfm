@@ -1,21 +1,21 @@
 object Desktop: TDesktop
-  Left = 0
+  Left = 275
   Height = 460
-  Top = 0
+  Top = 146
   Width = 833
   ActiveControl = PageControl1
   Caption = 'Pasciön v1.0'
-  ClientHeight = 460
+  ClientHeight = 435
   ClientWidth = 833
   DefaultMonitor = dmDesktop
   Menu = MainMenu1
-  Visible = False
+  LCLVersion = '1.8.0.4'
   WindowState = wsMaximized
   object ToolBar1: TToolBar
     Left = 0
     Height = 26
     Top = 0
-    Width = 849
+    Width = 833
     Caption = 'ToolBar1'
     Images = ImageList1
     TabOrder = 0
@@ -59,20 +59,20 @@ object Desktop: TDesktop
   end
   object LCtrlPanel: TPanel
     Left = 0
-    Height = 434
+    Height = 409
     Top = 26
     Width = 170
     Align = alLeft
     BevelColor = clActiveBorder
     BevelOuter = bvNone
-    ClientHeight = 434
+    ClientHeight = 409
     ClientWidth = 170
     Color = clMenuBar
     ParentColor = False
     TabOrder = 1
     object GBPropriedades: TGroupBox
       Left = 0
-      Height = 434
+      Height = 409
       Top = 0
       Width = 170
       Align = alClient
@@ -82,20 +82,20 @@ object Desktop: TDesktop
   end
   object PageControl1: TPageControl
     Left = 170
-    Height = 434
+    Height = 409
     Top = 26
-    Width = 509
+    Width = 493
     Align = alClient
     TabOrder = 2
   end
   object RCtrlPanel: TPanel
-    Left = 679
-    Height = 434
+    Left = 663
+    Height = 409
     Top = 26
     Width = 170
     Align = alRight
     BevelOuter = bvNone
-    ClientHeight = 434
+    ClientHeight = 409
     ClientWidth = 170
     Color = clMenuBar
     ParentColor = False
@@ -107,33 +107,33 @@ object Desktop: TDesktop
       Width = 170
       Align = alTop
       Caption = 'Projeto'
-      ClientHeight = 276
-      ClientWidth = 166
+      ClientHeight = 278
+      ClientWidth = 168
       TabOrder = 0
       object TVProject: TTreeView
         Left = 0
-        Height = 276
+        Height = 278
         Top = 0
-        Width = 166
+        Width = 168
         Align = alClient
         TabOrder = 0
       end
     end
     object GBComponentes: TGroupBox
       Left = 0
-      Height = 138
+      Height = 113
       Top = 296
       Width = 170
       Align = alClient
       Caption = 'Componentes'
-      ClientHeight = 118
-      ClientWidth = 166
+      ClientHeight = 95
+      ClientWidth = 168
       TabOrder = 1
       object LVComponentes: TListView
         Left = 0
-        Height = 118
+        Height = 95
         Top = 0
-        Width = 166
+        Width = 168
         Align = alClient
         Columns = <>
         TabOrder = 0
