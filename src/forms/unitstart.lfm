@@ -1,28 +1,31 @@
 object StartForm: TStartForm
-  Left = 390
+  Left = 319
   Height = 524
   Top = 140
-  Width = 1047
+  Width = 1331
   ActiveControl = EdtCaminho
+  BorderStyle = bsNone
   ClientHeight = 524
-  ClientWidth = 1047
+  ClientWidth = 1331
   Color = 11251751
   OnCreate = FormCreate
+  OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '1.8.0.4'
+  Visible = False
   object Panel1: TPanel
-    Left = -1
+    Left = 0
     Height = 524
     Top = 0
-    Width = 1048
+    Width = 1331
+    Align = alClient
     BevelOuter = bvNone
     ClientHeight = 524
-    ClientWidth = 1048
+    ClientWidth = 1331
     Color = 11251751
     ParentColor = False
     TabOrder = 0
     object Pn1: TPanel
-      Left = 376
+      Left = 608
       Height = 524
       Top = 0
       Width = 152
@@ -31,35 +34,27 @@ object StartForm: TStartForm
       ClientHeight = 524
       ClientWidth = 152
       TabOrder = 0
-      object Label1: TLabel
-        Left = 0
-        Height = 51
-        Top = 0
-        Width = 152
-        Align = alTop
-        Caption = 'BEM VINDO AO PASCIÖN'
-        Font.CharSet = ANSI_CHARSET
-        Font.Color = clWhite
-        Font.Height = -37
-        Font.Name = 'Century Gothic'
-        Font.Pitch = fpVariable
-        Font.Quality = fqDraft
-        ParentColor = False
-        ParentFont = False
-      end
       object PnNewProject: TPanel
         Cursor = crHandPoint
-        Left = 0
+        Left = 50
         Height = 50
-        Top = 51
-        Width = 152
+        Top = 237
+        Width = 52
         Align = alTop
+        BorderSpacing.Left = 50
+        BorderSpacing.Top = 170
+        BorderSpacing.Right = 50
         BevelColor = clWhite
         BevelInner = bvRaised
         BevelOuter = bvLowered
         Caption = 'Novo Projeto'
         Color = 11251751
+        Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
+        Font.Height = -13
+        Font.Name = 'SF Cartoonist Hand SC'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
         ParentColor = False
         ParentFont = False
         TabOrder = 0
@@ -67,66 +62,99 @@ object StartForm: TStartForm
       end
       object PnOpenProject: TPanel
         Cursor = crHandPoint
-        Left = 0
+        Left = 50
         Height = 50
-        Top = 101
-        Width = 152
+        Top = 307
+        Width = 52
         Align = alTop
+        BorderSpacing.Left = 50
+        BorderSpacing.Top = 20
+        BorderSpacing.Right = 50
         BevelColor = clWhite
         BevelInner = bvRaised
         BevelOuter = bvLowered
         Caption = 'Carregar Projeto'
         Color = 11251751
+        Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
+        Font.Height = -13
+        Font.Name = 'SF Cartoonist Hand SC'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
         ParentColor = False
         ParentFont = False
         TabOrder = 1
         OnClick = PnOpenProjectClick
       end
+      object Label8: TLabel
+        Left = 0
+        Height = 37
+        Top = 30
+        Width = 152
+        Align = alTop
+        Alignment = taCenter
+        BorderSpacing.Top = 30
+        Caption = 'Projeto'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -27
+        Font.Name = 'La chata'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
     end
     object Pn2: TPanel
-      Left = 528
+      Left = 760
       Height = 524
       Top = 0
-      Width = 120
+      Width = 448
       Align = alLeft
       BevelOuter = bvNone
       ClientHeight = 524
-      ClientWidth = 120
+      ClientWidth = 448
       TabOrder = 1
       object PnCaminho: TPanel
-        Left = 0
+        Left = 30
         Height = 88
-        Top = 74
-        Width = 120
+        Top = 224
+        Width = 388
         Align = alTop
+        BorderSpacing.Left = 30
+        BorderSpacing.Right = 30
         BevelOuter = bvNone
         ClientHeight = 88
-        ClientWidth = 120
+        ClientWidth = 388
         TabOrder = 0
         object Label3: TLabel
           Left = 0
-          Height = 18
+          Height = 15
           Top = 0
-          Width = 120
+          Width = 388
           Align = alTop
           Caption = 'Digite o diretório do projeto:'
           Font.CharSet = ANSI_CHARSET
           Font.Color = clWhite
           Font.Height = -13
-          Font.Name = 'Century Gothic'
+          Font.Name = 'SF Cartoonist Hand SC'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
           ParentColor = False
           ParentFont = False
         end
         object EdtCaminho: TEdit
-          Left = 8
-          Height = 29
+          Left = 0
+          Height = 23
           Top = 27
           Width = 304
           Color = 11251751
+          Font.CharSet = ANSI_CHARSET
           Font.Color = clWhite
+          Font.Height = -13
+          Font.Name = 'SF Cartoonist Hand SC'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
           ParentFont = False
           TabOrder = 0
         end
@@ -146,37 +174,45 @@ object StartForm: TStartForm
         end
       end
       object PnNome: TPanel
-        Left = 0
+        Left = 30
         Height = 74
-        Top = 0
-        Width = 120
+        Top = 150
+        Width = 388
         Align = alTop
+        BorderSpacing.Left = 30
+        BorderSpacing.Top = 150
+        BorderSpacing.Right = 30
         BevelOuter = bvNone
         ClientHeight = 74
-        ClientWidth = 120
+        ClientWidth = 388
         TabOrder = 1
         object EdtNome: TEdit
           Left = 0
-          Height = 29
-          Top = 18
-          Width = 120
+          Height = 23
+          Top = 15
+          Width = 388
           Align = alTop
           Color = 11251751
+          Font.CharSet = ANSI_CHARSET
           Font.Color = clWhite
+          Font.Height = -13
+          Font.Name = 'SF Cartoonist Hand SC'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
           ParentFont = False
           TabOrder = 0
         end
         object Label4: TLabel
           Left = 0
-          Height = 18
+          Height = 15
           Top = 0
-          Width = 120
+          Width = 388
           Align = alTop
           Caption = 'Digite o nome do projeto:'
           Font.CharSet = ANSI_CHARSET
           Font.Color = clWhite
           Font.Height = -13
-          Font.Name = 'Century Gothic'
+          Font.Name = 'SF Cartoonist Hand SC'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
           ParentColor = False
@@ -185,17 +221,24 @@ object StartForm: TStartForm
       end
       object PnCriarProjeto: TPanel
         Cursor = crHandPoint
-        Left = 0
+        Left = 50
         Height = 50
-        Top = 162
-        Width = 120
+        Top = 312
+        Width = 348
         Align = alTop
+        BorderSpacing.Left = 50
+        BorderSpacing.Right = 50
         BevelColor = clWhite
         BevelInner = bvRaised
         BevelOuter = bvLowered
         Caption = 'Criar Projeto'
         Color = 11251751
+        Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
+        Font.Height = -13
+        Font.Name = 'SF Cartoonist Hand SC'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
         ParentColor = False
         ParentFont = False
         TabOrder = 2
@@ -203,100 +246,251 @@ object StartForm: TStartForm
       end
     end
     object PnPastaLove: TPanel
-      Left = 0
+      Left = 170
       Height = 524
       Top = 0
-      Width = 376
+      Width = 438
       Align = alLeft
       BevelOuter = bvNone
       ClientHeight = 524
-      ClientWidth = 376
+      ClientWidth = 438
       TabOrder = 2
-      object PnCaminho1: TPanel
+      object PnCaminhoLove: TPanel
         Left = 0
-        Height = 88
-        Top = 28
-        Width = 376
+        Height = 272
+        Top = 0
+        Width = 438
         Align = alTop
         BevelOuter = bvNone
-        ClientHeight = 88
-        ClientWidth = 376
+        ClientHeight = 272
+        ClientWidth = 438
         TabOrder = 0
         object Label5: TLabel
-          Left = 0
-          Height = 18
-          Top = 0
-          Width = 376
+          Left = 50
+          Height = 15
+          Top = 235
+          Width = 388
           Align = alTop
+          BorderSpacing.Left = 50
+          BorderSpacing.Top = 143
           Caption = 'Digite o diretório do Löve2D:'
           Font.CharSet = ANSI_CHARSET
           Font.Color = clWhite
           Font.Height = -13
-          Font.Name = 'Century Gothic'
+          Font.Name = 'SF Cartoonist Hand SC'
           Font.Pitch = fpVariable
           Font.Quality = fqDraft
           ParentColor = False
           ParentFont = False
         end
         object EdtCaminhoLove: TEdit
-          Left = 8
-          Height = 29
-          Top = 27
-          Width = 304
+          Left = 50
+          Height = 22
+          Top = 250
+          Width = 326
+          Align = alLeft
+          AutoSize = False
+          BorderSpacing.Left = 50
           Color = 11251751
+          Font.CharSet = ANSI_CHARSET
           Font.Color = clWhite
+          Font.Height = -13
+          Font.Name = 'SF Cartoonist Hand SC'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
           ParentFont = False
           TabOrder = 0
         end
         object Panel4: TPanel
           Cursor = crHandPoint
-          Left = 312
-          Height = 29
-          Top = 27
-          Width = 26
+          Left = 376
+          Height = 22
+          Top = 250
+          Width = 24
+          Align = alLeft
           BevelColor = clBtnFace
           BevelInner = bvRaised
-          BevelWidth = 2
           Caption = '...'
           Font.Color = clWhite
           ParentFont = False
           TabOrder = 1
-          OnClick = Panel3Click
+          OnClick = Panel4Click
+        end
+        object Label2: TLabel
+          Left = 0
+          Height = 37
+          Top = 30
+          Width = 438
+          Align = alTop
+          Alignment = taCenter
+          BorderSpacing.Top = 30
+          Caption = 'Löve 2D'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clWhite
+          Font.Height = -27
+          Font.Name = 'La chata'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label6: TLabel
+          Left = 0
+          Height = 15
+          Top = 77
+          Width = 438
+          Align = alTop
+          Alignment = taCenter
+          BorderSpacing.Top = 10
+          Caption = 'Por favor, informe onde se encontra a engine Löve2D'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clWindow
+          Font.Height = -13
+          Font.Name = 'SF Cartoonist Hand SC'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
         end
       end
-      object Label2: TLabel
-        Left = 0
-        Height = 28
-        Top = 0
-        Width = 376
+      object PnProximo: TPanel
+        Cursor = crHandPoint
+        Left = 50
+        Height = 50
+        Top = 322
+        Width = 338
         Align = alTop
-        Alignment = taCenter
-        Caption = 'Löve2D'
+        BorderSpacing.Left = 50
+        BorderSpacing.Top = 35
+        BorderSpacing.Right = 50
+        BevelColor = clWhite
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        Caption = 'Proximo'
+        Color = 11251751
         Font.CharSet = ANSI_CHARSET
         Font.Color = clWhite
-        Font.Height = -20
-        Font.Name = 'Century Gothic'
+        Font.Height = -13
+        Font.Name = 'SF Cartoonist Hand SC'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 1
+        OnClick = PnProximoClick
+      end
+      object Label7: TLabel
+        Cursor = crHandPoint
+        Left = 50
+        Height = 15
+        Top = 272
+        Width = 98
+        Align = alTop
+        BorderSpacing.Left = 50
+        BorderSpacing.Right = 290
+        Caption = 'Download Löve2D'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -13
+        Font.Name = 'SF Cartoonist Hand SC'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        Font.Style = [fsUnderline]
+        ParentColor = False
+        ParentFont = False
+        OnClick = Label7Click
+      end
+    end
+    object Panel2: TPanel
+      Left = 0
+      Height = 524
+      Top = 0
+      Width = 170
+      Align = alLeft
+      BevelOuter = bvNone
+      ClientHeight = 524
+      ClientWidth = 170
+      TabOrder = 3
+      object Label1: TLabel
+        Left = 0
+        Height = 51
+        Top = 100
+        Width = 170
+        Align = alTop
+        Alignment = taCenter
+        BorderSpacing.Top = 100
+        Caption = 'BEM VINDO AO PASCIÖN'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -37
+        Font.Name = 'La chata'
         Font.Pitch = fpVariable
         Font.Quality = fqDraft
         ParentColor = False
         ParentFont = False
       end
+      object PnComecar: TPanel
+        Cursor = crHandPoint
+        Left = 50
+        Height = 50
+        Top = 293
+        Width = 70
+        Align = alTop
+        BorderSpacing.Left = 50
+        BorderSpacing.Top = 142
+        BorderSpacing.Right = 50
+        BevelColor = clWhite
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        Caption = 'Começar'
+        Color = 11251751
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -13
+        Font.Name = 'SF Cartoonist Hand SC'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
+        OnClick = PnComecarClick
+      end
     end
+  end
+  object PnVolta: TPanel
+    Cursor = crHandPoint
+    Left = 8
+    Height = 42
+    Top = 8
+    Width = 58
+    BevelOuter = bvNone
+    Caption = '↩'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -67
+    Font.Name = 'La chata'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 1
+    Visible = False
+    OnClick = PnVoltaClick
   end
   object OpenDialog1: TOpenDialog
     DefaultExt = '.pgp'
     Filter = 'pgp'
-    left = 400
-    top = 152
+    left = 344
+    top = 416
   end
   object SelectDirectoryDialog1: TSelectDirectoryDialog
-    left = 352
-    top = 152
+    left = 296
+    top = 416
   end
   object Timer1: TTimer
-    Interval = 10
+    Enabled = False
+    Interval = 1
     OnTimer = Timer1Timer
-    left = 304
-    top = 152
+    left = 248
+    top = 416
   end
 end

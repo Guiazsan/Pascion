@@ -120,9 +120,6 @@ begin
       then
         RMEditor.SetRangeColor( (PosEx(palavra, texto) - 2) + (String(RMEditor.text).Length - texto.Length),
                                  palavra.Length + 1 , cor);
-      {else
-        RMEditor.SetRangeColor( (PosEx(palavra, texto) - 2) + (String(RMEditor.text).Length - texto.Length),
-                                 palavra.Length + 1 , TColor(clWhite));}
 
       texto := texto.Substring(PosEx(palavra, texto) + palavra.Length);
     end;

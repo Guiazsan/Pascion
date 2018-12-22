@@ -8,7 +8,7 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, UnitDesktop, UnitSplash, UnitStart, UnitLuaEditor,
-  UnitVariaveisGlobais, UnitFuncoes;
+  UnitVariaveisGlobais, UnitFuncoes, unit1;
 
 {$R *.res}
 
@@ -16,11 +16,7 @@ begin
   Application.Title := 'Pasciön';
   RequireDerivedFormResource := True;
   Application.Initialize;
-  Application.CreateForm(TLuaEditor, LuaEditor);
   Application.CreateForm(TSplashForm, SplashForm);
-  Application.CreateForm(TDesktop, Desktop);
-  Application.CreateForm(TStartForm, StartForm);
-
   Application.Run;
 end.
 

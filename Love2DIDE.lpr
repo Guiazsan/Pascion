@@ -17,10 +17,6 @@ begin
   RequireDerivedFormResource := True;
   Application.Initialize;
   Application.CreateForm(TSplashForm, SplashForm);
-  Application.CreateForm(TDesktop, Desktop);
-  Application.CreateForm(TStartForm, StartForm);
-  Application.CreateForm(TLuaEditor, LuaEditor);
-
   Application.Run;
 end.
 

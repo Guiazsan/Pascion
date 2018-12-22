@@ -1,16 +1,18 @@
 object Desktop: TDesktop
   Left = 275
-  Height = 460
+  Height = 466
   Top = 146
   Width = 833
   ActiveControl = PageControl1
   Caption = 'Pasciön v1.0'
-  ClientHeight = 435
+  ClientHeight = 466
   ClientWidth = 833
   DefaultMonitor = dmDesktop
   Menu = MainMenu1
-  LCLVersion = '1.8.0.4'
-  WindowState = wsMaximized
+  OnClose = FormClose
+  OnCreate = FormCreate
+  LCLVersion = '1.8.4.0'
+  Visible = False
   object ToolBar1: TToolBar
     Left = 0
     Height = 26
@@ -59,83 +61,72 @@ object Desktop: TDesktop
   end
   object LCtrlPanel: TPanel
     Left = 0
-    Height = 409
+    Height = 314
     Top = 26
     Width = 170
     Align = alLeft
     BevelColor = clActiveBorder
     BevelOuter = bvNone
-    ClientHeight = 409
+    ClientHeight = 314
     ClientWidth = 170
     Color = clMenuBar
     ParentColor = False
     TabOrder = 1
-    object GBPropriedades: TGroupBox
+    object GBProjeto: TGroupBox
       Left = 0
-      Height = 409
+      Height = 314
       Top = 0
       Width = 170
       Align = alClient
-      Caption = 'Propriedades'
-      TabOrder = 0
-    end
-  end
-  object PageControl1: TPageControl
-    Left = 170
-    Height = 409
-    Top = 26
-    Width = 493
-    Align = alClient
-    TabOrder = 2
-  end
-  object RCtrlPanel: TPanel
-    Left = 663
-    Height = 409
-    Top = 26
-    Width = 170
-    Align = alRight
-    BevelOuter = bvNone
-    ClientHeight = 409
-    ClientWidth = 170
-    Color = clMenuBar
-    ParentColor = False
-    TabOrder = 3
-    object GBProjeto: TGroupBox
-      Left = 0
-      Height = 296
-      Top = 0
-      Width = 170
-      Align = alTop
       Caption = 'Projeto'
-      ClientHeight = 278
-      ClientWidth = 168
+      ClientHeight = 294
+      ClientWidth = 166
       TabOrder = 0
-      object TVProject: TTreeView
+      object ProjetoTree: TTreeView
         Left = 0
-        Height = 278
+        Height = 294
         Top = 0
-        Width = 168
+        Width = 166
         Align = alClient
         TabOrder = 0
       end
     end
-    object GBComponentes: TGroupBox
+  end
+  object PageControl1: TPageControl
+    Left = 170
+    Height = 314
+    Top = 26
+    Width = 663
+    Align = alClient
+    TabOrder = 2
+  end
+  object PnBottom: TPanel
+    Left = 0
+    Height = 106
+    Top = 340
+    Width = 833
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 106
+    ClientWidth = 833
+    TabOrder = 3
+    object GBConsole: TGroupBox
       Left = 0
-      Height = 113
-      Top = 296
-      Width = 170
-      Align = alClient
-      Caption = 'Componentes'
-      ClientHeight = 95
-      ClientWidth = 168
-      TabOrder = 1
-      object LVComponentes: TListView
+      Height = 105
+      Top = 0
+      Width = 833
+      Align = alTop
+      Caption = 'Console'
+      ClientHeight = 85
+      ClientWidth = 829
+      TabOrder = 0
+      object MemoConsole: TMemo
         Left = 0
-        Height = 95
+        Height = 85
         Top = 0
-        Width = 168
+        Width = 829
         Align = alClient
-        Columns = <>
+        ReadOnly = True
         TabOrder = 0
       end
     end
@@ -155,6 +146,7 @@ object Desktop: TDesktop
     end
     object ActSair: TAction
       Caption = 'Sair'
+      OnExecute = ActSairExecute
     end
     object ActSalvar: TAction
       Category = 'Arquivo'

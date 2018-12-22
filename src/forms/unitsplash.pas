@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  ComCtrls, IniFiles;
+  ComCtrls, StdCtrls, IniFiles;
 
 type
 
@@ -14,10 +14,9 @@ type
 
   TSplashForm = class(TForm)
     Image1: TImage;
-    ProgressBar1: TProgressBar;
+    LbStatus: TLabel;
     procedure FormActivate(Sender: TObject);
   private
-    INIPath : TINIFile;
     Paths   : TStringList;
   public
 
@@ -36,28 +35,37 @@ uses
 { TSplashForm }
 
 procedure TSplashForm.FormActivate(Sender: TObject);
+var INIPath : TINIFile;
 begin
+  LbStatus.Caption := 'Carregando Config';
+
   if FileExists(GetCurrentDir + '\Config.ini') then
   begin
-    Application.CreateForm(TDesktop,Desktop);
+    INIPath := TIniFile.Create(GetCurrentDir + '\Config.ini');
     try
-      Desktop.ShowModal;
-      SplashForm.Visible := false;
-    finally
-      FreeAndNil(Desktop);
-      Close;
-    end;
-  end
-  else
-    begin
-      Application.CreateForm(TStartForm,StartForm);
-      try
-        SplashForm.Visible := false;
-        StartForm.ShowModal;
-      finally
-        FreeAndNil(StartForm);
+      if (INIPath.ReadString('Project','Path','') <> '') and (INIPath.ReadString('Love2d','Path','') <> '') then
+      begin
+        Application.CreateForm(TDesktop,Desktop);
+        try
+          Desktop.ShowModal;
+          SplashForm.Visible := false;
+        finally
+          FreeAndNil(Desktop);
+          Close;
+        end;
       end;
-  end
+    finally
+      FreeAndNil(INIPath);
+    end;
+  end;
+
+  Application.CreateForm(TStartForm,StartForm);
+  try
+    SplashForm.Visible := false;
+    StartForm.ShowModal;
+  finally
+    FreeAndNil(StartForm);
+  end;
 end;
 
 end.

@@ -1,13 +1,14 @@
 object StartForm: TStartForm
-  Left = 157
+  Left = 319
   Height = 524
-  Top = 103
+  Top = 140
   Width = 1047
   ActiveControl = EdtCaminho
   ClientHeight = 524
   ClientWidth = 1047
   Color = 11251751
   OnCreate = FormCreate
+  OnShow = FormShow
   Position = poDesktopCenter
   LCLVersion = '1.8.0.4'
   object Panel1: TPanel
@@ -22,36 +23,22 @@ object StartForm: TStartForm
     ParentColor = False
     TabOrder = 0
     object Pn1: TPanel
-      Left = 0
+      Left = 354
       Height = 524
       Top = 0
-      Width = 522
+      Width = 152
       Align = alLeft
       BevelOuter = bvNone
       ClientHeight = 524
-      ClientWidth = 522
+      ClientWidth = 152
       TabOrder = 0
-      object Label1: TLabel
-        Left = 36
-        Height = 51
-        Top = 40
-        Width = 437
-        Caption = 'BEM VINDO AO PASCIÖN'
-        Font.CharSet = ANSI_CHARSET
-        Font.Color = clWhite
-        Font.Height = -37
-        Font.Name = 'Century Gothic'
-        Font.Pitch = fpVariable
-        Font.Quality = fqDraft
-        ParentColor = False
-        ParentFont = False
-      end
       object PnNewProject: TPanel
         Cursor = crHandPoint
-        Left = 176
+        Left = 0
         Height = 50
-        Top = 225
-        Width = 170
+        Top = 0
+        Width = 152
+        Align = alTop
         BevelColor = clWhite
         BevelInner = bvRaised
         BevelOuter = bvLowered
@@ -65,10 +52,11 @@ object StartForm: TStartForm
       end
       object PnOpenProject: TPanel
         Cursor = crHandPoint
-        Left = 176
+        Left = 0
         Height = 50
-        Top = 352
-        Width = 170
+        Top = 50
+        Width = 152
+        Align = alTop
         BevelColor = clWhite
         BevelInner = bvRaised
         BevelOuter = bvLowered
@@ -82,29 +70,31 @@ object StartForm: TStartForm
       end
     end
     object Pn2: TPanel
-      Left = 522
+      Left = 506
       Height = 524
       Top = 0
-      Width = 522
+      Width = 120
       Align = alLeft
       BevelOuter = bvNone
       ClientHeight = 524
-      ClientWidth = 522
+      ClientWidth = 120
       TabOrder = 1
       object PnCaminho: TPanel
-        Left = 72
+        Left = 0
         Height = 88
-        Top = 272
-        Width = 430
+        Top = 74
+        Width = 120
+        Align = alTop
         BevelOuter = bvNone
         ClientHeight = 88
-        ClientWidth = 430
+        ClientWidth = 120
         TabOrder = 0
         object Label3: TLabel
-          Left = 8
+          Left = 0
           Height = 18
-          Top = 8
-          Width = 170
+          Top = 0
+          Width = 120
+          Align = alTop
           Caption = 'Digite o diretório do projeto:'
           Font.CharSet = ANSI_CHARSET
           Font.Color = clWhite
@@ -141,29 +131,32 @@ object StartForm: TStartForm
         end
       end
       object PnNome: TPanel
-        Left = 72
+        Left = 0
         Height = 74
-        Top = 168
-        Width = 430
+        Top = 0
+        Width = 120
+        Align = alTop
         BevelOuter = bvNone
         ClientHeight = 74
-        ClientWidth = 430
+        ClientWidth = 120
         TabOrder = 1
         object EdtNome: TEdit
-          Left = 8
+          Left = 0
           Height = 29
-          Top = 37
-          Width = 330
+          Top = 18
+          Width = 120
+          Align = alTop
           Color = 11251751
           Font.Color = clWhite
           ParentFont = False
           TabOrder = 0
         end
         object Label4: TLabel
-          Left = 8
+          Left = 0
           Height = 18
-          Top = 18
-          Width = 153
+          Top = 0
+          Width = 120
+          Align = alTop
           Caption = 'Digite o nome do projeto:'
           Font.CharSet = ANSI_CHARSET
           Font.Color = clWhite
@@ -175,30 +168,13 @@ object StartForm: TStartForm
           ParentFont = False
         end
       end
-      object Panel2: TPanel
-        Cursor = crHandPoint
-        Left = 8
-        Height = 90
-        Top = 0
-        Width = 90
-        BevelOuter = bvNone
-        Caption = 'f'
-        Font.CharSet = SYMBOL_CHARSET
-        Font.Color = clWhite
-        Font.Height = -48
-        Font.Name = 'Wingdings 3'
-        Font.Pitch = fpVariable
-        Font.Quality = fqDraft
-        ParentFont = False
-        TabOrder = 2
-        OnClick = Panel2Click
-      end
       object PnCriarProjeto: TPanel
         Cursor = crHandPoint
-        Left = 344
+        Left = 0
         Height = 50
-        Top = 464
-        Width = 170
+        Top = 162
+        Width = 120
+        Align = alTop
         BevelColor = clWhite
         BevelInner = bvRaised
         BevelOuter = bvLowered
@@ -207,7 +183,148 @@ object StartForm: TStartForm
         Font.Color = clWhite
         ParentColor = False
         ParentFont = False
-        TabOrder = 3
+        TabOrder = 2
+        OnClick = PnCriarProjetoClick
+      end
+    end
+    object PnPastaLove: TPanel
+      Left = 170
+      Height = 524
+      Top = 0
+      Width = 184
+      Align = alLeft
+      BevelOuter = bvNone
+      ClientHeight = 524
+      ClientWidth = 184
+      TabOrder = 2
+      object PnCaminhoLove: TPanel
+        Left = 0
+        Height = 284
+        Top = 0
+        Width = 184
+        Align = alTop
+        BevelOuter = bvNone
+        ClientHeight = 284
+        ClientWidth = 184
+        TabOrder = 0
+        object Label5: TLabel
+          Left = 8
+          Height = 18
+          Top = 207
+          Width = 171
+          Caption = 'Digite o diretório do Löve2D:'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clWhite
+          Font.Height = -13
+          Font.Name = 'Century Gothic'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+        object EdtCaminhoLove: TEdit
+          Left = 8
+          Height = 29
+          Top = 228
+          Width = 304
+          Color = 11251751
+          Font.Color = clWhite
+          ParentFont = False
+          TabOrder = 0
+        end
+        object Panel4: TPanel
+          Cursor = crHandPoint
+          Left = 312
+          Height = 29
+          Top = 228
+          Width = 32
+          BevelColor = clBtnFace
+          BevelInner = bvRaised
+          BevelWidth = 2
+          Caption = '...'
+          Font.Color = clWhite
+          ParentFont = False
+          TabOrder = 1
+          OnClick = Panel3Click
+        end
+        object Label2: TLabel
+          Left = 136
+          Height = 37
+          Top = 72
+          Width = 93
+          Alignment = taCenter
+          Caption = 'Löve2D'
+          Font.CharSet = ANSI_CHARSET
+          Font.Color = clWhite
+          Font.Height = -27
+          Font.Name = 'Century Gothic'
+          Font.Pitch = fpVariable
+          Font.Quality = fqDraft
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+      object PnProximo: TPanel
+        Cursor = crHandPoint
+        Left = 0
+        Height = 50
+        Top = 284
+        Width = 184
+        Align = alTop
+        BevelColor = clWhite
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        Caption = 'Proximo'
+        Color = 11251751
+        Font.Color = clWhite
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 1
+        OnClick = PnCriarProjetoClick
+      end
+    end
+    object Panel2: TPanel
+      Left = 0
+      Height = 524
+      Top = 0
+      Width = 170
+      Align = alLeft
+      BevelOuter = bvNone
+      ClientHeight = 524
+      ClientWidth = 170
+      TabOrder = 3
+      object Label1: TLabel
+        Left = 0
+        Height = 51
+        Top = 0
+        Width = 170
+        Align = alTop
+        Caption = 'BEM VINDO AO PASCIÖN'
+        Font.CharSet = ANSI_CHARSET
+        Font.Color = clWhite
+        Font.Height = -37
+        Font.Name = 'Century Gothic'
+        Font.Pitch = fpVariable
+        Font.Quality = fqDraft
+        ParentColor = False
+        ParentFont = False
+      end
+      object PnComecar: TPanel
+        Cursor = crHandPoint
+        Left = 0
+        Height = 50
+        Top = 51
+        Width = 170
+        Align = alTop
+        BevelColor = clWhite
+        BevelInner = bvRaised
+        BevelOuter = bvLowered
+        Caption = 'Começar'
+        Color = 11251751
+        Font.Color = clWhite
+        ParentColor = False
+        ParentFont = False
+        TabOrder = 0
         OnClick = PnCriarProjetoClick
       end
     end
@@ -215,11 +332,11 @@ object StartForm: TStartForm
   object OpenDialog1: TOpenDialog
     DefaultExt = '.pgp'
     Filter = 'pgp'
-    left = 464
+    left = 400
     top = 152
   end
   object SelectDirectoryDialog1: TSelectDirectoryDialog
-    left = 392
+    left = 352
     top = 152
   end
   object Timer1: TTimer
