@@ -47,8 +47,8 @@ begin
       begin
         Application.CreateForm(TDesktop,Desktop);
         try
-          Desktop.ShowModal;
           SplashForm.Visible := false;
+          Desktop.ShowModal;
         finally
           FreeAndNil(Desktop);
           Close;

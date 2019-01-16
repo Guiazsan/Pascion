@@ -3,11 +3,12 @@ object LuaEditor: TLuaEditor
   Height = 579
   Top = 48
   Width = 803
+  ActiveControl = RMEditor
   Caption = 'LuaEditor'
   ClientHeight = 579
   ClientWidth = 803
   OnCreate = FormCreate
-  LCLVersion = '1.8.0.4'
+  Visible = False
   object RMEditor: TRichMemo
     Left = 40
     Height = 579
@@ -27,8 +28,9 @@ object LuaEditor: TLuaEditor
       ''
     )
     OnChange = RMEditorChange
+    OnMouseWheel = RMEditorMouseWheel
     ParentFont = False
-    ScrollBars = ssAutoHorizontal
+    ScrollBars = ssAutoBoth
     TabOrder = 0
     WantTabs = True
     WordWrap = False

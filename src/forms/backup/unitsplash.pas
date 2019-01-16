@@ -38,6 +38,7 @@ procedure TSplashForm.FormActivate(Sender: TObject);
 var INIPath : TINIFile;
 begin
   LbStatus.Caption := 'Carregando Config';
+
   if FileExists(GetCurrentDir + '\Config.ini') then
   begin
     INIPath := TIniFile.Create(GetCurrentDir + '\Config.ini');
@@ -46,8 +47,8 @@ begin
       begin
         Application.CreateForm(TDesktop,Desktop);
         try
-          Desktop.ShowModal;
           SplashForm.Visible := false;
+          Desktop.ShowModal;
         finally
           FreeAndNil(Desktop);
           Close;

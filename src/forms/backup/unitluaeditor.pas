@@ -21,16 +21,20 @@ type
     procedure GridLinhasDrawCell(Sender: TObject; aCol, aRow: Integer;
       aRect: TRect; aState: TGridDrawState);
     procedure RMEditorChange(Sender: TObject);
+    procedure RMEditorMouseWheel(Sender: TObject; Shift: TShiftState;
+      WheelDelta: Integer; MousePos: TPoint; var Handled: Boolean);
     procedure Timer1Timer(Sender: TObject);
   private
-    KShift : Boolean;
+    FCaminho : String;
     procedure ColorirPalavrasReservadas(palavra : String; cor : TColor);
     procedure ColorirNumeros(cor : TColor);
     procedure ColorirComentarios(cor : TColor);
     procedure ColorirStrings(cor : TColor);
 
   public
-
+    procedure CarregarArquivo;
+    procedure SalvarArquivo;
+    procedure SetCaminho(caminho : String);
   end;
 
 var
@@ -69,9 +73,15 @@ begin
   GridLinhas.RowCount := RMEditor.Lines.Count;
 end;
 
+procedure TLuaEditor.RMEditorMouseWheel(Sender: TObject; Shift: TShiftState;
+  WheelDelta: Integer; MousePos: TPoint; var Handled: Boolean);
+begin
+//
+end;
+
 procedure TLuaEditor.FormCreate(Sender: TObject);
 begin
-  GridLinhas.DefaultRowHeight := RMEditor.Font.Size + 6;
+  GridLinhas.DefaultRowHeight := RMEditor.Font.Size + 5;
 end;
 
 procedure TLuaEditor.GridLinhasDblClick(Sender: TObject);
@@ -213,6 +223,32 @@ begin
     RMEditor.SetRangeColor((PosEx(texto, RMEditor.Text) - 2), indexFinal + 1, cor);
     texto := texto.Substring(PosEx('"',Texto));
   end;
+end;
+
+procedure TLuaEditor.CarregarArquivo;
+var
+  texto   : TStringList;
+  i       : Integer;
+begin
+  texto   := TStringList.Create;
+  try
+    texto.LoadFromFile(FCaminho);
+    for i := 0 to Pred(Texto.Count) do
+      RMEditor.Lines.Add(texto.Strings[i]);
+  finally
+    FreeAndNil(texto)
+  end;
+end;
+
+procedure TLuaEditor.SalvarArquivo(caminho: String);
+begin
+  //
+  RMEditor.Lines.SaveToFile(FCaminho);
+end;
+
+procedure TLuaEditor.SetCaminho(caminho: String);
+begin
+  FCaminho := ReplaceStr(caminho,'/','\');
 end;
 
 end.

@@ -5,12 +5,28 @@ unit UnitDesktop;
 interface
 
 uses
-  Classes, SysUtils, IniFiles, FileUtil, Forms, Controls, Graphics, Dialogs,
-  ComCtrls, ActnList, Menus, ExtCtrls, StdCtrls, ShellCtrls;
+  Classes, SysUtils, IniFiles, process, strutils, FileUtil, Forms,
+  Controls, Graphics, Dialogs, ComCtrls, ActnList, Menus, ExtCtrls, StdCtrls,
+  UnitLuaEditor, ResizeablePanel;
 
 type
 
   { TDesktop }
+
+  { TExecutarProjeto }
+
+  TExecutarProjeto = class(TThread)
+    public
+      comando     : String;
+      MemoSaida   : TMemo;
+      Constructor Create(CreateSuspended : boolean);
+      function getSaida : TStringList;
+    protected
+      procedure Execute; override;
+    private
+      love      : TProcess;
+      saida     : TStringList;
+  end;
 
   TDesktop = class(TForm)
     ActAbrir: TAction;
@@ -21,8 +37,8 @@ type
     ActSair: TAction;
     ActNovo: TAction;
     Actions: TActionList;
-    GBProjeto: TGroupBox;
     GBConsole: TGroupBox;
+    GBProjeto: TGroupBox;
     ImageList1: TImageList;
     MainMenu1: TMainMenu;
     MemoConsole: TMemo;
@@ -30,9 +46,11 @@ type
     MenuItem2: TMenuItem;
     MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
-    LCtrlPanel: TPanel;
+    AbrirProjeto: TOpenDialog;
     PageControl1: TPageControl;
-    PnBottom: TPanel;
+    CtrlLeftPanel: TResizeablePanel;
+    ProjetoTree: TTreeView;
+    PnBottom: TResizeablePanel;
     ToolBar1: TToolBar;
     BtnNovo: TToolButton;
     ToolButton1: TToolButton;
@@ -41,14 +59,21 @@ type
     ToolButton4: TToolButton;
     ToolButton5: TToolButton;
     ToolButton6: TToolButton;
-    ProjetoTree: TTreeView;
+    procedure ActAbrirExecute(Sender: TObject);
+    procedure ActPararExecute(Sender: TObject);
+    procedure ActPlayExecute(Sender: TObject);
     procedure ActSairExecute(Sender: TObject);
+    procedure ActSalvarExecute(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure ProjetoTreeDblClick(Sender: TObject);
   private
-    ProjetoPath, LovePath : String;
+    ProjetoPath, LovePath, ProjetoNome : String;
     IniConfig : TIniFile;
     procedure popularTreeProjeto;
+    procedure LimparTela;
+    procedure AlterarCodigo(Sender : TObject);
+
   public
 
   end;
@@ -59,6 +84,38 @@ var
 implementation
 
 {$R *.lfm}
+
+{ TExecutarProjeto }
+
+constructor TExecutarProjeto.Create(CreateSuspended: boolean);
+begin
+  inherited Create(CreateSuspended);
+  FreeOnTerminate := True;
+  Saida := TStringList.Create;
+end;
+
+function TExecutarProjeto.getSaida: TStringList;
+begin
+  Result := saida;
+end;
+
+procedure TExecutarProjeto.Execute;
+//var i : Integer;
+begin
+  love             := TProcess.Create(nil);
+  love.CommandLine := comando;
+  love.Options     := love.Options + [poUsePipes, poNoConsole];
+  love.Execute;
+  saida.LoadFromStream(love.Output);
+  {if love.Terminate(0) then
+  begin
+    for i := 0 to Pred(Saida.Count) do
+    begin
+      MemoSaida.Lines.Add(Saida.Strings[i]);
+    end;
+    Terminate;
+  end;}
+end;
 
 { TDesktop }
 
@@ -71,23 +128,99 @@ procedure TDesktop.FormCreate(Sender: TObject);
 begin
   IniConfig   := TIniFile.Create(GetCurrentDir + '\Config.ini');
   ProjetoPath := IniConfig.ReadString('Project','Path','');
+  ProjetoNome := IniConfig.ReadString('Project','Name','');
+  Self.Caption := ProjetoNome + ' - Pasciön IDE';
   LovePath := IniConfig.ReadString('Love2d','Path','');
+
+  popularTreeProjeto;
+end;
+
+procedure TDesktop.ProjetoTreeDblClick(Sender: TObject);
+var newTab: TTabSheet;
+    LuaTela : TLuaEditor;
+begin
+  if PosEx('.lua',ProjetoTree.Selected.Text) > 0 then
+  begin
+    newTab                := PageControl1.AddTabSheet;
+    newTab.Caption        := ProjetoTree.Selected.Text;
+
+    LuaTela := TLuaEditor.Create(nil);
+    LuaTela.SetCaminho(ProjetoPath + StringReplace(ProjetoTree.Selected.GetTextPath, ProjetoNome , '', []));
+    LuaTela.CarregarArquivo;
+    LuaTela.BorderStyle := bsNone;
+    LuaTela.Parent      := newTab;
+    LuaTela.Align       := alClient;
+    LuaTela.Show;
+    LuaTela.RMEditor.OnChange := @AlterarCodigo;
+  end;
 end;
 
 procedure TDesktop.popularTreeProjeto;
-var arquivo : TSearchRec;
+var
+  arquivo : TSearchRec;
+  raiz    : TTreeNode;
 begin
-  FindFirst(ProjetoPath, faAnyFile, arquivo);
-  ProjetoTree.Items.Add(nil, arquivo.Name);
-  while FindNext(arquivo) <> 0 do
-  begin
-    ProjetoTree.Items.Add(nil, arquivo.Name);
-  end;
+  raiz := ProjetoTree.Items.AddFirst(nil,ProjetoNome);
+  if FindFirst(ProjetoPath + '\*.*', faAnyFile, arquivo) = 0 then
+    repeat
+      if (arquivo.Name <> '.') and (arquivo.Name <> '..') then
+        ProjetoTree.Items.AddChild(raiz, arquivo.Name);
+    until FindNext(arquivo) <> 0;
+      FindClose(arquivo);
+end;
+
+procedure TDesktop.LimparTela;
+begin
+  //
+  //PageControl1.;
+end;
+
+procedure TDesktop.AlterarCodigo(Sender: TObject);
+begin
+  if PosEx('*',PageControl1.ActivePage.Caption) = 0 then
+    PageControl1.ActivePage.Caption := '*'+ PageControl1.ActivePage.Caption;
+  ActSalvar.Enabled := True;
 end;
 
 procedure TDesktop.ActSairExecute(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TDesktop.ActSalvarExecute(Sender: TObject);
+var i : Integer;
+begin
+  for i := 0 to Pred(PageControl1.ActivePage.ControlCount) do
+    if PageControl1.ActivePage.Controls[i].ClassType = TLuaEditor then
+      TLuaEditor(PageControl1.ActivePage.Controls[i]).SalvarArquivo;
+  ActSalvar.Enabled := false;
+  PageControl1.ActivePage.Caption := StringReplace(PageControl1.ActivePage.Caption,'*','',[]);
+end;
+
+procedure TDesktop.ActPlayExecute(Sender: TObject);
+var Executor : TExecutarProjeto;
+begin
+  MemoConsole.Lines.Add('Iniciando ' + ProjetoNome);
+  Executor := TExecutarProjeto.Create(true);
+  Executor.comando := '"'+LovePath + '\lovec.exe" '+ '"'+ProjetoPath+'"';
+  Executor.Execute;
+  //Executor.MemoSaida := MemoConsole;
+end;
+
+procedure TDesktop.ActPararExecute(Sender: TObject);
+begin
+//
+end;
+
+procedure TDesktop.ActAbrirExecute(Sender: TObject);
+var caminho : String;
+begin
+  if AbrirProjeto.Execute then
+  begin
+    caminho := AbrirProjeto.InitialDir.Substring(0, Length(AbrirProjeto.InitialDir) - 1);
+    IniConfig.WriteString('Project', 'Path', caminho);
+    IniConfig.WriteString('Project','Name', ReverseString(ReverseString(caminho).Substring(0, PosEx('\',ReverseString(caminho)) -1 )));
+  end;
 end;
 
 end.

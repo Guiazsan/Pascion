@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ExtCtrls, Menus, UnitDesktop, IniFiles, process, ShellApi;
+  ExtCtrls, Menus, UnitDesktop, IniFiles, process, ShellApi, strutils;
 
 type
 
@@ -157,7 +157,8 @@ begin
     Exit;
   end;
 
-  PathFile.WriteString('Project','Path', EdtCaminho.Text + '\' + EdtNome.Text);
+  PathFile.WriteString('Project','Path', EdtCaminho.Text);
+  PathFile.WriteString('Project','Name', EdtNome.Text);
   MainFile := TStringList.Create;
   try
     MainFile.SaveToFile(EdtCaminho.Text + '\' + EdtNome.Text + '\Main.lua');
@@ -170,10 +171,13 @@ begin
 end;
 
 procedure TStartForm.PnOpenProjectClick(Sender: TObject);
+var caminho : String;
 begin
   if (OpenDialog1.Execute) and (OpenDialog1.FileName <> '') then
   begin
-    PathFile.WriteString('Project','Path', OpenDialog1.FileName);
+    caminho := OpenDialog1.InitialDir.Substring(0, Length(OpenDialog1.InitialDir) - 1);
+    PathFile.WriteString('Project','Path', caminho);
+    PathFile.WriteString('Project','Name', ReverseString(ReverseString(caminho).Substring(0, PosEx('\',ReverseString(caminho)) -1 )));
     PgpFile := TIniFile.Create(OpenDialog1.FileName);
     abrirIDE;
   end;
@@ -251,8 +255,8 @@ procedure TStartForm.abrirIDE;
 begin
   Application.CreateForm(TDesktop, Desktop);
   try
-    Desktop.ShowModal;
     StartForm.Visible := False;
+    Desktop.ShowModal;
   finally
     FreeAndNil(Desktop);
     Close;

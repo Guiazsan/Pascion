@@ -8,10 +8,10 @@ object Desktop: TDesktop
   ClientHeight = 466
   ClientWidth = 833
   DefaultMonitor = dmDesktop
+  FormStyle = fsMDIForm
   Menu = MainMenu1
   OnClose = FormClose
   OnCreate = FormCreate
-  LCLVersion = '1.8.4.0'
   Visible = False
   object ToolBar1: TToolBar
     Left = 0
@@ -59,70 +59,79 @@ object Desktop: TDesktop
       Action = ActParar
     end
   end
-  object LCtrlPanel: TPanel
+  object PageControl1: TPageControl
+    Left = 170
+    Height = 326
+    Top = 26
+    Width = 663
+    Align = alClient
+    TabOrder = 1
+  end
+  object CtrlLeftPanel: TResizeablePanel
     Left = 0
-    Height = 314
+    Height = 326
     Top = 26
     Width = 170
     Align = alLeft
-    BevelColor = clActiveBorder
     BevelOuter = bvNone
-    ClientHeight = 314
+    ClientHeight = 326
     ClientWidth = 170
-    Color = clMenuBar
-    ParentColor = False
-    TabOrder = 1
+    TabOrder = 2
+    LeftResize = True
+    RightResize = False
+    TopResize = False
+    BottomResize = False
     object GBProjeto: TGroupBox
       Left = 0
-      Height = 314
+      Height = 326
       Top = 0
       Width = 170
       Align = alClient
       Caption = 'Projeto'
-      ClientHeight = 294
+      ClientHeight = 306
       ClientWidth = 166
       TabOrder = 0
       object ProjetoTree: TTreeView
         Left = 0
-        Height = 294
+        Height = 306
         Top = 0
         Width = 166
         Align = alClient
+        ReadOnly = True
+        ScrollBars = ssAutoBoth
         TabOrder = 0
+        OnDblClick = ProjetoTreeDblClick
+        Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
       end
     end
   end
-  object PageControl1: TPageControl
-    Left = 170
-    Height = 314
-    Top = 26
-    Width = 663
-    Align = alClient
-    TabOrder = 2
-  end
-  object PnBottom: TPanel
+  object PnBottom: TResizeablePanel
     Left = 0
-    Height = 106
-    Top = 340
+    Height = 114
+    Top = 352
     Width = 833
     Align = alBottom
     BevelOuter = bvNone
-    ClientHeight = 106
+    ClientHeight = 114
     ClientWidth = 833
     TabOrder = 3
+    LeftResize = False
+    RightResize = False
+    TopResize = False
+    BottomResize = False
     object GBConsole: TGroupBox
       Left = 0
-      Height = 105
+      Height = 114
       Top = 0
       Width = 833
-      Align = alTop
+      Align = alClient
       Caption = 'Console'
-      ClientHeight = 85
+      ClientHeight = 94
       ClientWidth = 829
       TabOrder = 0
       object MemoConsole: TMemo
         Left = 0
-        Height = 85
+        Height = 94
         Top = 0
         Width = 829
         Align = alClient
@@ -143,6 +152,7 @@ object Desktop: TDesktop
       Category = 'Arquivo'
       Caption = 'Abrir'
       ImageIndex = 1
+      OnExecute = ActAbrirExecute
     end
     object ActSair: TAction
       Caption = 'Sair'
@@ -153,6 +163,7 @@ object Desktop: TDesktop
       Caption = 'Salvar'
       Hint = 'Salvar Arquivo'
       ImageIndex = 2
+      OnExecute = ActSalvarExecute
     end
     object ActSalvarTudo: TAction
       Category = 'Arquivo'
@@ -165,12 +176,15 @@ object Desktop: TDesktop
       Caption = 'Play'
       Hint = 'Iniciar Aplicação'
       ImageIndex = 4
+      OnExecute = ActPlayExecute
     end
     object ActParar: TAction
       Category = 'Executar'
       Caption = 'Parar'
+      Enabled = False
       Hint = 'Parar Aplicação'
       ImageIndex = 5
+      OnExecute = ActPararExecute
     end
   end
   object ImageList1: TImageList
@@ -386,5 +400,9 @@ object Desktop: TDesktop
         Action = ActSair
       end
     end
+  end
+  object AbrirProjeto: TOpenDialog
+    left = 176
+    top = 32
   end
 end
