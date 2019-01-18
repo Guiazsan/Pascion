@@ -3,12 +3,12 @@ program Love2DIDE;
 {$mode objfpc}{$H+}
 
 uses
-  {$IFDEF UNIX}{$IFDEF UseCThreads}
-  cthreads,
-  {$ENDIF}{$ENDIF}
+  {$IFDEF UNIX}
+  cthreads, cmem,
+  {$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, UnitDesktop, UnitSplash, UnitStart, UnitLuaEditor,
-  UnitVariaveisGlobais, UnitFuncoes, unit1;
+  UnitVariaveisGlobais, UnitFuncoes;
 
 {$R *.res}
 

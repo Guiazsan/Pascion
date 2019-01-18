@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, IniFiles, process, strutils, FileUtil, Forms,
   Controls, Graphics, Dialogs, ComCtrls, ActnList, Menus, ExtCtrls, StdCtrls,
-  UnitLuaEditor, ResizeablePanel;
+  UnitLuaEditor, UnitVariaveisGlobais, ResizeablePanel;
 
 type
 
@@ -42,11 +42,17 @@ type
     ImageList1: TImageList;
     MainMenu1: TMainMenu;
     MemoConsole: TMemo;
-    MenuItem1: TMenuItem;
-    MenuItem2: TMenuItem;
-    MenuItem3: TMenuItem;
-    MenuItem4: TMenuItem;
+    ItemArquivo: TMenuItem;
+    ItemNovo: TMenuItem;
+    ItemAbrir: TMenuItem;
+    ItemSair: TMenuItem;
     AbrirProjeto: TOpenDialog;
+    ItemEditar : TMenuItem;
+    ItemSalvar : TMenuItem;
+    ItemSalvarTodos : TMenuItem;
+    ItemExecutar : TMenuItem;
+    ItemPlay : TMenuItem;
+    ItemStop : TMenuItem;
     PageControl1: TPageControl;
     CtrlLeftPanel: TResizeablePanel;
     ProjetoTree: TTreeView;
@@ -67,13 +73,12 @@ type
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure ProjetoTreeDblClick(Sender: TObject);
+    procedure AlterarCodigo(Sender : TObject);
   private
     ProjetoPath, LovePath, ProjetoNome : String;
     IniConfig : TIniFile;
     procedure popularTreeProjeto;
     procedure LimparTela;
-    procedure AlterarCodigo(Sender : TObject);
-
   public
 
   end;
@@ -126,7 +131,7 @@ end;
 
 procedure TDesktop.FormCreate(Sender: TObject);
 begin
-  IniConfig   := TIniFile.Create(GetCurrentDir + '\Config.ini');
+  IniConfig   := TIniFile.Create(GetCurrentDir + separadorPasta +'Config.ini');
   ProjetoPath := IniConfig.ReadString('Project','Path','');
   ProjetoNome := IniConfig.ReadString('Project','Name','');
   Self.Caption := ProjetoNome + ' - Pasciön IDE';
@@ -161,7 +166,7 @@ var
   raiz    : TTreeNode;
 begin
   raiz := ProjetoTree.Items.AddFirst(nil,ProjetoNome);
-  if FindFirst(ProjetoPath + '\*.*', faAnyFile, arquivo) = 0 then
+  if FindFirst(ProjetoPath + separadorPasta +'*.*', faAnyFile, arquivo) = 0 then
     repeat
       if (arquivo.Name <> '.') and (arquivo.Name <> '..') then
         ProjetoTree.Items.AddChild(raiz, arquivo.Name);
@@ -202,9 +207,9 @@ var Executor : TExecutarProjeto;
 begin
   MemoConsole.Lines.Add('Iniciando ' + ProjetoNome);
   Executor := TExecutarProjeto.Create(true);
-  Executor.comando := '"'+LovePath + '\lovec.exe" '+ '"'+ProjetoPath+'"';
+  Executor.comando := LovePath + ' "'+ProjetoPath+'"';
   Executor.Execute;
-  //Executor.MemoSaida := MemoConsole;
+  Executor.MemoSaida := MemoConsole;
 end;
 
 procedure TDesktop.ActPararExecute(Sender: TObject);

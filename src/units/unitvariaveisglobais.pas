@@ -19,8 +19,10 @@ type
   public
     class function getPalavrasReservadas : TStringList;
     class procedure setPalavrasReservadas(palavra : String);
-
   end;
+
+var
+  separadorPasta : String;
 
 implementation
 
@@ -59,7 +61,13 @@ begin
                                        'end','false','for','function','if',
                                        'in','local','nil','not','or','repeat',
                                        'return','then','true','until','while']);
-
+  {$IFDEF UNIX}
+    separadorPasta := '/';
+  {$ELSE}
+    {$IFDEF WINDOWS}
+      separadorPasta := '\';
+    {$ENDIF}
+  {$ENDIF}
 
 end;
 end.

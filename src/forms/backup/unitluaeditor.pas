@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  Menus, Grids, ExtCtrls, RichMemo, Types;
+  Menus, Grids, ExtCtrls, RichMemo, UnitDesktop, Types;
 
 type
 
@@ -71,6 +71,7 @@ procedure TLuaEditor.RMEditorChange(Sender: TObject);
 begin
   Timer1.Enabled := True;
   GridLinhas.RowCount := RMEditor.Lines.Count;
+  Desktop.AlterarCodigo(nil);
 end;
 
 procedure TLuaEditor.RMEditorMouseWheel(Sender: TObject; Shift: TShiftState;
@@ -236,19 +237,18 @@ begin
     for i := 0 to Pred(Texto.Count) do
       RMEditor.Lines.Add(texto.Strings[i]);
   finally
-    FreeAndNil(texto)
+    FreeAndNil(texto);
   end;
 end;
 
-procedure TLuaEditor.SalvarArquivo(caminho: String);
+procedure TLuaEditor.SalvarArquivo;
 begin
-  //
   RMEditor.Lines.SaveToFile(FCaminho);
 end;
 
 procedure TLuaEditor.SetCaminho(caminho: String);
 begin
-  FCaminho := ReplaceStr(caminho,'/','\');
+  FCaminho := IIF(separadorPasta = '/', caminho, ReplaceStr(caminho,'/','\'));
 end;
 
 end.

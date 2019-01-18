@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  ExtCtrls, Menus, UnitDesktop, IniFiles, process, ShellApi, strutils;
+  ExtCtrls, Menus, UnitDesktop, UnitVariaveisGlobais, IniFiles, process,
+  strutils, LCLIntf, LazUtils;
 
 type
 
@@ -82,7 +83,7 @@ procedure TStartForm.CriarProjeto();
 begin
   if SelectDirectoryDialog1.Execute then
   begin
-    PathFile := TIniFile.Create(GetCurrentDir + '\Config.ini');
+    PathFile := TIniFile.Create(GetCurrentDir + separadorPasta +'Config.ini');
     PathFile.WriteString('Project','Path', SelectDirectoryDialog1.FileName);
     PgpFile := TIniFile.Create(SelectDirectoryDialog1.FileName);
     {FileCreate(SaveDialog1.GetNamePath + '\conf\conf.lua');
@@ -102,9 +103,9 @@ end;
 procedure TStartForm.FormCreate(Sender: TObject);
 begin
   StartForm.Width := 522;
-  EdtCaminho.Text := GetUserDir + 'Pascion Projects\';
+  EdtCaminho.Text := GetUserDir + 'Pascion Projects'+ separadorPasta;
   EdtNome.Text := 'NewProject';
-  PathFile := TIniFile.Create(GetCurrentDir + '\Config.ini');
+  PathFile := TIniFile.Create(GetCurrentDir + separadorPasta + 'Config.ini');
 end;
 
 procedure TStartForm.FormShow(Sender: TObject);
@@ -114,7 +115,8 @@ end;
 
 procedure TStartForm.Label7Click(Sender: TObject);
 begin
-  Shellexecute(handle, 'open', pchar('https://love2d.org/'), nil,nil, 1);
+  //Shellexecute(handle, 'open', pchar('https://love2d.org/'), nil,nil, 1);
+  OpenUrl('https://love2d.org/');
 end;
 
 procedure TStartForm.Panel2Click(Sender: TObject);
@@ -132,9 +134,19 @@ end;
 
 procedure TStartForm.Panel4Click(Sender: TObject);
 begin
-  if SelectDirectoryDialog1.Execute then
+  if OpenDialog1.Execute then
   begin
-    EdtCaminhoLove.Text := SelectDirectoryDialog1.FileName;
+    {$IFDEF LINUX}
+      OpenDialog1.DefaultExt := '.appimage';
+      OpenDialog1.Filter := 'appimage';
+    {$ELSE}
+      {$IFDEF WINDOWS}
+        OpenDialog1.DefaultExt := '.exe';
+        OpenDialog1.Filter := 'exe';
+      {$ENDIF}
+    {$ENDIF}
+
+    EdtCaminhoLove.Text := OpenDialog1.FileName;
   end;
 end;
 
@@ -161,7 +173,11 @@ begin
   PathFile.WriteString('Project','Name', EdtNome.Text);
   MainFile := TStringList.Create;
   try
-    MainFile.SaveToFile(EdtCaminho.Text + '\' + EdtNome.Text + '\Main.lua');
+    If Not DirectoryExists(EdtCaminho.Text + separadorPasta + EdtNome.Text) then
+      CreateDir(EdtCaminho.Text + separadorPasta + EdtNome.Text);
+
+    MainFile.SaveToFile(EdtCaminho.Text + separadorPasta +
+        EdtNome.Text + separadorPasta +'Main.lua');
   finally
     FreeAndNil(MainFile);
   end;
@@ -177,7 +193,7 @@ begin
   begin
     caminho := OpenDialog1.InitialDir.Substring(0, Length(OpenDialog1.InitialDir) - 1);
     PathFile.WriteString('Project','Path', caminho);
-    PathFile.WriteString('Project','Name', ReverseString(ReverseString(caminho).Substring(0, PosEx('\',ReverseString(caminho)) -1 )));
+    PathFile.WriteString('Project','Name', ReverseString(ReverseString(caminho).Substring(0, PosEx(separadorPasta,ReverseString(caminho)) -1 )));
     PgpFile := TIniFile.Create(OpenDialog1.FileName);
     abrirIDE;
   end;

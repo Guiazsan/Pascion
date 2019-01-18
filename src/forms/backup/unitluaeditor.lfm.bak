@@ -8,6 +8,7 @@ object LuaEditor: TLuaEditor
   ClientHeight = 579
   ClientWidth = 803
   OnCreate = FormCreate
+  LCLVersion = '1.8.4.0'
   Visible = False
   object RMEditor: TRichMemo
     Left = 40

@@ -43,7 +43,7 @@ var
 implementation
 
 uses
-  RichMemoUtils, UnitVariaveisGlobais, UnitFuncoes, strutils, LCLType, Clipbrd;
+  RichMemoUtils, UnitVariaveisGlobais, UnitFuncoes, strutils, LCLType, Clipbrd, UnitDesktop;
 
 {$R *.lfm}
 
@@ -71,6 +71,7 @@ procedure TLuaEditor.RMEditorChange(Sender: TObject);
 begin
   Timer1.Enabled := True;
   GridLinhas.RowCount := RMEditor.Lines.Count;
+  Desktop.AlterarCodigo(nil);
 end;
 
 procedure TLuaEditor.RMEditorMouseWheel(Sender: TObject; Shift: TShiftState;
@@ -236,7 +237,7 @@ begin
     for i := 0 to Pred(Texto.Count) do
       RMEditor.Lines.Add(texto.Strings[i]);
   finally
-    FreeAndNil(texto)
+    FreeAndNil(texto);
   end;
 end;
 
@@ -247,7 +248,7 @@ end;
 
 procedure TLuaEditor.SetCaminho(caminho: String);
 begin
-  FCaminho := ReplaceStr(caminho,'/','\');
+  FCaminho := IIF(separadorPasta = '/', caminho, ReplaceStr(caminho,'/','\'));
 end;
 
 end.
