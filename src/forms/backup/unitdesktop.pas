@@ -15,19 +15,6 @@ type
 
   { TExecutarProjeto }
 
-  TExecutarProjeto = class(TThread)
-    public
-      comando     : String;
-      MemoSaida   : TMemo;
-      Constructor Create(CreateSuspended : boolean);
-      function getSaida : TStringList;
-    protected
-      procedure Execute; override;
-    private
-      love      : TProcess;
-      saida     : TStringList;
-  end;
-
   TDesktop = class(TForm)
     ActAbrir: TAction;
     ActParar: TAction;
@@ -77,6 +64,7 @@ type
   private
     ProjetoPath, LovePath, ProjetoNome : String;
     IniConfig : TIniFile;
+    love : TProcess;
     procedure popularTreeProjeto;
     procedure LimparTela;
   public
@@ -89,38 +77,6 @@ var
 implementation
 
 {$R *.lfm}
-
-{ TExecutarProjeto }
-
-constructor TExecutarProjeto.Create(CreateSuspended: boolean);
-begin
-  inherited Create(CreateSuspended);
-  FreeOnTerminate := True;
-  Saida := TStringList.Create;
-end;
-
-function TExecutarProjeto.getSaida: TStringList;
-begin
-  Result := saida;
-end;
-
-procedure TExecutarProjeto.Execute;
-//var i : Integer;
-begin
-  love             := TProcess.Create(nil);
-  love.CommandLine := comando;
-  love.Options     := love.Options + [poUsePipes, poNoConsole];
-  love.Execute;
-  saida.LoadFromStream(love.Output);
-  {if love.Terminate(0) then
-  begin
-    for i := 0 to Pred(Saida.Count) do
-    begin
-      MemoSaida.Lines.Add(Saida.Strings[i]);
-    end;
-    Terminate;
-  end;}
-end;
 
 { TDesktop }
 
@@ -156,7 +112,6 @@ begin
     LuaTela.Parent      := newTab;
     LuaTela.Align       := alClient;
     LuaTela.Show;
-    //LuaTela.RMEditor.OnChange := @AlterarCodigo;
   end;
 end;
 
@@ -203,18 +158,30 @@ begin
 end;
 
 procedure TDesktop.ActPlayExecute(Sender: TObject);
-var Executor : TExecutarProjeto;
 begin
   MemoConsole.Lines.Add('Iniciando ' + ProjetoNome);
-  Executor := TExecutarProjeto.Create(true);
-  Executor.comando := LovePath + ' "'+ProjetoPath+'"';
-  Executor.Execute;
+  love := TProcess.Create(nil);
+  love.CommandLine := LovePath + ' "'+ProjetoPath+'"';
+  love.Active := True;
+  if love.Active then
+  begin
+    ActPlay.Enabled := False;
+    ActParar.Enabled := True;
+  end;
+
+  //SysUtils.ExecuteProcess(Utf8ToAnsi(LovePath),Utf8ToAnsi('"'+ProjetoPath+'"'),[]);
   //Executor.MemoSaida := MemoConsole;
 end;
 
 procedure TDesktop.ActPararExecute(Sender: TObject);
 begin
-//
+  love.Active := False;
+  if not(love.Active) then
+  begin
+    ActPlay.Enabled := True;
+    ActParar.Enabled := False;
+    FreeAndNil(love);
+  end;
 end;
 
 procedure TDesktop.ActAbrirExecute(Sender: TObject);

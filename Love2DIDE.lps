@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="19">
+    <Units Count="16">
       <Unit0>
         <Filename Value="Love2DIDE.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -22,8 +22,8 @@
         <UnitName Value="UnitDesktop"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="196"/>
-        <CursorPos X="3" Y="212"/>
+        <TopLine Value="199"/>
+        <CursorPos X="45" Y="210"/>
         <UsageCount Value="221"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -36,7 +36,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitSplash"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="49"/>
+        <TopLine Value="45"/>
         <CursorPos X="11" Y="56"/>
         <UsageCount Value="221"/>
         <Loaded Value="True"/>
@@ -63,8 +63,7 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitLuaEditor"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="19"/>
-        <CursorPos Y="39"/>
+        <CursorPos X="22" Y="24"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -88,97 +87,72 @@
         <UsageCount Value="216"/>
       </Unit6>
       <Unit7>
-        <Filename Value="..\Libs\lzRichEdit\tcustomrichbox.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="33"/>
-        <CursorPos X="10" Y="52"/>
-        <UsageCount Value="7"/>
-      </Unit7>
-      <Unit8>
-        <Filename Value="..\..\KZDesktop\kzdesktop_beta02\kzlazdesktop.pas"/>
-        <ComponentName Value="KZLazDesktopInterface"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <UnitName Value="KZLazDesktop"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="191"/>
-        <CursorPos X="33" Y="206"/>
-        <UsageCount Value="7"/>
-      </Unit8>
-      <Unit9>
-        <Filename Value="D:\usr\lib\lazarus\1.8.4\ide\lazarus.pp"/>
-        <UnitName Value="Lazarus"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="44" Y="7"/>
-        <UsageCount Value="7"/>
-      </Unit9>
-      <Unit10>
         <Filename Value="C:\lazarus\fpc\3.0.4\source\packages\rtl-objpas\src\inc\strutils.pp"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="79"/>
         <CursorPos X="10" Y="99"/>
-        <UsageCount Value="8"/>
-      </Unit10>
-      <Unit11>
+        <UsageCount Value="10"/>
+      </Unit7>
+      <Unit8>
         <Filename Value="C:\lazarus\lcl\include\treeview.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="4361"/>
         <CursorPos Y="4385"/>
-        <UsageCount Value="8"/>
-      </Unit11>
-      <Unit12>
+        <UsageCount Value="10"/>
+      </Unit8>
+      <Unit9>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="3407"/>
         <CursorPos Y="3427"/>
-        <UsageCount Value="8"/>
-      </Unit12>
-      <Unit13>
+        <UsageCount Value="10"/>
+      </Unit9>
+      <Unit10>
         <Filename Value="C:\lazarus\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="4309"/>
         <CursorPos Y="4328"/>
-        <UsageCount Value="9"/>
-      </Unit13>
-      <Unit14>
+        <UsageCount Value="1"/>
+      </Unit10>
+      <Unit11>
         <Filename Value="C:\lazarus\fpc\3.0.4\source\packages\winunits-base\src\shellapi.pp"/>
         <UnitName Value="ShellApi"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1058"/>
         <CursorPos X="10" Y="1079"/>
-        <UsageCount Value="10"/>
-      </Unit14>
-      <Unit15>
+        <UsageCount Value="2"/>
+      </Unit11>
+      <Unit12>
         <Filename Value="Components\resizeablepanel.pas"/>
         <UnitName Value="ResizeablePanel"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="70"/>
         <CursorPos X="5" Y="70"/>
-        <UsageCount Value="18"/>
-      </Unit15>
-      <Unit16>
+        <UsageCount Value="10"/>
+      </Unit12>
+      <Unit13>
         <Filename Value="C:\lazarus\lcl\extctrls.pp"/>
         <UnitName Value="ExtCtrls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1101"/>
         <CursorPos X="18" Y="1128"/>
-        <UsageCount Value="12"/>
-      </Unit16>
-      <Unit17>
+        <UsageCount Value="4"/>
+      </Unit13>
+      <Unit14>
         <Filename Value="C:\lazarus\lcl\controls.pp"/>
         <UnitName Value="Controls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1647"/>
         <CursorPos X="14" Y="1666"/>
-        <UsageCount Value="10"/>
-      </Unit17>
-      <Unit18>
+        <UsageCount Value="2"/>
+      </Unit14>
+      <Unit15>
         <Filename Value="..\..\..\..\usr\share\lazarus\1.8.4\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="6448"/>
         <CursorPos X="6" Y="6460"/>
-        <UsageCount Value="10"/>
-      </Unit18>
+        <UsageCount Value="3"/>
+      </Unit15>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
