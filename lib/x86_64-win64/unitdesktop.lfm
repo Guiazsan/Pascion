@@ -82,20 +82,20 @@ object Desktop: TDesktop
     TopResize = False
     BottomResize = False
     object GBProjeto: TGroupBox
-      Left = 0
-      Height = 326
-      Top = 0
-      Width = 170
+      Left = 2
+      Height = 322
+      Top = 2
+      Width = 166
       Align = alClient
       Caption = 'Projeto'
-      ClientHeight = 306
-      ClientWidth = 166
+      ClientHeight = 302
+      ClientWidth = 162
       TabOrder = 0
       object ProjetoTree: TTreeView
         Left = 0
-        Height = 306
+        Height = 302
         Top = 0
-        Width = 166
+        Width = 162
         Align = alClient
         ReadOnly = True
         ScrollBars = ssAutoBoth
@@ -119,24 +119,31 @@ object Desktop: TDesktop
     RightResize = False
     TopResize = False
     BottomResize = False
-    object GBConsole: TGroupBox
-      Left = 0
-      Height = 114
-      Top = 0
-      Width = 833
+    object PcSaidas: TPageControl
+      Left = 2
+      Height = 110
+      Top = 2
+      Width = 829
+      ActivePage = TsMensagens
       Align = alClient
-      Caption = 'Console'
-      ClientHeight = 94
-      ClientWidth = 829
+      TabIndex = 1
       TabOrder = 0
-      object MemoConsole: TMemo
-        Left = 0
-        Height = 94
-        Top = 0
-        Width = 829
-        Align = alClient
-        ReadOnly = True
-        TabOrder = 0
+      object TsConsole: TTabSheet
+        Caption = 'Console'
+      end
+      object TsMensagens: TTabSheet
+        Caption = 'Mensagens'
+        ClientHeight = 82
+        ClientWidth = 821
+        object MemoMensagens: TMemo
+          Left = 0
+          Height = 82
+          Top = 0
+          Width = 821
+          Align = alClient
+          ReadOnly = True
+          TabOrder = 0
+        end
       end
     end
   end
@@ -161,6 +168,7 @@ object Desktop: TDesktop
     object ActSalvar: TAction
       Category = 'Arquivo'
       Caption = 'Salvar'
+      Enabled = False
       Hint = 'Salvar Arquivo'
       ImageIndex = 2
       OnExecute = ActSalvarExecute
@@ -388,21 +396,45 @@ object Desktop: TDesktop
   object MainMenu1: TMainMenu
     Images = ImageList1
     left = 504
-    object MenuItem1: TMenuItem
+    object ItemArquivo: TMenuItem
       Caption = 'Arquivo'
-      object MenuItem2: TMenuItem
+      object ItemNovo: TMenuItem
         Action = ActNovo
       end
-      object MenuItem3: TMenuItem
+      object ItemAbrir: TMenuItem
         Action = ActAbrir
       end
-      object MenuItem4: TMenuItem
+      object ItemSair: TMenuItem
         Action = ActSair
+      end
+    end
+    object ItemEditar: TMenuItem
+      Caption = 'Editar'
+      object ItemSalvar: TMenuItem
+        Action = ActSalvar
+      end
+      object ItemSalvarTodos: TMenuItem
+        Action = ActSalvarTudo
+      end
+    end
+    object ItemExecutar: TMenuItem
+      Caption = 'Executar'
+      object ItemPlay: TMenuItem
+        Action = ActPlay
+      end
+      object ItemStop: TMenuItem
+        Action = ActParar
       end
     end
   end
   object AbrirProjeto: TOpenDialog
     left = 176
     top = 32
+  end
+  object TmExecutor: TTimer
+    Enabled = False
+    OnTimer = TmExecutorTimer
+    left = 576
+    top = 88
   end
 end

@@ -20,9 +20,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitDesktop"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="118"/>
-        <CursorPos X="5" Y="212"/>
+        <TopLine Value="133"/>
+        <CursorPos X="40" Y="157"/>
         <UsageCount Value="221"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -35,8 +36,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitSplash"/>
         <EditorIndex Value="5"/>
-        <TopLine Value="45"/>
-        <CursorPos X="11" Y="56"/>
+        <TopLine Value="31"/>
+        <CursorPos X="23" Y="53"/>
         <UsageCount Value="221"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -61,9 +62,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitLuaEditor"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="20"/>
+        <TopLine Value="33"/>
         <CursorPos X="22" Y="24"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
@@ -74,8 +74,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnitVariaveisGlobais"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="48"/>
-        <CursorPos X="10" Y="66"/>
+        <TopLine Value="33"/>
+        <CursorPos X="62" Y="55"/>
         <UsageCount Value="316"/>
         <Loaded Value="True"/>
       </Unit5>
@@ -104,8 +104,8 @@
       <Unit9>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="3407"/>
-        <CursorPos Y="3427"/>
+        <TopLine Value="3362"/>
+        <CursorPos X="13" Y="3379"/>
         <UsageCount Value="10"/>
       </Unit9>
       <Unit10>
@@ -148,7 +148,7 @@
         <UsageCount Value="2"/>
       </Unit14>
       <Unit15>
-        <Filename Value="..\..\..\..\usr\share\lazarus\1.8.4\lcl\include\wincontrol.inc"/>
+        <Filename Value="D:\usr\share\lazarus\1.8.4\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="6448"/>
         <CursorPos X="6" Y="6460"/>
@@ -157,124 +157,124 @@
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="src\forms\unitstart.pas"/>
-        <Caret Line="140" Column="49" TopLine="136"/>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="69" Column="23" TopLine="51"/>
       </Position1>
       <Position2>
-        <Filename Value="src\forms\unitstart.pas"/>
-        <Caret Line="139" Column="49" TopLine="135"/>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="23" Column="24" TopLine="20"/>
       </Position2>
       <Position3>
-        <Filename Value="src\forms\unitstart.pas"/>
-        <Caret Line="196" Column="114" TopLine="79"/>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="70" Column="22" TopLine="62"/>
       </Position3>
       <Position4>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="203" Column="53" TopLine="194"/>
+        <Caret Line="181" Column="29" TopLine="15"/>
       </Position4>
       <Position5>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="22" Column="22" TopLine="13"/>
+        <Caret Line="182" Column="29" TopLine="158"/>
       </Position5>
       <Position6>
-        <Filename Value="src\forms\unitstart.pas"/>
-        <Caret Line="211" Column="60" TopLine="209"/>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="183" Column="29" TopLine="159"/>
       </Position6>
       <Position7>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="25" Column="20" TopLine="10"/>
+        <Caret Line="184" Column="29" TopLine="160"/>
       </Position7>
       <Position8>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="73" Column="20" TopLine="53"/>
+        <Caret Line="185" Column="29" TopLine="161"/>
       </Position8>
       <Position9>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="163" Column="51" TopLine="158"/>
+        <Caret Line="186" Column="29" TopLine="162"/>
       </Position9>
       <Position10>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="164" TopLine="158"/>
+        <Caret Line="187" Column="29" TopLine="163"/>
       </Position10>
       <Position11>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="166" Column="61" TopLine="158"/>
+        <Caret Line="40" Column="30" TopLine="26"/>
       </Position11>
       <Position12>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="168" TopLine="158"/>
+        <Caret Line="163" Column="35" TopLine="137"/>
       </Position12>
       <Position13>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="166" TopLine="158"/>
+        <Caret Line="155" Column="40" TopLine="139"/>
       </Position13>
       <Position14>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="167" Column="56" TopLine="158"/>
+        <Caret Line="189" Column="31" TopLine="159"/>
       </Position14>
       <Position15>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="168" TopLine="158"/>
+        <Caret Line="190" Column="31" TopLine="160"/>
       </Position15>
       <Position16>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="166" TopLine="158"/>
+        <Caret Line="189" Column="31" TopLine="159"/>
       </Position16>
       <Position17>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="168" TopLine="158"/>
+        <Caret Line="188" Column="31" TopLine="158"/>
       </Position17>
       <Position18>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="169" TopLine="158"/>
+        <Caret Line="189" Column="31" TopLine="159"/>
       </Position18>
       <Position19>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="170" TopLine="158"/>
+        <Caret Line="190" Column="31" TopLine="160"/>
       </Position19>
       <Position20>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="136" TopLine="124"/>
+        <Caret Line="192" Column="31" TopLine="162"/>
       </Position20>
       <Position21>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="69" Column="23" TopLine="51"/>
+        <Caret Line="191" Column="31" TopLine="161"/>
       </Position21>
       <Position22>
-        <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="23" Column="24" TopLine="20"/>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="190" Column="31" TopLine="160"/>
       </Position22>
       <Position23>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="70" Column="22" TopLine="62"/>
+        <Caret Line="195" Column="34" TopLine="170"/>
       </Position23>
       <Position24>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="181" Column="29" TopLine="15"/>
+        <Caret Line="167" Column="6" TopLine="135"/>
       </Position24>
       <Position25>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="182" Column="29" TopLine="158"/>
+        <Caret Line="194" Column="42" TopLine="173"/>
       </Position25>
       <Position26>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="183" Column="29" TopLine="159"/>
+        <Caret Line="193" Column="23" TopLine="170"/>
       </Position26>
       <Position27>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="184" Column="29" TopLine="160"/>
+        <Caret Line="194" Column="3" TopLine="169"/>
       </Position27>
       <Position28>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="185" Column="29" TopLine="161"/>
+        <Caret Line="152" TopLine="139"/>
       </Position28>
       <Position29>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="186" Column="29" TopLine="162"/>
+        <Caret Line="151" Column="28" TopLine="139"/>
       </Position29>
       <Position30>
         <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="187" Column="29" TopLine="163"/>
+        <Caret Line="157" Column="40" TopLine="133"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

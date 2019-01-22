@@ -129,7 +129,7 @@ object StartForm: TStartForm
         TabOrder = 0
         object Label3: TLabel
           Left = 0
-          Height = 15
+          Height = 18
           Top = 0
           Width = 388
           Align = alTop
@@ -145,12 +145,12 @@ object StartForm: TStartForm
         end
         object EdtCaminho: TEdit
           Left = 0
-          Height = 23
+          Height = 30
           Top = 27
           Width = 304
           Color = 11251751
           Font.CharSet = ANSI_CHARSET
-          Font.Color = clWhite
+          Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'SF Cartoonist Hand SC'
           Font.Pitch = fpVariable
@@ -188,13 +188,13 @@ object StartForm: TStartForm
         TabOrder = 1
         object EdtNome: TEdit
           Left = 0
-          Height = 23
-          Top = 15
+          Height = 30
+          Top = 18
           Width = 388
           Align = alTop
           Color = 11251751
           Font.CharSet = ANSI_CHARSET
-          Font.Color = clWhite
+          Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'SF Cartoonist Hand SC'
           Font.Pitch = fpVariable
@@ -204,7 +204,7 @@ object StartForm: TStartForm
         end
         object Label4: TLabel
           Left = 0
-          Height = 15
+          Height = 18
           Top = 0
           Width = 388
           Align = alTop
@@ -267,8 +267,8 @@ object StartForm: TStartForm
         TabOrder = 0
         object Label5: TLabel
           Left = 50
-          Height = 15
-          Top = 235
+          Height = 18
+          Top = 238
           Width = 388
           Align = alTop
           BorderSpacing.Left = 50
@@ -285,15 +285,15 @@ object StartForm: TStartForm
         end
         object EdtCaminhoLove: TEdit
           Left = 50
-          Height = 22
-          Top = 250
+          Height = 16
+          Top = 256
           Width = 326
           Align = alLeft
           AutoSize = False
           BorderSpacing.Left = 50
           Color = 11251751
           Font.CharSet = ANSI_CHARSET
-          Font.Color = clWhite
+          Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'SF Cartoonist Hand SC'
           Font.Pitch = fpVariable
@@ -304,8 +304,8 @@ object StartForm: TStartForm
         object Panel4: TPanel
           Cursor = crHandPoint
           Left = 376
-          Height = 22
-          Top = 250
+          Height = 16
+          Top = 256
           Width = 24
           Align = alLeft
           BevelColor = clBtnFace
@@ -336,7 +336,7 @@ object StartForm: TStartForm
         end
         object Label6: TLabel
           Left = 0
-          Height = 15
+          Height = 18
           Top = 77
           Width = 438
           Align = alTop
@@ -357,7 +357,7 @@ object StartForm: TStartForm
         Cursor = crHandPoint
         Left = 50
         Height = 50
-        Top = 322
+        Top = 325
         Width = 338
         Align = alTop
         BorderSpacing.Left = 50
@@ -382,7 +382,7 @@ object StartForm: TStartForm
       object Label7: TLabel
         Cursor = crHandPoint
         Left = 50
-        Height = 15
+        Height = 18
         Top = 272
         Width = 98
         Align = alTop

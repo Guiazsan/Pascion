@@ -12,6 +12,7 @@ object SplashForm: TSplashForm
   DefaultMonitor = dmDesktop
   OnActivate = FormActivate
   Position = poDesktopCenter
+  LCLVersion = '1.8.4.0'
   Visible = False
   object Image1: TImage
     Left = 0
@@ -1672,9 +1673,9 @@ object SplashForm: TSplashForm
   end
   object LbStatus: TLabel
     Left = 8
-    Height = 15
+    Height = 18
     Top = 0
-    Width = 116
+    Width = 102
     Caption = 'Teste TESTE teste'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite

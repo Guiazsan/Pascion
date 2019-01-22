@@ -88,14 +88,14 @@ object Desktop: TDesktop
       Width = 166
       Align = alClient
       Caption = 'Projeto'
-      ClientHeight = 304
-      ClientWidth = 164
+      ClientHeight = 302
+      ClientWidth = 162
       TabOrder = 0
       object ProjetoTree: TTreeView
         Left = 0
-        Height = 304
+        Height = 302
         Top = 0
-        Width = 164
+        Width = 162
         Align = alClient
         ReadOnly = True
         ScrollBars = ssAutoBoth
@@ -119,24 +119,31 @@ object Desktop: TDesktop
     RightResize = False
     TopResize = False
     BottomResize = False
-    object GBConsole: TGroupBox
+    object PcSaidas: TPageControl
       Left = 2
       Height = 110
       Top = 2
       Width = 829
+      ActivePage = TsMensagens
       Align = alClient
-      Caption = 'Console'
-      ClientHeight = 92
-      ClientWidth = 827
+      TabIndex = 1
       TabOrder = 0
-      object MemoConsole: TMemo
-        Left = 0
-        Height = 92
-        Top = 0
-        Width = 827
-        Align = alClient
-        ReadOnly = True
-        TabOrder = 0
+      object TsConsole: TTabSheet
+        Caption = 'Console'
+      end
+      object TsMensagens: TTabSheet
+        Caption = 'Mensagens'
+        ClientHeight = 82
+        ClientWidth = 821
+        object MemoMensagens: TMemo
+          Left = 0
+          Height = 82
+          Top = 0
+          Width = 821
+          Align = alClient
+          ReadOnly = True
+          TabOrder = 0
+        end
       end
     end
   end
@@ -423,5 +430,11 @@ object Desktop: TDesktop
   object AbrirProjeto: TOpenDialog
     left = 176
     top = 32
+  end
+  object TmExecutor: TTimer
+    Enabled = False
+    OnTimer = TmExecutorTimer
+    left = 576
+    top = 88
   end
 end

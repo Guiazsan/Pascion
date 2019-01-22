@@ -24,11 +24,9 @@ type
     ActSair: TAction;
     ActNovo: TAction;
     Actions: TActionList;
-    GBConsole: TGroupBox;
     GBProjeto: TGroupBox;
     ImageList1: TImageList;
     MainMenu1: TMainMenu;
-    MemoConsole: TMemo;
     ItemArquivo: TMenuItem;
     ItemNovo: TMenuItem;
     ItemAbrir: TMenuItem;
@@ -40,10 +38,15 @@ type
     ItemExecutar : TMenuItem;
     ItemPlay : TMenuItem;
     ItemStop : TMenuItem;
+    MemoMensagens: TMemo;
     PageControl1: TPageControl;
     CtrlLeftPanel: TResizeablePanel;
+    PcSaidas: TPageControl;
     ProjetoTree: TTreeView;
     PnBottom: TResizeablePanel;
+    TsMensagens: TTabSheet;
+    TsConsole: TTabSheet;
+    TmExecutor: TTimer;
     ToolBar1: TToolBar;
     BtnNovo: TToolButton;
     ToolButton1: TToolButton;
@@ -61,10 +64,12 @@ type
     procedure FormCreate(Sender: TObject);
     procedure ProjetoTreeDblClick(Sender: TObject);
     procedure AlterarCodigo(Sender : TObject);
+    procedure TmExecutorTimer(Sender: TObject);
   private
     ProjetoPath, LovePath, ProjetoNome : String;
     IniConfig : TIniFile;
     love : TProcess;
+    MemSaida : TMemoryStream;
     procedure popularTreeProjeto;
     procedure LimparTela;
   public
@@ -142,6 +147,28 @@ begin
   ActSalvar.Enabled := True;
 end;
 
+procedure TDesktop.TmExecutorTimer(Sender: TObject);
+begin
+  if Assigned(love) and love.Running then
+  begin
+    ActParar.Enabled := True;
+    ActPlay.Enabled := False;
+    //MemSaida.SetSize(love.Stderr.Size);
+    MemSaida := love.Output;
+  end
+  else
+  begin
+    ActParar.Enabled := False;
+    ActPlay.Enabled := True;
+    TmExecutor.Enabled := False;
+    if Assigned(love) then
+      FreeAndNil(love);
+
+    {if Assigned(ExecutorSaida) then
+      FreeAndNil(ExecutorSaida);}
+  end;
+end;
+
 procedure TDesktop.ActSairExecute(Sender: TObject);
 begin
   Close;
@@ -159,29 +186,26 @@ end;
 
 procedure TDesktop.ActPlayExecute(Sender: TObject);
 begin
-  MemoConsole.Lines.Add('Iniciando ' + ProjetoNome);
+  MemoMensagens.Lines.Add('Iniciando ' + ProjetoNome);
   love := TProcess.Create(nil);
   love.CommandLine := LovePath + ' "'+ProjetoPath+'"';
+  love.Options := love.Options + [poUsePipes, poStderrToOutPut];
   love.Active := True;
-  if love.Active then
-  begin
-    ActPlay.Enabled := False;
-    ActParar.Enabled := True;
-  end;
+  MemSaida := TMemoryStream.Create;
+
+  TmExecutor.Enabled := True;
 
   //SysUtils.ExecuteProcess(Utf8ToAnsi(LovePath),Utf8ToAnsi('"'+ProjetoPath+'"'),[]);
-  //Executor.MemoSaida := MemoConsole;
 end;
 
 procedure TDesktop.ActPararExecute(Sender: TObject);
 begin
-  love.Active := False;
-  if not(love.Active) then
-  begin
-    ActPlay.Enabled := True;
-    ActParar.Enabled := False;
+  love.Terminate(0);
+
+  ActPlay.Enabled := True;
+  ActParar.Enabled := False;
+  if Assigned(love) then
     FreeAndNil(love);
-  end;
 end;
 
 procedure TDesktop.ActAbrirExecute(Sender: TObject);
