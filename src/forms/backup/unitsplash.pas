@@ -5,8 +5,8 @@ unit UnitSplash;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  ComCtrls, StdCtrls, IniFiles;
+  cmem,Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
+  ComCtrls, StdCtrls, UnitVariaveisGlobais, IniFiles;
 
 type
 
@@ -39,11 +39,13 @@ var INIPath : TINIFile;
 begin
   LbStatus.Caption := 'Carregando Config';
 
-  if FileExists(GetCurrentDir + '\Config.ini') then
+  if FileExists(GetCurrentDir + separadorPasta + 'Config.ini') then
   begin
-    INIPath := TIniFile.Create(GetCurrentDir + '\Config.ini');
+    INIPath := TIniFile.Create(GetCurrentDir + separadorPasta + 'Config.ini');
     try
-      if (INIPath.ReadString('Project','Path','') <> '') and (INIPath.ReadString('Love2d','Path','') <> '') then
+      if (INIPath.ReadString('Project','Path','') <> '') and
+        (INIPath.ReadString('Love2d','Path','') <> '') and
+        FileExists(INIPath.ReadString('Project', 'Path', '')) then
       begin
         Application.CreateForm(TDesktop,Desktop);
         try

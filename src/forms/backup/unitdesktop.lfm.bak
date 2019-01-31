@@ -88,14 +88,14 @@ object Desktop: TDesktop
       Width = 166
       Align = alClient
       Caption = 'Projeto'
-      ClientHeight = 302
-      ClientWidth = 162
+      ClientHeight = 304
+      ClientWidth = 164
       TabOrder = 0
       object ProjetoTree: TTreeView
         Left = 0
-        Height = 302
+        Height = 304
         Top = 0
-        Width = 162
+        Width = 164
         Align = alClient
         ReadOnly = True
         ScrollBars = ssAutoBoth
@@ -133,13 +133,13 @@ object Desktop: TDesktop
       end
       object TsMensagens: TTabSheet
         Caption = 'Mensagens'
-        ClientHeight = 82
-        ClientWidth = 821
+        ClientHeight = 79
+        ClientWidth = 819
         object MemoMensagens: TMemo
           Left = 0
-          Height = 82
+          Height = 79
           Top = 0
-          Width = 821
+          Width = 819
           Align = alClient
           ReadOnly = True
           TabOrder = 0
@@ -159,11 +159,9 @@ object Desktop: TDesktop
       Category = 'Arquivo'
       Caption = 'Abrir'
       ImageIndex = 1
-      OnExecute = ActAbrirExecute
     end
     object ActSair: TAction
       Caption = 'Sair'
-      OnExecute = ActSairExecute
     end
     object ActSalvar: TAction
       Category = 'Arquivo'
@@ -171,7 +169,6 @@ object Desktop: TDesktop
       Enabled = False
       Hint = 'Salvar Arquivo'
       ImageIndex = 2
-      OnExecute = ActSalvarExecute
     end
     object ActSalvarTudo: TAction
       Category = 'Arquivo'
@@ -184,7 +181,6 @@ object Desktop: TDesktop
       Caption = 'Play'
       Hint = 'Iniciar Aplicação'
       ImageIndex = 4
-      OnExecute = ActPlayExecute
     end
     object ActParar: TAction
       Category = 'Executar'
@@ -192,7 +188,6 @@ object Desktop: TDesktop
       Enabled = False
       Hint = 'Parar Aplicação'
       ImageIndex = 5
-      OnExecute = ActPararExecute
     end
   end
   object ImageList1: TImageList
@@ -433,7 +428,6 @@ object Desktop: TDesktop
   end
   object TmExecutor: TTimer
     Enabled = False
-    OnTimer = TmExecutorTimer
     left = 576
     top = 88
   end

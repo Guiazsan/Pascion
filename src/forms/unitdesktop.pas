@@ -5,9 +5,10 @@ unit UnitDesktop;
 interface
 
 uses
-  Classes, SysUtils, IniFiles, process, strutils, FileUtil, Forms,
-  Controls, Graphics, Dialogs, ComCtrls, ActnList, Menus, ExtCtrls, StdCtrls,
-  UnitLuaEditor, UnitVariaveisGlobais, ResizeablePanel;
+  cmem, Classes, SysUtils, IniFiles, process, strutils, FileUtil,
+  Forms, Controls, Graphics, Dialogs, ComCtrls, ActnList,
+  Menus, ExtCtrls, StdCtrls, UnitLuaEditor, UnitVariaveisGlobais,
+  ResizeablePanel;
 
 type
 
@@ -55,24 +56,26 @@ type
     ToolButton4: TToolButton;
     ToolButton5: TToolButton;
     ToolButton6: TToolButton;
-    procedure ActAbrirExecute(Sender: TObject);
-    procedure ActPararExecute(Sender: TObject);
-    procedure ActPlayExecute(Sender: TObject);
-    procedure ActSairExecute(Sender: TObject);
-    procedure ActSalvarExecute(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure ActAbrirExecute(Sender : TObject);
     procedure ProjetoTreeDblClick(Sender: TObject);
-    procedure AlterarCodigo(Sender : TObject);
-    procedure TmExecutorTimer(Sender: TObject);
+    procedure ActPararExecute(Sender : TObject);
+    procedure ActPlayExecute(Sender : TObject);
+    procedure ActSairExecute(Sender : TObject);
+    procedure ActSalvarExecute(Sender : TObject);
   private
     ProjetoPath, LovePath, ProjetoNome : String;
     IniConfig : TIniFile;
     love : TProcess;
     MemSaida : TMemoryStream;
+
+
     procedure popularTreeProjeto;
     procedure LimparTela;
+    procedure TmExecutorTimer(Sender : TObject);
   public
+    procedure AlterarCodigo(Sender : TObject);
 
   end;
 
@@ -80,6 +83,8 @@ var
   Desktop: TDesktop;
 
 implementation
+
+uses LCLMessageGlue;
 
 {$R *.lfm}
 
@@ -121,17 +126,28 @@ begin
 end;
 
 procedure TDesktop.popularTreeProjeto;
+  procedure popularChilds(path : String; raiz : TTreeNode);
+    var arquivo : TSearchRec;
+        filho : TTreeNode;
+    begin
+      if FindFirst(path + separadorPasta +'*',faAnyFile and faDirectory, arquivo) = 0 then
+        repeat
+          if (arquivo.Name <> '.') and (arquivo.Name <> '..') then
+          begin
+            filho := ProjetoTree.Items.AddChild(raiz, arquivo.Name);
+
+            if (arquivo.Attr and faDirectory) = faDirectory then
+              popularChilds(path + separadorPasta + arquivo.Name, filho);
+
+          end;
+        until FindNext(arquivo) <> 0;
+          FindClose(arquivo);
+    end;
 var
-  arquivo : TSearchRec;
-  raiz    : TTreeNode;
+  raiz : TTreeNode;
 begin
   raiz := ProjetoTree.Items.AddFirst(nil,ProjetoNome);
-  if FindFirst(ProjetoPath + separadorPasta +'*.*', faAnyFile, arquivo) = 0 then
-    repeat
-      if (arquivo.Name <> '.') and (arquivo.Name <> '..') then
-        ProjetoTree.Items.AddChild(raiz, arquivo.Name);
-    until FindNext(arquivo) <> 0;
-      FindClose(arquivo);
+  popularChilds(ProjetoPath, raiz);
 end;
 
 procedure TDesktop.LimparTela;
@@ -218,6 +234,5 @@ begin
     IniConfig.WriteString('Project','Name', ReverseString(ReverseString(caminho).Substring(0, PosEx('\',ReverseString(caminho)) -1 )));
   end;
 end;
-
 end.
 

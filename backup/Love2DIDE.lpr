@@ -4,10 +4,10 @@ program Love2DIDE;
 
 uses
   {$IFDEF UNIX}
-  cthreads, cmem,
+  cmem, cthreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, UnitDesktop, UnitSplash, UnitStart, UnitLuaEditor,
+  Forms, lazmouseandkeyinput, UnitDesktop, UnitSplash, UnitStart, UnitLuaEditor,
   UnitVariaveisGlobais, UnitFuncoes;
 
 {$R *.res}

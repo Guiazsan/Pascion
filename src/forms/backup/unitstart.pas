@@ -208,7 +208,7 @@ begin
     Exit;
   end;
 
-  PathFile.WriteString('Love2d','Path', SelectDirectoryDialog1.FileName);
+  PathFile.WriteString('Love2d','Path', EdtCaminhoLove.Text);
   SetPainelAtual(Pn1, True);
 end;
 

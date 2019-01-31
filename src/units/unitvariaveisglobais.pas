@@ -5,7 +5,7 @@ unit UnitVariaveisGlobais;
 interface
 
 uses
-  Classes, SysUtils;
+  cmem, Classes, SysUtils;
 
 type
 

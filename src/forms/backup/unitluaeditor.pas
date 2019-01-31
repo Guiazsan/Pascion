@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  Menus, Grids, ExtCtrls, RichMemo, UnitDesktop, Types;
+  Menus, Grids, ExtCtrls, RichMemo, Types;
 
 type
 
@@ -43,7 +43,7 @@ var
 implementation
 
 uses
-  RichMemoUtils, UnitVariaveisGlobais, UnitFuncoes, strutils, LCLType, Clipbrd;
+  RichMemoUtils, UnitVariaveisGlobais, UnitFuncoes, strutils, LCLType, Clipbrd, UnitDesktop;
 
 {$R *.lfm}
 

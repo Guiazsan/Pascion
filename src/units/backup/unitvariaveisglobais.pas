@@ -64,9 +64,9 @@ begin
   {$IFDEF UNIX}
     separadorPasta := '/';
   {$ELSE}
-  {$IFDEF WINDOWS}
-    separadorPasta := '\';
-  {$ENDIF}
+    {$IFDEF WINDOWS}
+      separadorPasta := '\';
+    {$ENDIF}
   {$ENDIF}
 
 end;

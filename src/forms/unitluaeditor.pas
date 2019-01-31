@@ -5,7 +5,7 @@ unit UnitLuaEditor;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  cmem, Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   Menus, Grids, ExtCtrls, RichMemo, Types;
 
 type
