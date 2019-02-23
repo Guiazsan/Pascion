@@ -7,8 +7,8 @@ uses
   cmem, cthreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, UnitDesktop, UnitSplash, UnitStart, UnitLuaEditor,
-  UnitVariaveisGlobais, UnitFuncoes;
+  Forms, memdslaz, UnitDesktop, UnitSplash, UnitStart, UnitLuaEditor,
+  UnitVariaveisGlobais, UnitFuncoes, UnitPastasProjetos;
 
 {$R *.res}
 

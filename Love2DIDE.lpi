@@ -25,21 +25,24 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="4">
+    <RequiredPackages Count="5">
       <Item1>
-        <PackageName Value="LazMouseAndKeyInput"/>
+        <PackageName Value="MemDSLaz"/>
       </Item1>
       <Item2>
-        <PackageName Value="PascionPack"/>
+        <PackageName Value="LazMouseAndKeyInput"/>
       </Item2>
       <Item3>
-        <PackageName Value="richmemopackage"/>
+        <PackageName Value="PascionPack"/>
       </Item3>
       <Item4>
-        <PackageName Value="LCL"/>
+        <PackageName Value="richmemopackage"/>
       </Item4>
+      <Item5>
+        <PackageName Value="LCL"/>
+      </Item5>
     </RequiredPackages>
-    <Units Count="7">
+    <Units Count="8">
       <Unit0>
         <Filename Value="Love2DIDE.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -86,6 +89,14 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnitFuncoes"/>
       </Unit6>
+      <Unit7>
+        <Filename Value="src\forms\unitpastasprojetos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="PastasProjetos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitPastasProjetos"/>
+      </Unit7>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

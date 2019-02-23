@@ -39,7 +39,7 @@
         <PackageName Value="LCL"/>
       </Item4>
     </RequiredPackages>
-    <Units Count="7">
+    <Units Count="8">
       <Unit0>
         <Filename Value="Love2DIDE.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -86,6 +86,13 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnitFuncoes"/>
       </Unit6>
+      <Unit7>
+        <Filename Value="src\forms\unitpastasprojetos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="PastasProjetos"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitPastasProjetos"/>
+      </Unit7>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

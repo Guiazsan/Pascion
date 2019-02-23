@@ -7,8 +7,8 @@ uses
   cmem, cthreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, lazmouseandkeyinput, UnitDesktop, UnitSplash, UnitStart, UnitLuaEditor,
-  UnitVariaveisGlobais, UnitFuncoes;
+  Forms, UnitDesktop, UnitSplash, UnitStart, UnitLuaEditor,
+  UnitVariaveisGlobais, UnitFuncoes, UnitPastasProjetos;
 
 {$R *.res}
 
@@ -17,6 +17,7 @@ begin
   RequireDerivedFormResource := True;
   Application.Initialize;
   Application.CreateForm(TSplashForm, SplashForm);
+  Application.CreateForm(TPastasProjetos, PastasProjetos);
   Application.Run;
 end.
 

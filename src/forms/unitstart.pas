@@ -67,7 +67,7 @@ type
     procedure SetPainelAtual(Painel : TPanel; animacao : Boolean = False);
     procedure abrirIDE;
   public
-    procedure CriarProjeto();
+    procedure CriarProjeto;
   end;
 
 var
@@ -79,7 +79,7 @@ implementation
 
 { TStartForm }
 
-procedure TStartForm.CriarProjeto();
+procedure TStartForm.CriarProjeto;
 begin
   if SelectDirectoryDialog1.Execute then
   begin

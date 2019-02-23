@@ -8,7 +8,7 @@ uses
   cmem, Classes, SysUtils, IniFiles, process, strutils, FileUtil,
   Forms, Controls, Graphics, Dialogs, ComCtrls, ActnList,
   Menus, ExtCtrls, StdCtrls, UnitLuaEditor, UnitVariaveisGlobais,
-  ResizeablePanel;
+  ResizeablePanel, UnitPastasProjetos;
 
 type
 
@@ -25,7 +25,6 @@ type
     ActSair: TAction;
     ActNovo: TAction;
     Actions: TActionList;
-    GBProjeto: TGroupBox;
     ImageList1: TImageList;
     MainMenu1: TMainMenu;
     ItemArquivo: TMenuItem;
@@ -43,7 +42,6 @@ type
     PageControl1: TPageControl;
     CtrlLeftPanel: TResizeablePanel;
     PcSaidas: TPageControl;
-    ProjetoTree: TTreeView;
     PnBottom: TResizeablePanel;
     TsMensagens: TTabSheet;
     TsConsole: TTabSheet;
@@ -59,7 +57,6 @@ type
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure ActAbrirExecute(Sender : TObject);
-    procedure ProjetoTreeDblClick(Sender: TObject);
     procedure ActPararExecute(Sender : TObject);
     procedure ActPlayExecute(Sender : TObject);
     procedure ActSairExecute(Sender : TObject);
@@ -69,13 +66,13 @@ type
     IniConfig : TIniFile;
     love : TProcess;
     MemSaida : TMemoryStream;
+    FramePastas : TPastasProjetos;
 
-
-    procedure popularTreeProjeto;
     procedure LimparTela;
     procedure TmExecutorTimer(Sender : TObject);
   public
     procedure AlterarCodigo(Sender : TObject);
+    procedure AbrirCodigo(Caminho, Nome : String);
 
   end;
 
@@ -84,7 +81,6 @@ var
 
 implementation
 
-uses LCLMessageGlue;
 
 {$R *.lfm}
 
@@ -97,62 +93,22 @@ end;
 
 procedure TDesktop.FormCreate(Sender: TObject);
 begin
-  IniConfig   := TIniFile.Create(GetCurrentDir + separadorPasta +'Config.ini');
-  ProjetoPath := IniConfig.ReadString('Project','Path','');
-  ProjetoNome := IniConfig.ReadString('Project','Name','');
-  Self.Caption := ProjetoNome + ' - Pasciön IDE';
-  LovePath := IniConfig.ReadString('Love2d','Path','');
+  IniConfig     := TIniFile.Create(GetCurrentDir + separadorPasta +'Config.ini');
+  ProjetoPath   := IniConfig.ReadString('Project','Path','');
+  ProjetoNome   := IniConfig.ReadString('Project','Name','');
+  Self.Caption  := ProjetoNome + ' - Pasciön IDE';
+  LovePath      := IniConfig.ReadString('Love2d','Path','');
 
-  popularTreeProjeto;
-end;
+  FramePastas         := TPastasProjetos.Create(nil);
+  FramePastas.popularTreeProjeto(ProjetoPath, ProjetoNome);
+  FramePastas.Parent  := CtrlLeftPanel;
+  FramePastas.Align   := alClient;
+  FramePastas.Show;
 
-procedure TDesktop.ProjetoTreeDblClick(Sender: TObject);
-var newTab: TTabSheet;
-    LuaTela : TLuaEditor;
-begin
-  if PosEx('.lua',ProjetoTree.Selected.Text) > 0 then
-  begin
-    newTab                := PageControl1.AddTabSheet;
-    newTab.Caption        := ProjetoTree.Selected.Text;
-
-    LuaTela := TLuaEditor.Create(nil);
-    LuaTela.SetCaminho(ProjetoPath + StringReplace(ProjetoTree.Selected.GetTextPath, ProjetoNome , '', []));
-    LuaTela.CarregarArquivo;
-    LuaTela.BorderStyle := bsNone;
-    LuaTela.Parent      := newTab;
-    LuaTela.Align       := alClient;
-    LuaTela.Show;
-  end;
-end;
-
-procedure TDesktop.popularTreeProjeto;
-  procedure popularChilds(path : String; raiz : TTreeNode);
-    var arquivo : TSearchRec;
-        filho : TTreeNode;
-    begin
-      if FindFirst(path + separadorPasta +'*',faAnyFile and faDirectory, arquivo) = 0 then
-        repeat
-          if (arquivo.Name <> '.') and (arquivo.Name <> '..') then
-          begin
-            filho := ProjetoTree.Items.AddChild(raiz, arquivo.Name);
-
-            if (arquivo.Attr and faDirectory) = faDirectory then
-              popularChilds(path + separadorPasta + arquivo.Name, filho);
-
-          end;
-        until FindNext(arquivo) <> 0;
-          FindClose(arquivo);
-    end;
-var
-  raiz : TTreeNode;
-begin
-  raiz := ProjetoTree.Items.AddFirst(nil,ProjetoNome);
-  popularChilds(ProjetoPath, raiz);
 end;
 
 procedure TDesktop.LimparTela;
 begin
-  //
   //PageControl1.;
 end;
 
@@ -161,6 +117,25 @@ begin
   if PosEx('*',PageControl1.ActivePage.Caption) = 0 then
     PageControl1.ActivePage.Caption := '*'+ PageControl1.ActivePage.Caption;
   ActSalvar.Enabled := True;
+end;
+
+procedure TDesktop.AbrirCodigo(Caminho, Nome : String);
+var newTab: TTabSheet;
+    LuaTela : TLuaEditor;
+begin
+  if PosEx('.lua',Nome) > 0 then
+  begin
+    newTab                := PageControl1.AddTabSheet;
+    newTab.Caption        := Nome;
+
+    LuaTela := TLuaEditor.Create(nil);
+    LuaTela.SetCaminho(ProjetoPath + StringReplace(Caminho, ProjetoNome , '', []));
+    LuaTela.CarregarArquivo;
+    LuaTela.BorderStyle := bsNone;
+    LuaTela.Parent      := newTab;
+    LuaTela.Align       := alClient;
+    LuaTela.Show;
+  end;
 end;
 
 procedure TDesktop.TmExecutorTimer(Sender: TObject);

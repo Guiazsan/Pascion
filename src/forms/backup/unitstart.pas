@@ -5,7 +5,7 @@ unit UnitStart;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  cmem, Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
   ExtCtrls, Menus, UnitDesktop, UnitVariaveisGlobais, IniFiles, process,
   strutils, LCLIntf, LazUtils;
 
