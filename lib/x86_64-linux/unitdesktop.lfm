@@ -101,12 +101,23 @@ object Desktop: TDesktop
       Height = 110
       Top = 2
       Width = 829
-      ActivePage = TsMensagens
+      ActivePage = TsConsole
       Align = alClient
-      TabIndex = 1
+      TabIndex = 0
       TabOrder = 0
       object TsConsole: TTabSheet
         Caption = 'Console'
+        ClientHeight = 79
+        ClientWidth = 819
+        object Memo1: TMemo
+          Left = 0
+          Height = 79
+          Top = 0
+          Width = 819
+          Align = alClient
+          ReadOnly = True
+          TabOrder = 0
+        end
       end
       object TsMensagens: TTabSheet
         Caption = 'Mensagens'
@@ -409,6 +420,7 @@ object Desktop: TDesktop
   end
   object TmExecutor: TTimer
     Enabled = False
+    OnTimer = TmExecutorTimer
     left = 576
     top = 88
   end

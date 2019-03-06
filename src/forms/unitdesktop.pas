@@ -38,6 +38,7 @@ type
     ItemExecutar : TMenuItem;
     ItemPlay : TMenuItem;
     ItemStop : TMenuItem;
+    Memo1 : TMemo;
     MemoMensagens: TMemo;
     PageControl1: TPageControl;
     CtrlLeftPanel: TResizeablePanel;
@@ -61,15 +62,15 @@ type
     procedure ActPlayExecute(Sender : TObject);
     procedure ActSairExecute(Sender : TObject);
     procedure ActSalvarExecute(Sender : TObject);
+    procedure TmExecutorTimer(Sender : TObject);
   private
     ProjetoPath, LovePath, ProjetoNome : String;
     IniConfig : TIniFile;
     love : TProcess;
-    MemSaida : TMemoryStream;
+    MemSaida : TMemo;
     FramePastas : TPastasProjetos;
 
     procedure LimparTela;
-    procedure TmExecutorTimer(Sender : TObject);
   public
     procedure AlterarCodigo(Sender : TObject);
     procedure AbrirCodigo(Caminho, Nome : String);
@@ -144,8 +145,6 @@ begin
   begin
     ActParar.Enabled := True;
     ActPlay.Enabled := False;
-    //MemSaida.SetSize(love.Stderr.Size);
-    //MemSaida := love.Output.Read(MemSaida.);
   end
   else
   begin
@@ -153,7 +152,10 @@ begin
     ActPlay.Enabled := True;
     TmExecutor.Enabled := False;
     if Assigned(love) then
+    begin
+      Memo1.Lines.LoadFromStream(love.Output);
       FreeAndNil(love);
+    end;
 
     {if Assigned(ExecutorSaida) then
       FreeAndNil(ExecutorSaida);}
@@ -182,7 +184,6 @@ begin
   love.CommandLine := LovePath + ' "'+ProjetoPath+'"';
   love.Options := love.Options + [poUsePipes, poStderrToOutPut];
   love.Active := True;
-  MemSaida := TMemoryStream.Create;
 
   TmExecutor.Enabled := True;
 

@@ -108,32 +108,32 @@ var
   texto : String;
 begin
   texto := RMEditor.Text;
-    while AnsiContainsStr(texto, palavra) do
-    begin
-      if ((texto[PosEx(palavra, texto) + palavra.Length] = ' ') or
-          (texto[PosEx(palavra, texto) + palavra.Length] = '') or
-          (texto[PosEx(palavra, texto) + palavra.Length] = LineEnding) or
-          (texto[PosEx(palavra, texto) + palavra.Length] = sLineBreak) or
-          (texto[PosEx(palavra, texto) + palavra.Length] = '(') or
-          (texto[PosEx(palavra, texto) + palavra.Length] = ')') or
-          (texto[PosEx(palavra, texto) + palavra.Length] = ',') or
-          (texto[PosEx(palavra, texto) + palavra.Length] = '.')) and   //Depois da Palavra
+  while AnsiContainsStr(texto, palavra) do
+  begin
+    if ((texto[PosEx(palavra, texto) + palavra.Length] = ' ') or
+        (texto[PosEx(palavra, texto) + palavra.Length] = '') or
+        (texto[PosEx(palavra, texto) + palavra.Length] = LineEnding) or
+        (texto[PosEx(palavra, texto) + palavra.Length] = sLineBreak) or
+        (texto[PosEx(palavra, texto) + palavra.Length] = '(') or
+        (texto[PosEx(palavra, texto) + palavra.Length] = ')') or
+        (texto[PosEx(palavra, texto) + palavra.Length] = ',') or
+        (texto[PosEx(palavra, texto) + palavra.Length] = '.')) and   //Depois da Palavra
 
-         ((texto[PosEx(palavra, texto) - 1] = ' ') or
-          (texto[PosEx(palavra, texto) - 1] = '') or
-          (texto[PosEx(palavra, texto) - 1] = '(') or
-          (texto[PosEx(palavra, texto) - 1] = ')') or
-          (texto[PosEx(palavra, texto) - 1] = ',') or
-          (texto[PosEx(palavra, texto) - 1] = #10) or
-          (texto[PosEx(palavra, texto) - 1] = LineEnding) or
-          (texto[PosEx(palavra, texto) - 1] = sLineBreak) or
-          (PosEx(palavra, RMEditor.text) = 1))  //Antes da Palavra
-      then
-        RMEditor.SetRangeColor( (PosEx(palavra, texto) - 2) + (String(RMEditor.text).Length - texto.Length),
-                                 palavra.Length + 1 , cor);
+       ((texto[PosEx(palavra, texto) - 1] = ' ') or
+        (texto[PosEx(palavra, texto) - 1] = '') or
+        (texto[PosEx(palavra, texto) - 1] = '(') or
+        (texto[PosEx(palavra, texto) - 1] = ')') or
+        (texto[PosEx(palavra, texto) - 1] = ',') or
+        (texto[PosEx(palavra, texto) - 1] = #10) or
+        (texto[PosEx(palavra, texto) - 1] = LineEnding) or
+        (texto[PosEx(palavra, texto) - 1] = sLineBreak) or
+        (PosEx(palavra, RMEditor.text) = 1))  //Antes da Palavra
+    then
+      RMEditor.SetRangeColor( (PosEx(palavra, texto) - 2) + (String(RMEditor.text).Length - texto.Length) - 1,
+                               palavra.Length + 1 , cor);
 
-      texto := texto.Substring(PosEx(palavra, texto) + palavra.Length);
-    end;
+    texto := texto.Substring(PosEx(palavra, texto) + palavra.Length);
+  end;
 end;
 
 procedure TLuaEditor.ColorirNumeros(cor: TColor);
@@ -150,11 +150,13 @@ begin
           and
           not(texto[PosEx(IntToStr(numeros[i]), texto) - 1] in ['a'..'z','A'..'Z']))
       then
-        RMEditor.SetRangeColor( (PosEx(IntToStr(numeros[i]), texto) - 2) + (String(RMEditor.text).Length - texto.Length),
-                                 IntToStr(numeros[i]).Length + 2 , cor)
+        RMEditor.SetRangeColor(
+          (PosEx(IntToStr(numeros[i]), texto) - 2) + (String(RMEditor.text).Length - texto.Length),
+           IntToStr(numeros[i]).Length + 1 , cor)
       else
-        RMEditor.SetRangeColor( (PosEx(IntToStr(numeros[i]), texto) - 2) + (String(RMEditor.text).Length - texto.Length),
-                                 IntToStr(numeros[i]).Length + 2 , TColor(clWhite));
+        RMEditor.SetRangeColor(
+          (PosEx(IntToStr(numeros[i]), texto) - 2) + (String(RMEditor.text).Length - texto.Length),
+           IntToStr(numeros[i]).Length + 1 , TColor(clWhite));
 
       texto := texto.Substring(PosEx(IntToStr(numeros[i]), texto) + IntToStr(numeros[i]).Length);
     end;
@@ -168,6 +170,8 @@ var
   i : Integer;
 begin
   texto := RMEditor.Text;
+
+  //comentários de multiplas linhas
   while PosEx('--[[', texto) > 0 do
   begin
     texto := texto.Substring(PosEx('--[[',Texto));
@@ -181,6 +185,7 @@ begin
     texto := texto.Substring(PosEx(']]--',Texto));
   end;
 
+  // comentários de linha única
   for i := 0 to RMEditor.Lines.Count -1 do
   begin
     texto := RMEditor.Lines[i];
@@ -198,7 +203,7 @@ begin
       else
         indexFinal := PosEx(final, texto);
 
-      RMEditor.SetRangeColor( (PosEx(texto, RMEditor.Text) - 2),(indexFinal - PosEx('--', texto)) + 1, cor);
+      RMEditor.SetRangeColor( (PosEx(texto, RMEditor.Text) - 3),(indexFinal - PosEx('--', texto)) + 1, cor);
 
 
       texto := texto.Substring(PosEx(final,Texto));
@@ -233,6 +238,7 @@ var
 begin
   texto   := TStringList.Create;
   try
+    RMEditor.Clear;
     texto.LoadFromFile(FCaminho);
     for i := 0 to Pred(Texto.Count) do
       RMEditor.Lines.Add(texto.Strings[i]);
