@@ -1,3 +1,4 @@
+
 program Love2DIDE;
 
 {$mode objfpc}{$H+}
@@ -7,7 +8,7 @@ uses
   cmem, cthreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, UnitDesktop, UnitSplash, UnitStart, UnitLuaEditor,
+  Forms, memdslaz, UnitDesktop, UnitSplash, UnitStart, UnitLuaEditor,
   UnitVariaveisGlobais, UnitFuncoes, UnitPastasProjetos;
 
 {$R *.res}
@@ -17,7 +18,5 @@ begin
   RequireDerivedFormResource := True;
   Application.Initialize;
   Application.CreateForm(TSplashForm, SplashForm);
-  Application.CreateForm(TPastasProjetos, PastasProjetos);
   Application.Run;
 end.
-

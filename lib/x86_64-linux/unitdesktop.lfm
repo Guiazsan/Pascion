@@ -1,67 +1,72 @@
 object Desktop: TDesktop
   Left = 275
-  Height = 466
+  Height = 427
   Top = 146
   Width = 833
   ActiveControl = PageControl1
   Caption = 'Pasciön v1.0'
-  ClientHeight = 466
+  ClientHeight = 427
   ClientWidth = 833
+  Color = 4539717
   DefaultMonitor = dmDesktop
   FormStyle = fsMDIForm
   Menu = MainMenu1
   OnClose = FormClose
   OnCreate = FormCreate
-  Visible = False
+  WindowState = wsMaximized
   object ToolBar1: TToolBar
     Left = 0
     Height = 26
     Top = 0
     Width = 833
     Caption = 'ToolBar1'
+    Color = 4539717
+    EdgeInner = esNone
+    EdgeOuter = esNone
     Images = ImageList1
+    ParentColor = False
     TabOrder = 0
     object BtnNovo: TToolButton
       Left = 1
-      Top = 2
+      Top = 0
       Action = ActNovo
     end
     object ToolButton2: TToolButton
       Left = 24
-      Top = 2
+      Top = 0
       Action = ActAbrir
     end
     object ToolButton1: TToolButton
       Left = 47
-      Top = 2
+      Top = 0
       Action = ActSalvar
     end
     object ToolButton3: TToolButton
       Left = 70
-      Top = 2
+      Top = 0
       Action = ActSalvarTudo
     end
     object ToolButton4: TToolButton
       Left = 93
       Height = 22
-      Top = 2
+      Top = 0
       Caption = 'ToolButton4'
       Style = tbsSeparator
     end
     object ToolButton5: TToolButton
       Left = 101
-      Top = 2
+      Top = 0
       Action = ActPlay
     end
     object ToolButton6: TToolButton
       Left = 124
-      Top = 2
+      Top = 0
       Action = ActParar
     end
   end
   object PageControl1: TPageControl
     Left = 170
-    Height = 326
+    Height = 287
     Top = 26
     Width = 663
     Align = alClient
@@ -69,13 +74,16 @@ object Desktop: TDesktop
   end
   object CtrlLeftPanel: TResizeablePanel
     Left = 0
-    Height = 326
+    Height = 287
     Top = 26
     Width = 170
     Align = alLeft
+    BevelColor = 4539717
     BevelOuter = bvNone
-    ClientHeight = 326
+    ClientHeight = 287
     ClientWidth = 170
+    Color = 4539717
+    ParentColor = False
     TabOrder = 2
     LeftResize = True
     RightResize = False
@@ -85,7 +93,7 @@ object Desktop: TDesktop
   object PnBottom: TResizeablePanel
     Left = 0
     Height = 114
-    Top = 352
+    Top = 313
     Width = 833
     Align = alBottom
     BevelOuter = bvNone
@@ -106,7 +114,7 @@ object Desktop: TDesktop
       TabIndex = 0
       TabOrder = 0
       object TsConsole: TTabSheet
-        Caption = 'Console'
+        Caption = '>_ Console'
         ClientHeight = 79
         ClientWidth = 819
         object Memo1: TMemo
@@ -115,6 +123,9 @@ object Desktop: TDesktop
           Top = 0
           Width = 819
           Align = alClient
+          Color = 2039583
+          Font.Color = clWhite
+          ParentFont = False
           ReadOnly = True
           TabOrder = 0
         end
@@ -129,6 +140,8 @@ object Desktop: TDesktop
           Top = 0
           Width = 819
           Align = alClient
+          BorderStyle = bsNone
+          Color = clWindow
           ReadOnly = True
           TabOrder = 0
         end

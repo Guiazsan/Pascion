@@ -55,7 +55,7 @@ end;
 procedure TResizeablePanel.ResizeL(Sender: TObject; Shift: TShiftState; X,
   Y: Integer);
 begin
-  if clicando and LSize then
+  if clicando then
   begin
     Self.Width := Self.Width - x;
     Self.Left := Self.Left + x;
@@ -65,14 +65,14 @@ end;
 procedure TResizeablePanel.ResizeR(Sender: TObject; Shift: TShiftState; X,
   Y: Integer);
 begin
-  if clicando and RSize then
+  if clicando then
     Self.Width := Self.Width + x;
 end;
 
 procedure TResizeablePanel.ResizeT(Sender: TObject; Shift: TShiftState; X,
   Y: Integer);
 begin
-  if clicando and TopSize then
+  if clicando then
   begin
     Self.Height := Self.Height - y;
     Self.Top := Self.Top + y;
@@ -82,7 +82,7 @@ end;
 procedure TResizeablePanel.ResizeB(Sender: TObject; Shift: TShiftState; X,
   Y: Integer);
 begin
-  if clicando and BSize then
+  if clicando then
     Self.Height := Self.Height + y;
 end;
 
@@ -105,6 +105,7 @@ begin
     LeftBar := TPanel.Create(nil);
     with LeftBar do
     begin
+      BevelOuter := bvNone;
       Parent := Self;
       Align  := alLeft;
       Width  := 2;
@@ -117,6 +118,7 @@ begin
     RightBar := TPanel.Create(nil);
     with RightBar do
     begin
+      BevelOuter := bvNone;
       Parent := Self;
       Align  := alRight;
       Width  := 2;
@@ -129,6 +131,7 @@ begin
     TopBar := TPanel.Create(nil);
     with TopBar do
     begin
+      BevelOuter := bvNone;
       Parent := Self;
       Align  := alTop;
       Height  := 2;
@@ -142,6 +145,7 @@ begin
     BottomBar := TPanel.Create(nil);
     with BottomBar do
     begin
+      BevelOuter := bvNone;
       Parent := Self;
       Align  := alBottom;
       Height := 2;

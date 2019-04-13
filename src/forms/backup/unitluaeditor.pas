@@ -13,8 +13,9 @@ type
   { TLuaEditor }
 
   TLuaEditor = class(TForm)
-    GridLinhas: TDrawGrid;
-    RMEditor: TRichMemo;
+    GridLinhas : TDrawGrid;
+    RMEditor : TRichMemo;
+    ScrollBox1 : TScrollBox;
     Timer1: TTimer;
     procedure FormCreate(Sender: TObject);
     procedure GridLinhasDblClick(Sender: TObject);
@@ -57,11 +58,11 @@ begin
     RMEditor.SetRangeColor(0,Length(RMEditor.Text),TColor(clWhite));
     for i := 0 to VariaveisGlobais.getPalavrasReservadas.Count - 1 do
     begin
-      ColorirPalavrasReservadas(VariaveisGlobais.getPalavrasReservadas[i], TColor(clBlue));
+      ColorirPalavrasReservadas(VariaveisGlobais.getPalavrasReservadas[i], TColor($5F8FFF));
     end;
-    ColorirNumeros(TColor(clPurple));
-    ColorirStrings(TColor(clYellow));
-    ColorirComentarios(TColor(clGreen));
+    ColorirNumeros(TColor($77a796));
+    ColorirStrings(TColor($ce9178));
+    ColorirComentarios(TColor($59954c));
   finally
     Timer1.Enabled := false;
   end;
@@ -69,9 +70,10 @@ end;
 
 procedure TLuaEditor.RMEditorChange(Sender: TObject);
 begin
+  Timer1.Enabled := False;
   Timer1.Enabled := True;
-  GridLinhas.RowCount := RMEditor.Lines.Count;
   Desktop.AlterarCodigo(nil);
+  GridLinhas.RowCount := RMEditor.Lines.Count;
 end;
 
 procedure TLuaEditor.RMEditorMouseWheel(Sender: TObject; Shift: TShiftState;
@@ -82,7 +84,7 @@ end;
 
 procedure TLuaEditor.FormCreate(Sender: TObject);
 begin
-  GridLinhas.DefaultRowHeight := RMEditor.Font.Size + 5;
+  GridLinhas.DefaultRowHeight := RMEditor.Font.Size + 6;
 end;
 
 procedure TLuaEditor.GridLinhasDblClick(Sender: TObject);
@@ -95,8 +97,8 @@ procedure TLuaEditor.GridLinhasDrawCell(Sender: TObject; aCol, aRow: Integer;
 var i : Integer;
 begin
   GridLinhas.Canvas.Font.Size := 8;
-  GridLinhas.Canvas.TextOut(GridLinhas.CellRect(0,0).Left + 20,GridLinhas.CellRect(0,0).Top -1, IntToStr(1));
-  for i := 1 to GridLinhas.RowCount do
+  //GridLinhas.Canvas.TextOut(GridLinhas.CellRect(0,0).Left + 20,GridLinhas.CellRect(0,0).Top -1, '1');
+  for i := 0 to GridLinhas.RowCount do
   begin
      GridLinhas.Canvas.TextOut(GridLinhas.CellRect(0,i).Left + 26 - (Length(IntToStr(i + 1)) * 6),
                                GridLinhas.CellRect(0,i).Top -1, IntToStr(i + 1));
@@ -110,56 +112,37 @@ begin
   texto := RMEditor.Text;
   while AnsiContainsStr(texto, palavra) do
   begin
-    if ((texto[PosEx(palavra, texto) + palavra.Length] = ' ') or
-        (texto[PosEx(palavra, texto) + palavra.Length] = '') or
-        (texto[PosEx(palavra, texto) + palavra.Length] = LineEnding) or
-        (texto[PosEx(palavra, texto) + palavra.Length] = sLineBreak) or
-        (texto[PosEx(palavra, texto) + palavra.Length] = '(') or
-        (texto[PosEx(palavra, texto) + palavra.Length] = ')') or
-        (texto[PosEx(palavra, texto) + palavra.Length] = ',') or
-        (texto[PosEx(palavra, texto) + palavra.Length] = '.')) and   //Depois da Palavra
-
-       ((texto[PosEx(palavra, texto) - 1] = ' ') or
-        (texto[PosEx(palavra, texto) - 1] = '') or
-        (texto[PosEx(palavra, texto) - 1] = '(') or
-        (texto[PosEx(palavra, texto) - 1] = ')') or
-        (texto[PosEx(palavra, texto) - 1] = ',') or
-        (texto[PosEx(palavra, texto) - 1] = #10) or
-        (texto[PosEx(palavra, texto) - 1] = LineEnding) or
-        (texto[PosEx(palavra, texto) - 1] = sLineBreak) or
-        (PosEx(palavra, RMEditor.text) = 1))  //Antes da Palavra
+    if ((texto[PosEx(palavra, texto) + palavra.Length] in
+        [' ', #10, '(', ')', '}', ',', '.', Char('')]) or //Depois da Palavra
+        (PosEx(palavra, RMEditor.text) + Length(palavra) = Length(RMEditor.text))) and
+        ((texto[PosEx(palavra, texto) - 1] in
+        [' ', '(', ')', '{', ',', #10, Char('')]) or //Antes da Palavra
+        (PosEx(palavra, RMEditor.text) - 1 = 0))
     then
-      RMEditor.SetRangeColor( (PosEx(palavra, texto) - 2) + (String(RMEditor.text).Length - texto.Length) - 1,
-                               palavra.Length + 1 , cor);
+      RMEditor.SetRangeParams((PosEx(palavra, texto)) + (String(RMEditor.text).Length - texto.Length) - 1,
+       palavra.Length ,[tmm_Styles, tmm_Color], RMEditor.Font.Name, RMEditor.Font.Size, cor,
+       [fsBold], []);
 
     texto := texto.Substring(PosEx(palavra, texto) + palavra.Length);
+
   end;
 end;
 
 procedure TLuaEditor.ColorirNumeros(cor: TColor);
 var
   texto : String;
-  numeros : array[0..9] of Integer;
   i : Integer;
 begin
   texto := RMEditor.Text;
-  for i := 0 to Length(numeros) - 1 do
-    while PosEx(IntToStr(numeros[i]), texto) <> 0 do
-    begin
-      if (not(texto[PosEx(IntToStr(numeros[i]), texto) + IntToStr(numeros[i]).Length] in ['a'..'z','A'..'Z'])
-          and
-          not(texto[PosEx(IntToStr(numeros[i]), texto) - 1] in ['a'..'z','A'..'Z']))
-      then
-        RMEditor.SetRangeColor(
-          (PosEx(IntToStr(numeros[i]), texto) - 2) + (String(RMEditor.text).Length - texto.Length),
-           IntToStr(numeros[i]).Length + 1 , cor)
-      else
-        RMEditor.SetRangeColor(
-          (PosEx(IntToStr(numeros[i]), texto) - 2) + (String(RMEditor.text).Length - texto.Length),
-           IntToStr(numeros[i]).Length + 1 , TColor(clWhite));
+  for i := 1 to Length(texto) do
+  begin
+    if (texto[i] in ['1','2','3','4','5','6','7','8','9','0']) and
+     not(texto[i - 1] in ['a'..'z','A'..'Z']) //se antes não for letra
+     and not(texto[i + 1] in ['a'..'z','A'..'Z']) //se depois não for letra
+    then
+      RMEditor.SetRangeColor(i - 1, 1, cor);
 
-      texto := texto.Substring(PosEx(IntToStr(numeros[i]), texto) + IntToStr(numeros[i]).Length);
-    end;
+  end;
 end;
 
 procedure TLuaEditor.ColorirComentarios(cor: TColor);
@@ -179,10 +162,12 @@ begin
     if PosEx(']]--', texto) = 0 then
       indexFinal := Length(texto) - 1
     else
-      indexFinal := PosEx(']]--', texto) + 3;
+      indexFinal := PosEx(']]', texto) + 3;
 
-    RMEditor.SetRangeColor((PosEx(texto, RMEditor.Text) - 2), indexFinal + 1, cor);
-    texto := texto.Substring(PosEx(']]--',Texto));
+    RMEditor.SetRangeParams((PosEx(texto, RMEditor.Text) - 2), indexFinal + 1,
+      [tmm_Styles, tmm_Color], RMEditor.Font.Name, RMEditor.Font.Size,
+      cor, [fsItalic], [fsBold]);
+    texto := texto.Substring(PosEx(']]',Texto));
   end;
 
   // comentários de linha única
@@ -203,7 +188,9 @@ begin
       else
         indexFinal := PosEx(final, texto);
 
-      RMEditor.SetRangeColor( (PosEx(texto, RMEditor.Text) - 3),(indexFinal - PosEx('--', texto)) + 1, cor);
+      RMEditor.SetRangeParams( (PosEx(texto, RMEditor.Text) -2 ),
+      (indexFinal - PosEx('--', texto)) + 2, [tmm_Styles, tmm_Color],
+       RMEditor.Font.Name, RMEditor.Font.Size, cor, [fsItalic], [fsBold]);
 
 
       texto := texto.Substring(PosEx(final,Texto));
@@ -232,18 +219,10 @@ begin
 end;
 
 procedure TLuaEditor.CarregarArquivo;
-var
-  texto   : TStringList;
-  i       : Integer;
 begin
-  texto   := TStringList.Create;
-  try
-    texto.LoadFromFile(FCaminho);
-    for i := 0 to Pred(Texto.Count) do
-      RMEditor.Lines.Add(texto.Strings[i]);
-  finally
-    FreeAndNil(texto);
-  end;
+  RMEditor.Clear;
+  RMEditor.Lines.LoadFromFile(FCaminho);
+  Timer1.Enabled := True;
 end;
 
 procedure TLuaEditor.SalvarArquivo;

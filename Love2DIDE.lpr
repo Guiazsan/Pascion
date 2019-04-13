@@ -19,4 +19,3 @@ begin
   Application.CreateForm(TSplashForm, SplashForm);
   Application.Run;
 end.
-

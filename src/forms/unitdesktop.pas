@@ -132,6 +132,7 @@ begin
     LuaTela := TLuaEditor.Create(nil);
     LuaTela.SetCaminho(ProjetoPath + StringReplace(Caminho, ProjetoNome , '', []));
     LuaTela.CarregarArquivo;
+    LuaTela.GridLinhas.RowCount := LuaTela.RMEditor.Lines.Count;
     LuaTela.BorderStyle := bsNone;
     LuaTela.Parent      := newTab;
     LuaTela.Align       := alClient;
@@ -153,7 +154,7 @@ begin
     TmExecutor.Enabled := False;
     if Assigned(love) then
     begin
-      Memo1.Lines.LoadFromStream(love.Output);
+      //Memo1.Lines.LoadFromStream(love.Output);
       FreeAndNil(love);
     end;
 

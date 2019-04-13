@@ -105,6 +105,8 @@ begin
     LeftBar := TPanel.Create(nil);
     with LeftBar do
     begin
+      Color := self.Color;
+      BevelOuter := bvNone;
       Parent := Self;
       Align  := alLeft;
       Width  := 2;
@@ -117,6 +119,8 @@ begin
     RightBar := TPanel.Create(nil);
     with RightBar do
     begin
+      Color := self.Color;
+      BevelOuter := bvNone;
       Parent := Self;
       Align  := alRight;
       Width  := 2;
@@ -129,6 +133,8 @@ begin
     TopBar := TPanel.Create(nil);
     with TopBar do
     begin
+      Color := self.Color;
+      BevelOuter := bvNone;
       Parent := Self;
       Align  := alTop;
       Height  := 2;
@@ -142,6 +148,8 @@ begin
     BottomBar := TPanel.Create(nil);
     with BottomBar do
     begin
+      Color := self.Color;
+      BevelOuter := bvNone;
       Parent := Self;
       Align  := alBottom;
       Height := 2;

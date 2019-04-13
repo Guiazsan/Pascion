@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, strutils, memds, db, FileUtil, Forms, Controls, Graphics,
   Dialogs, StdCtrls, ComCtrls, ExtCtrls, Buttons, ActnList, Grids, DBGrids,
-  UnitVariaveisGlobais;
+  KPageControl, UnitVariaveisGlobais;
 
 type
 
@@ -51,6 +51,7 @@ uses UnitDesktop;
 procedure TPastasProjetos.ProjetoTreeDblClick(Sender : TObject);
 begin
   Desktop.AbrirCodigo(ProjetoTree.Selected.GetTextPath, ProjetoTree.Selected.Text);
+  Desktop.PageControl1.ActivePageIndex := PageControl1.PageCount;
 end;
 
 procedure TPastasProjetos.popularTreeProjeto(ProjetoPath, ProjetoNome : String);

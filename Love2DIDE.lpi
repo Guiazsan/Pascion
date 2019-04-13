@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="10"/>
+    <Version Value="11"/>
     <PathDelim Value="\"/>
     <General>
       <SessionStorage Value="InProjectDir"/>
@@ -21,26 +21,30 @@
       <Version Value="2"/>
     </PublishOptions>
     <RunParams>
-      <local>
-        <FormatVersion Value="1"/>
-      </local>
+      <FormatVersion Value="2"/>
+      <Modes Count="1">
+        <Mode0 Name="default"/>
+      </Modes>
     </RunParams>
-    <RequiredPackages Count="5">
+    <RequiredPackages Count="6">
       <Item1>
-        <PackageName Value="MemDSLaz"/>
+        <PackageName Value="KControlsLaz"/>
       </Item1>
       <Item2>
-        <PackageName Value="LazMouseAndKeyInput"/>
+        <PackageName Value="FCL"/>
       </Item2>
       <Item3>
-        <PackageName Value="PascionPack"/>
+        <PackageName Value="MemDSLaz"/>
       </Item3>
       <Item4>
-        <PackageName Value="richmemopackage"/>
+        <PackageName Value="PascionPack"/>
       </Item4>
       <Item5>
-        <PackageName Value="LCL"/>
+        <PackageName Value="richmemopackage"/>
       </Item5>
+      <Item6>
+        <PackageName Value="LCL"/>
+      </Item6>
     </RequiredPackages>
     <Units Count="8">
       <Unit0>
@@ -119,7 +123,7 @@
     </Linking>
   </CompilerOptions>
   <Debugging>
-    <Exceptions Count="3">
+    <Exceptions Count="6">
       <Item1>
         <Name Value="EAbort"/>
       </Item1>
@@ -129,6 +133,15 @@
       <Item3>
         <Name Value="EFOpenError"/>
       </Item3>
+      <Item4>
+        <Name Value="RunError(219)"/>
+      </Item4>
+      <Item5>
+        <Name Value="EInvalidCast"/>
+      </Item5>
+      <Item6>
+        <Name Value="EGridException"/>
+      </Item6>
     </Exceptions>
   </Debugging>
 </CONFIG>
