@@ -7,26 +7,31 @@ object LuaEditor: TLuaEditor
   ClientHeight = 449
   ClientWidth = 803
   OnCreate = FormCreate
+  OnResize = FormResize
+  OnShow = FormResize
   object ScrollBox1: TScrollBox
     Left = 0
     Height = 449
     Top = 0
     Width = 803
-    HorzScrollBar.Page = 190
-    VertScrollBar.Page = 50
+    HorzScrollBar.Page = 790
+    HorzScrollBar.Range = 795
+    HorzScrollBar.Visible = False
+    VertScrollBar.Page = 436
+    VertScrollBar.Range = 700
     Align = alClient
+    AutoScroll = False
     BorderStyle = bsNone
     ClientHeight = 449
-    ClientWidth = 803
+    ClientWidth = 790
     Color = 2039583
     ParentColor = False
     TabOrder = 0
     object RMEditor: TRichMemo
       Left = 40
-      Height = 449
+      Height = 700
       Top = 0
-      Width = 763
-      Align = alClient
+      Width = 755
       BorderStyle = bsNone
       Color = 2039583
       Font.CharSet = ANSI_CHARSET
@@ -40,8 +45,8 @@ object LuaEditor: TLuaEditor
         ''
       )
       OnChange = RMEditorChange
-      OnMouseWheel = RMEditorMouseWheel
       ParentFont = False
+      ScrollBars = ssVertical
       TabOrder = 0
       WantTabs = True
       WordWrap = False
@@ -49,7 +54,7 @@ object LuaEditor: TLuaEditor
     end
     object GridLinhas: TDrawGrid
       Left = 0
-      Height = 449
+      Height = 700
       Top = 0
       Width = 40
       Align = alLeft

@@ -5,9 +5,9 @@ unit UnitDesktop;
 interface
 
 uses
-  cmem, Classes, SysUtils, IniFiles, process, strutils, FileUtil,
-  Forms, Controls, Graphics, Dialogs, ComCtrls, ActnList,
-  Menus, ExtCtrls, StdCtrls, UnitLuaEditor, UnitVariaveisGlobais,
+  cmem, Classes, SysUtils, IniFiles, process, strutils, FileUtil, Forms,
+  Controls, Graphics, Dialogs, ComCtrls, ActnList, Menus, ExtCtrls, StdCtrls,
+  CustomDrawn_Common, CustomDrawnControls, UnitLuaEditor, UnitVariaveisGlobais,
   ResizeablePanel, UnitPastasProjetos;
 
 type
@@ -40,12 +40,12 @@ type
     ItemStop : TMenuItem;
     Memo1 : TMemo;
     MemoMensagens: TMemo;
-    PageControl1: TPageControl;
+    PageControl1: TCDPageControl;
     CtrlLeftPanel: TResizeablePanel;
-    PcSaidas: TPageControl;
+    PcSaidas: TCDPageControl;
     PnBottom: TResizeablePanel;
-    TsMensagens: TTabSheet;
-    TsConsole: TTabSheet;
+    TsMensagens: TCDTabSheet;
+    TsConsole: TCDTabSheet;
     TmExecutor: TTimer;
     ToolBar1: TToolBar;
     BtnNovo: TToolButton;
@@ -121,13 +121,12 @@ begin
 end;
 
 procedure TDesktop.AbrirCodigo(Caminho, Nome : String);
-var newTab: TTabSheet;
+var newTab: TCDTabSheet;
     LuaTela : TLuaEditor;
 begin
   if PosEx('.lua',Nome) > 0 then
   begin
-    newTab                := PageControl1.AddTabSheet;
-    newTab.Caption        := Nome;
+    newTab                := PageControl1.AddPage(Nome);
 
     LuaTela := TLuaEditor.Create(nil);
     LuaTela.SetCaminho(ProjetoPath + StringReplace(Caminho, ProjetoNome , '', []));

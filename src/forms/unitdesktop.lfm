@@ -1,12 +1,12 @@
 object Desktop: TDesktop
   Left = 275
-  Height = 427
+  Height = 414
   Top = 146
-  Width = 833
+  Width = 807
   ActiveControl = PageControl1
   Caption = 'Pasciön v1.0'
-  ClientHeight = 427
-  ClientWidth = 833
+  ClientHeight = 414
+  ClientWidth = 807
   Color = 4539717
   DefaultMonitor = dmDesktop
   FormStyle = fsMDIForm
@@ -18,7 +18,7 @@ object Desktop: TDesktop
     Left = 0
     Height = 26
     Top = 0
-    Width = 833
+    Width = 807
     Caption = 'ToolBar1'
     Color = 4539717
     EdgeInner = esNone
@@ -64,23 +64,28 @@ object Desktop: TDesktop
       Action = ActParar
     end
   end
-  object PageControl1: TPageControl
+  object PageControl1: TCDPageControl
     Left = 170
-    Height = 287
+    Height = 274
     Top = 26
-    Width = 663
+    Width = 637
     Align = alClient
-    TabOrder = 1
+    DrawStyle = dsDefault
+    Font.Color = clHighlightText
+    PageIndex = 0
+    Options = []
+    ParentFont = False
+    TabIndex = 0
   end
   object CtrlLeftPanel: TResizeablePanel
     Left = 0
-    Height = 287
+    Height = 274
     Top = 26
     Width = 170
     Align = alLeft
     BevelColor = 4539717
     BevelOuter = bvNone
-    ClientHeight = 287
+    ClientHeight = 274
     ClientWidth = 170
     Color = 4539717
     ParentColor = False
@@ -93,55 +98,65 @@ object Desktop: TDesktop
   object PnBottom: TResizeablePanel
     Left = 0
     Height = 114
-    Top = 313
-    Width = 833
+    Top = 300
+    Width = 807
     Align = alBottom
     BevelOuter = bvNone
     ClientHeight = 114
-    ClientWidth = 833
+    ClientWidth = 807
+    Font.Color = clHighlightText
+    ParentFont = False
     TabOrder = 3
     LeftResize = False
     RightResize = False
     TopResize = False
     BottomResize = False
-    object PcSaidas: TPageControl
+    object PcSaidas: TCDPageControl
       Left = 2
       Height = 110
       Top = 2
-      Width = 829
-      ActivePage = TsConsole
+      Width = 803
       Align = alClient
+      ActivePage = TsConsole
+      DrawStyle = dsDefault
+      PageIndex = 0
+      Options = []
       TabIndex = 0
-      TabOrder = 0
-      object TsConsole: TTabSheet
-        Caption = '>_ Console'
-        ClientHeight = 79
-        ClientWidth = 819
-        object Memo1: TMemo
-          Left = 0
-          Height = 79
-          Top = 0
-          Width = 819
-          Align = alClient
-          Color = 2039583
-          Font.Color = clWhite
-          ParentFont = False
-          ReadOnly = True
-          TabOrder = 0
-        end
-      end
-      object TsMensagens: TTabSheet
+      object TsMensagens: TCDTabSheet
+        Left = 2
+        Height = 79
+        Top = 29
+        Width = 799
         Caption = 'Mensagens'
-        ClientHeight = 79
-        ClientWidth = 819
+        TabVisible = False
         object MemoMensagens: TMemo
           Left = 0
           Height = 79
           Top = 0
-          Width = 819
+          Width = 799
           Align = alClient
           BorderStyle = bsNone
           Color = clWindow
+          ReadOnly = True
+          TabOrder = 0
+        end
+      end
+      object TsConsole: TCDTabSheet
+        Left = 2
+        Height = 79
+        Top = 29
+        Width = 799
+        Caption = '>_ Console'
+        TabVisible = False
+        object Memo1: TMemo
+          Left = 0
+          Height = 79
+          Top = 0
+          Width = 799
+          Align = alClient
+          Color = 2039583
+          Font.Color = clWhite
+          ParentFont = False
           ReadOnly = True
           TabOrder = 0
         end

@@ -6,8 +6,8 @@ interface
 
 uses
   Classes, SysUtils, strutils, memds, db, FileUtil, Forms, Controls, Graphics,
-  Dialogs, StdCtrls, ComCtrls, ExtCtrls, Buttons, ActnList, Grids, DBGrids,
-  KPageControl, UnitVariaveisGlobais;
+  Dialogs, StdCtrls, ComCtrls, ExtCtrls, Buttons, ActnList, DBGrids,
+  CustomDrawnControls, CustomDrawnDrawers, CustomDrawn_Android, UnitVariaveisGlobais;
 
 type
 
@@ -20,17 +20,17 @@ type
     ActionList1 : TActionList;
     BtnNewScene : TSpeedButton;
     BtnAddFile : TSpeedButton;
+    CDPageControl1 : TCDPageControl;
+    CDTabSheet1 : TCDTabSheet;
+    CDTabSheet2 : TCDTabSheet;
     DSCenas : TDataSource;
     DBGrid1 : TDBGrid;
     GBProjeto : TGroupBox;
     ImageList1 : TImageList;
     MDSCenas : TMemDataset;
-    PageControl1 : TPageControl;
     Panel1 : TPanel;
     ProjetoTree : TTreeView;
     BtnNewFolder : TSpeedButton;
-    TabPastas : TTabSheet;
-    TabSheet1 : TTabSheet;
     procedure ProjetoTreeDblClick(Sender : TObject);
   private
 
@@ -51,7 +51,7 @@ uses UnitDesktop;
 procedure TPastasProjetos.ProjetoTreeDblClick(Sender : TObject);
 begin
   Desktop.AbrirCodigo(ProjetoTree.Selected.GetTextPath, ProjetoTree.Selected.Text);
-  Desktop.PageControl1.ActivePageIndex := PageControl1.PageCount;
+  Desktop.PageControl1.PageIndex := CDPageControl1.PageCount;
 end;
 
 procedure TPastasProjetos.popularTreeProjeto(ProjetoPath, ProjetoNome : String);

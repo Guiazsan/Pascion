@@ -18,12 +18,11 @@ type
     ScrollBox1 : TScrollBox;
     Timer1: TTimer;
     procedure FormCreate(Sender: TObject);
+    procedure FormResize(Sender : TObject);
     procedure GridLinhasDblClick(Sender: TObject);
     procedure GridLinhasDrawCell(Sender: TObject; aCol, aRow: Integer;
       aRect: TRect; aState: TGridDrawState);
     procedure RMEditorChange(Sender: TObject);
-    procedure RMEditorMouseWheel(Sender: TObject; Shift: TShiftState;
-      WheelDelta: Integer; MousePos: TPoint; var Handled: Boolean);
     procedure Timer1Timer(Sender: TObject);
   private
     FCaminho : String;
@@ -58,7 +57,8 @@ begin
     RMEditor.SetRangeColor(0,Length(RMEditor.Text),TColor(clWhite));
     for i := 0 to VariaveisGlobais.getPalavrasReservadas.Count - 1 do
     begin
-      ColorirPalavrasReservadas(VariaveisGlobais.getPalavrasReservadas[i], TColor($5F8FFF));
+      ColorirPalavrasReservadas(VariaveisGlobais.getPalavrasReservadas[i],
+        TColor($5F8FFF));
     end;
     ColorirNumeros(TColor($77a796));
     ColorirStrings(TColor($ce9178));
@@ -74,17 +74,18 @@ begin
   Timer1.Enabled := True;
   Desktop.AlterarCodigo(nil);
   GridLinhas.RowCount := RMEditor.Lines.Count;
-end;
-
-procedure TLuaEditor.RMEditorMouseWheel(Sender: TObject; Shift: TShiftState;
-  WheelDelta: Integer; MousePos: TPoint; var Handled: Boolean);
-begin
-//
+  RMEditor.Height := RMEditor.Lines.Count * RMEditor.Font.Size;
 end;
 
 procedure TLuaEditor.FormCreate(Sender: TObject);
 begin
   GridLinhas.DefaultRowHeight := RMEditor.Font.Size + 6;
+end;
+
+procedure TLuaEditor.FormResize(Sender : TObject);
+begin
+  RMEditor.Width := Self.Width - GridLinhas.Width;
+  RMEditor.Left  := GridLinhas.Width;
 end;
 
 procedure TLuaEditor.GridLinhasDblClick(Sender: TObject);
@@ -97,11 +98,12 @@ procedure TLuaEditor.GridLinhasDrawCell(Sender: TObject; aCol, aRow: Integer;
 var i : Integer;
 begin
   GridLinhas.Canvas.Font.Size := 8;
-  //GridLinhas.Canvas.TextOut(GridLinhas.CellRect(0,0).Left + 20,GridLinhas.CellRect(0,0).Top -1, '1');
-  for i := 0 to GridLinhas.RowCount do
+  for i := 0 to Pred(GridLinhas.RowCount) do
   begin
-     GridLinhas.Canvas.TextOut(GridLinhas.CellRect(0,i).Left + 26 - (Length(IntToStr(i + 1)) * 6),
-                               GridLinhas.CellRect(0,i).Top -1, IntToStr(i + 1));
+                              //para deixar sempre alinhado os números
+    GridLinhas.Canvas.TextOut(GridLinhas.CellRect(0,i).Left + 26 - (Length(IntToStr(i + 1)) * 6),
+                              GridLinhas.CellRect(0,i).Top -1, IntToStr(i + 1));
+
   end;
 end;
 
@@ -223,6 +225,8 @@ begin
   RMEditor.Clear;
   RMEditor.Lines.LoadFromFile(FCaminho);
   Timer1.Enabled := True;
+  RMEditor.Height := RMEditor.Lines.Count * (RMEditor.Font.Size + 6);
+  ScrollBox1.AutoScroll := True;
 end;
 
 procedure TLuaEditor.SalvarArquivo;

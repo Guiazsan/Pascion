@@ -2,23 +2,24 @@ object PastasProjetos: TPastasProjetos
   Left = 0
   Height = 377
   Top = 0
-  Width = 320
+  Width = 369
   BorderStyle = bsNone
   Caption = 'Pastas'
   ClientHeight = 377
-  ClientWidth = 320
+  ClientWidth = 369
   Color = 2039583
   object GBProjeto: TGroupBox
     Left = 0
     Height = 377
     Top = 0
-    Width = 320
+    Width = 369
     Align = alClient
     Caption = 'Projeto'
     ClientHeight = 359
-    ClientWidth = 318
+    ClientWidth = 367
     Color = 4539717
     Font.Color = clHighlightText
+    ParentBidiMode = False
     ParentColor = False
     ParentFont = False
     TabOrder = 0
@@ -26,11 +27,11 @@ object PastasProjetos: TPastasProjetos
       Left = 0
       Height = 34
       Top = 0
-      Width = 318
+      Width = 367
       Align = alTop
       BevelOuter = bvNone
       ClientHeight = 34
-      ClientWidth = 318
+      ClientWidth = 367
       Color = 4539717
       ParentColor = False
       TabOrder = 0
@@ -65,24 +66,30 @@ object PastasProjetos: TPastasProjetos
         ShowCaption = False
       end
     end
-    object PageControl1: TPageControl
+    object CDPageControl1: TCDPageControl
       Left = 0
       Height = 325
       Top = 34
-      Width = 318
-      ActivePage = TabPastas
+      Width = 367
       Align = alClient
+      ActivePage = CDTabSheet2
+      DrawStyle = dsKDEPlastique
+      Caption = 'CDPageControl1'
+      PageIndex = 0
+      Options = []
       TabIndex = 0
-      TabOrder = 1
-      object TabPastas: TTabSheet
+      object CDTabSheet1: TCDTabSheet
+        Left = 2
+        Height = 294
+        Top = 29
+        Width = 363
         Caption = 'Pastas'
-        ClientHeight = 294
-        ClientWidth = 308
+        TabVisible = False
         object ProjetoTree: TTreeView
           Left = 0
           Height = 294
           Top = 0
-          Width = 308
+          Width = 363
           Align = alClient
           BackgroundColor = 4539717
           Color = 4539717
@@ -94,15 +101,18 @@ object PastasProjetos: TPastasProjetos
           Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
         end
       end
-      object TabSheet1: TTabSheet
+      object CDTabSheet2: TCDTabSheet
+        Left = 2
+        Height = 294
+        Top = 29
+        Width = 363
         Caption = 'Cenas'
-        ClientHeight = 294
-        ClientWidth = 308
+        TabVisible = False
         object DBGrid1: TDBGrid
           Left = 0
-          Height = 273
+          Height = 294
           Top = 0
-          Width = 308
+          Width = 363
           Align = alClient
           BorderStyle = bsNone
           Color = 4539717

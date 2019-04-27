@@ -5,8 +5,9 @@ unit UnitSplash;
 interface
 
 uses
-  cmem, Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  ComCtrls, StdCtrls, UnitVariaveisGlobais, IniFiles;
+  cmem, Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs,
+  ExtCtrls, ComCtrls, StdCtrls, CustomDrawnControls, CustomDrawnDrawers,
+  UnitVariaveisGlobais, IniFiles;
 
 type
 

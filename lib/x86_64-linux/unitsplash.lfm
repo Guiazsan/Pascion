@@ -12,8 +12,7 @@ object SplashForm: TSplashForm
   DefaultMonitor = dmDesktop
   OnActivate = FormActivate
   Position = poDesktopCenter
-  LCLVersion = '1.8.4.0'
-  Visible = False
+  LCLVersion = '2.0.0.4'
   object Image1: TImage
     Left = 0
     Height = 401

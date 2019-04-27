@@ -46,7 +46,7 @@
         <PackageName Value="LCL"/>
       </Item6>
     </RequiredPackages>
-    <Units Count="8">
+    <Units Count="10">
       <Unit0>
         <Filename Value="Love2DIDE.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -101,6 +101,18 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitPastasProjetos"/>
       </Unit7>
+      <Unit8>
+        <Filename Value="src\forms\unitcenaeditor.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form1"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitCenaEditor"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="src\units\unitloveobjs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="unitLoveObjs"/>
+      </Unit9>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
