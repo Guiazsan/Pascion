@@ -5,10 +5,16 @@ unit UnitCenaEditor;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls;
 
 type
+
+  { TForm1 }
+
   TForm1 = class(TForm)
+    GroupBox1 : TGroupBox;
+    Panel1 : TPanel;
+    ScrollBox1 : TScrollBox;
   private
 
   public

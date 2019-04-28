@@ -1,8 +1,45 @@
 object Form1: TForm1
   Left = 260
-  Height = 240
+  Height = 404
   Top = 250
-  Width = 320
+  Width = 533
   Caption = 'Form1'
-  Color = clBlack
+  ClientHeight = 404
+  ClientWidth = 533
+  Color = 4539717
+  object GroupBox1: TGroupBox
+    Left = 348
+    Height = 404
+    Top = 0
+    Width = 185
+    Align = alRight
+    Caption = 'Inspertor'
+    Font.Color = clHighlightText
+    ParentFont = False
+    TabOrder = 0
+  end
+  object ScrollBox1: TScrollBox
+    Left = 0
+    Height = 404
+    Top = 0
+    Width = 348
+    HorzScrollBar.Page = 178
+    VertScrollBar.Page = 58
+    Align = alClient
+    ClientHeight = 402
+    ClientWidth = 346
+    Color = 4539717
+    ParentColor = False
+    TabOrder = 1
+    object Panel1: TPanel
+      Left = 8
+      Height = 50
+      Top = 8
+      Width = 170
+      BevelOuter = bvNone
+      Color = clBlack
+      ParentColor = False
+      TabOrder = 0
+    end
+  end
 end

@@ -4,5 +4,5 @@ object Form1: TForm1
   Top = 250
   Width = 320
   Caption = 'Form1'
-  LCLVersion = '2.0.0.4'
+  Color = clBlack
 end
