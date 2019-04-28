@@ -75,9 +75,9 @@ object PastasProjetos: TPastasProjetos
       ActivePage = CDTabSheet2
       DrawStyle = dsKDEPlastique
       Caption = 'CDPageControl1'
-      PageIndex = 0
+      PageIndex = 1
       Options = []
-      TabIndex = 0
+      TabIndex = 1
       object CDTabSheet1: TCDTabSheet
         Left = 2
         Height = 294
@@ -275,6 +275,7 @@ object PastasProjetos: TPastasProjetos
     object ActAddFile: TAction
       Caption = 'AddFile'
       ImageIndex = 3
+      OnExecute = ActAddFileExecute
     end
   end
   object MDSCenas: TMemDataset

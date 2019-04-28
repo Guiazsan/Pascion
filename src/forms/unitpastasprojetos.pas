@@ -31,6 +31,7 @@ type
     Panel1 : TPanel;
     ProjetoTree : TTreeView;
     BtnNewFolder : TSpeedButton;
+    procedure ActAddFileExecute(Sender : TObject);
     procedure ProjetoTreeDblClick(Sender : TObject);
   private
 
@@ -52,6 +53,20 @@ procedure TPastasProjetos.ProjetoTreeDblClick(Sender : TObject);
 begin
   Desktop.AbrirCodigo(ProjetoTree.Selected.GetTextPath, ProjetoTree.Selected.Text);
   Desktop.PageControl1.PageIndex := CDPageControl1.PageCount;
+end;
+
+procedure TPastasProjetos.ActAddFileExecute(Sender : TObject);
+var
+  cenaNome : String;
+  cena : TStringList;
+begin
+  nome := InputBox('Nome da Cena', 'Nome', '');
+  cena := TStringList.Create;
+  try
+    cena.SaveToFile(Desktop.ProjetoPath + nome);
+  finally
+    FreeAndNil(cena);
+  end;
 end;
 
 procedure TPastasProjetos.popularTreeProjeto(ProjetoPath, ProjetoNome : String);

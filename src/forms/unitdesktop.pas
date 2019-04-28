@@ -64,7 +64,6 @@ type
     procedure ActSalvarExecute(Sender : TObject);
     procedure TmExecutorTimer(Sender : TObject);
   private
-    ProjetoPath, LovePath, ProjetoNome : String;
     IniConfig : TIniFile;
     love : TProcess;
     MemSaida : TMemo;
@@ -72,6 +71,7 @@ type
 
     procedure LimparTela;
   public
+    ProjetoPath, LovePath, ProjetoNome : String;
     procedure AlterarCodigo(Sender : TObject);
     procedure AbrirCodigo(Caminho, Nome : String);
 

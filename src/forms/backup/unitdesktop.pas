@@ -44,8 +44,8 @@ type
     CtrlLeftPanel: TResizeablePanel;
     PcSaidas: TCDPageControl;
     PnBottom: TResizeablePanel;
-    TsMensagens: TTabSheet;
-    TsConsole: TTabSheet;
+    TsMensagens: TCDTabSheet;
+    TsConsole: TCDTabSheet;
     TmExecutor: TTimer;
     ToolBar1: TToolBar;
     BtnNovo: TToolButton;
