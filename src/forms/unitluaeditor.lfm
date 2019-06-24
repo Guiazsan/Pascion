@@ -14,13 +14,10 @@ object LuaEditor: TLuaEditor
     Height = 449
     Top = 0
     Width = 803
-    HorzScrollBar.Page = 790
-    HorzScrollBar.Range = 795
+    HorzScrollBar.Page = 1
     HorzScrollBar.Visible = False
-    VertScrollBar.Page = 436
-    VertScrollBar.Range = 700
+    VertScrollBar.Page = 449
     Align = alClient
-    AutoScroll = False
     BorderStyle = bsNone
     ClientHeight = 449
     ClientWidth = 790
@@ -46,7 +43,6 @@ object LuaEditor: TLuaEditor
       )
       OnChange = RMEditorChange
       ParentFont = False
-      ScrollBars = ssAutoVertical
       TabOrder = 0
       WantTabs = True
       WordWrap = False
@@ -57,7 +53,6 @@ object LuaEditor: TLuaEditor
       Height = 700
       Top = 0
       Width = 40
-      Align = alLeft
       BorderStyle = bsNone
       Color = 2039583
       ColCount = 1

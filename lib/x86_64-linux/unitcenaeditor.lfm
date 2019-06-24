@@ -1,8 +1,61 @@
-object Form1: TForm1
+object CenaEditor: TCenaEditor
   Left = 260
-  Height = 240
+  Height = 404
   Top = 250
-  Width = 320
-  Caption = 'Form1'
-  Color = clBlack
+  Width = 657
+  Caption = 'CenaEditor'
+  ClientHeight = 404
+  ClientWidth = 657
+  Color = 4539717
+  LCLVersion = '2.0.0.4'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 404
+    Top = 0
+    Width = 657
+    ActivePage = TabCodigo
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 0
+    TabPosition = tpBottom
+    object TabSheet1: TTabSheet
+      Caption = 'Editor'
+      ClientHeight = 370
+      ClientWidth = 647
+      object ScrollBox1: TScrollBox
+        Left = 0
+        Height = 373
+        Top = 0
+        Width = 462
+        HorzScrollBar.Page = 1
+        VertScrollBar.Page = 1
+        Align = alClient
+        TabOrder = 0
+      end
+      object Panel1: TPanel
+        Left = 8
+        Height = 80
+        Top = 8
+        Width = 104
+        BevelOuter = bvNone
+        Color = clBlack
+        ParentColor = False
+        TabOrder = 1
+      end
+      object GroupBox1: TGroupBox
+        Left = 462
+        Height = 373
+        Top = 0
+        Width = 185
+        Align = alRight
+        Caption = 'Inspetor'
+        Font.Color = clHighlightText
+        ParentFont = False
+        TabOrder = 2
+      end
+    end
+    object TabCodigo: TTabSheet
+      Caption = 'Código'
+    end
+  end
 end

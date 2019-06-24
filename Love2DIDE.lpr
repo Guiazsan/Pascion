@@ -17,6 +17,6 @@ begin
   RequireDerivedFormResource := True;
   Application.Initialize;
   Application.CreateForm(TSplashForm, SplashForm);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TCenaEditor, CenaEditor);
   Application.Run;
 end.

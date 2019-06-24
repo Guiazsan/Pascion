@@ -74,7 +74,7 @@ begin
   Timer1.Enabled := True;
   Desktop.AlterarCodigo(nil);
   GridLinhas.RowCount := RMEditor.Lines.Count;
-  RMEditor.Height := RMEditor.Lines.Count * RMEditor.Font.Size;
+  RMEditor.Height := (RMEditor.Lines.Count + 1) * (RMEditor.Font.Size + 6);
 end;
 
 procedure TLuaEditor.FormCreate(Sender: TObject);
@@ -225,7 +225,7 @@ begin
   RMEditor.Clear;
   RMEditor.Lines.LoadFromFile(FCaminho);
   Timer1.Enabled := True;
-  RMEditor.Height := RMEditor.Lines.Count * (RMEditor.Font.Size + 6);
+  //RMEditor.Height := RMEditor.Lines.Count * (RMEditor.Font.Size + 6);
   ScrollBox1.AutoScroll := True;
 end;
 

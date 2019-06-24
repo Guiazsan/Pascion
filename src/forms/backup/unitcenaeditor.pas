@@ -5,22 +5,51 @@ unit UnitCenaEditor;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
+  CustomDrawnControls, ComCtrls, UnitLuaEditor, KPageControl;
 
 type
-  TForm1 = class(TForm)
+
+  { TCenaEditor }
+
+  TCenaEditor = class(TForm)
+    GroupBox1 : TGroupBox;
+    PageControl1 : TPageControl;
+    Panel1 : TPanel;
+    ScrollBox1 : TScrollBox;
+    TabSheet1 : TTabSheet;
+    TabCodigo : TTabSheet;
   private
+    FCaminho, FNome : String;
 
   public
+    procedure AbrirEditor(Caminho, Nome : String);
 
   end;
 
 var
-  Form1 : TForm1;
+  CenaEditor : TCenaEditor;
 
 implementation
 
 {$R *.lfm}
+
+{ TCenaEditor }
+
+procedure TCenaEditor.AbrirEditor(Caminho, Nome : String);
+var LuaTela : TLuaEditor;
+begin
+  FCaminho                    := Caminho;
+  FNome                       := Nome;
+  LuaTela                     := TLuaEditor.Create(nil);
+  LuaTela.SetCaminho(Caminho + Nome);
+  LuaTela.CarregarArquivo;
+  //LuaTela.GridLinhas.RowCount := LuaTela.RMEditor.Lines.Count;
+  LuaTela.BorderStyle         := bsNone;
+  LuaTela.Parent              := TabCodigo;
+  LuaTela.Align               := alClient;
+  LuaTela.Show;
+end;
 
 end.
 

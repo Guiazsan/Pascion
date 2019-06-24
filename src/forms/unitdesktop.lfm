@@ -74,7 +74,7 @@ object Desktop: TDesktop
     DrawStyle = dsDefault
     Font.Color = clHighlightText
     PageIndex = 0
-    Options = []
+    Options = [nboShowCloseButtons]
     ParentFont = False
     TabIndex = 0
   end

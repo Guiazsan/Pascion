@@ -8,6 +8,7 @@ object PastasProjetos: TPastasProjetos
   ClientHeight = 377
   ClientWidth = 369
   Color = 2039583
+  OnShow = FormShow
   object GBProjeto: TGroupBox
     Left = 0
     Height = 377
@@ -72,12 +73,38 @@ object PastasProjetos: TPastasProjetos
       Top = 34
       Width = 367
       Align = alClient
-      ActivePage = CDTabSheet2
+      ActivePage = CDTabSheet1
       DrawStyle = dsKDEPlastique
       Caption = 'CDPageControl1'
-      PageIndex = 0
+      PageIndex = 1
       Options = []
-      TabIndex = 0
+      TabIndex = 1
+      object CDTabSheet2: TCDTabSheet
+        Left = 2
+        Height = 294
+        Top = 29
+        Width = 363
+        Caption = 'Cenas'
+        TabVisible = False
+        object DBGrid1: TDBGrid
+          Left = 0
+          Height = 294
+          Top = 0
+          Width = 363
+          Align = alClient
+          AutoEdit = False
+          AutoFillColumns = True
+          BorderStyle = bsNone
+          Color = 4539717
+          Columns = <>
+          DataSource = DSCenas
+          FixedCols = 0
+          Options = [dgEditing, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+          TabOrder = 0
+          TitleFont.Color = clHighlightText
+          OnDblClick = DBGrid1DblClick
+        end
+      end
       object CDTabSheet1: TCDTabSheet
         Left = 2
         Height = 294
@@ -97,30 +124,9 @@ object PastasProjetos: TPastasProjetos
           ReadOnly = True
           ScrollBars = ssAutoBoth
           TabOrder = 0
+          OnCustomDrawItem = ProjetoTreeCustomDrawItem
           OnDblClick = ProjetoTreeDblClick
           Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
-        end
-      end
-      object CDTabSheet2: TCDTabSheet
-        Left = 2
-        Height = 294
-        Top = 29
-        Width = 363
-        Caption = 'Cenas'
-        TabVisible = False
-        object DBGrid1: TDBGrid
-          Left = 0
-          Height = 294
-          Top = 0
-          Width = 363
-          Align = alClient
-          BorderStyle = bsNone
-          Color = 4539717
-          Columns = <>
-          FixedCols = 0
-          Options = [dgEditing, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
-          TabOrder = 0
-          TitleFont.Color = clHighlightText
         end
       end
     end
@@ -275,24 +281,51 @@ object PastasProjetos: TPastasProjetos
     object ActAddFile: TAction
       Caption = 'AddFile'
       ImageIndex = 3
+      OnExecute = ActAddFileExecute
     end
   end
   object MDSCenas: TMemDataset
     FieldDefs = <    
       item
         Name = 'MDSCenasNome'
-        DataType = ftUnknown
+        DataType = ftString
       end    
       item
         Name = 'MDSCenasCaminho'
-        DataType = ftUnknown
+        DataType = ftString
       end>
     left = 160
     top = 104
   end
   object DSCenas: TDataSource
-    DataSet = MDSCenas
+    DataSet = BDSCenas
     left = 160
     top = 168
+  end
+  object BDSCenas: TBufDataset
+    FieldDefs = <>
+    left = 160
+    top = 240
+    object BDSCenasNome: TStringField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'Nome'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object BDSCenasCaminho: TStringField
+      FieldKind = fkData
+      FieldName = 'Caminho'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 500
+    end
   end
 end

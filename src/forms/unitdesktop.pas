@@ -8,7 +8,7 @@ uses
   cmem, Classes, SysUtils, IniFiles, process, strutils, FileUtil, Forms,
   Controls, Graphics, Dialogs, ComCtrls, ActnList, Menus, ExtCtrls, StdCtrls,
   CustomDrawn_Common, CustomDrawnControls, UnitLuaEditor, UnitVariaveisGlobais,
-  ResizeablePanel, UnitPastasProjetos;
+  ResizeablePanel, UnitPastasProjetos, UnitCenaEditor;
 
 type
 
@@ -74,6 +74,7 @@ type
     ProjetoPath, LovePath, ProjetoNome : String;
     procedure AlterarCodigo(Sender : TObject);
     procedure AbrirCodigo(Caminho, Nome : String);
+    procedure AbrirCena(Caminho, Nome : String);
 
   end;
 
@@ -136,6 +137,23 @@ begin
     LuaTela.Parent      := newTab;
     LuaTela.Align       := alClient;
     LuaTela.Show;
+  end;
+end;
+
+procedure TDesktop.AbrirCena(Caminho, Nome : String);
+var newTab: TCDTabSheet;
+    CenaTela : TCenaEditor;
+begin
+  if PosEx('.lcn',Nome) > 0 then
+  begin
+    newTab                := PageControl1.AddPage(Nome);
+
+    CenaTela := TCenaEditor.Create(nil);
+    CenaTela.AbrirEditor(Caminho, Nome);
+    CenaTela.BorderStyle := bsNone;
+    CenaTela.Parent      := newTab;
+    CenaTela.Align       := alClient;
+    CenaTela.Show;
   end;
 end;
 
