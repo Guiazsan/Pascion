@@ -8,7 +8,8 @@ uses
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, memdslaz, UnitDesktop, UnitSplash, UnitStart, UnitLuaEditor,
-  UnitVariaveisGlobais, UnitFuncoes, UnitPastasProjetos, UnitCenaEditor, unitLoveObjs;
+  UnitVariaveisGlobais, UnitFuncoes, UnitPastasProjetos, UnitCenaEditor,
+  unitLoveObjs;
 
 {$R *.res}
 

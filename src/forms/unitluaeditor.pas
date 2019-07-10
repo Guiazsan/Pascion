@@ -65,6 +65,7 @@ begin
     ColorirComentarios(TColor($59954c));
   finally
     Timer1.Enabled := false;
+    Application.ProcessMessages;
   end;
 end;
 
@@ -126,7 +127,6 @@ begin
        [fsBold], []);
 
     texto := texto.Substring(PosEx(palavra, texto) + palavra.Length);
-
   end;
 end;
 

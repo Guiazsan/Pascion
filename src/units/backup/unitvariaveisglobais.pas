@@ -5,7 +5,7 @@ unit UnitVariaveisGlobais;
 interface
 
 uses
-  Classes, SysUtils;
+  cmem, Classes, SysUtils;
 
 type
 
@@ -43,10 +43,14 @@ var
   saida : TStringList;
 begin
   saida := TStringList.Create;
-  for i := 0 to Length(slPalavrasReservadas) - 1 do
-    saida.add(slPalavrasReservadas[i]);
+  try
+    for i := 0 to Length(slPalavrasReservadas) - 1 do
+      saida.add(slPalavrasReservadas[i]);
 
-  result := saida;
+    result := saida;
+  finally
+    FreeAndNil(saida);
+  end;
 end;
 
 class procedure VariaveisGlobais.setPalavrasReservadas(palavra: String);

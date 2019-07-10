@@ -4,13 +4,14 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="23">
+    <Units Count="14">
       <Unit0>
         <Filename Value="Love2DIDE.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos Y="12"/>
+        <EditorIndex Value="8"/>
+        <CursorPos Y="15"/>
         <UsageCount Value="221"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="src\forms\unitdesktop.pas"/>
@@ -20,8 +21,8 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitDesktop"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="123"/>
-        <CursorPos X="3" Y="128"/>
+        <TopLine Value="124"/>
+        <CursorPos X="23" Y="149"/>
         <UsageCount Value="221"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -45,9 +46,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitStart"/>
-        <EditorIndex Value="7"/>
-        <TopLine Value="72"/>
-        <CursorPos Y="84"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="75"/>
+        <CursorPos Y="86"/>
         <UsageCount Value="221"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -59,10 +61,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitLuaEditor"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="64"/>
-        <CursorPos Y="77"/>
+        <TopLine Value="52"/>
+        <CursorPos X="33" Y="65"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -71,16 +72,18 @@
         <Filename Value="src\units\unitvariaveisglobais.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnitVariaveisGlobais"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="9" Y="8"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="35"/>
+        <CursorPos X="40" Y="47"/>
         <UsageCount Value="316"/>
+        <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="src\units\unitfuncoes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnitFuncoes"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="10"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="9"/>
         <CursorPos Y="26"/>
         <UsageCount Value="216"/>
         <Loaded Value="True"/>
@@ -92,8 +95,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitPastasProjetos"/>
-        <TopLine Value="119"/>
-        <CursorPos X="3" Y="121"/>
+        <TopLine Value="49"/>
+        <CursorPos Y="61"/>
         <UsageCount Value="213"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -106,9 +109,9 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitCenaEditor"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="31"/>
+        <TopLine Value="28"/>
         <CursorPos X="29" Y="45"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="178"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit8>
@@ -118,7 +121,7 @@
         <UnitName Value="unitLoveObjs"/>
         <EditorIndex Value="2"/>
         <CursorPos X="19" Y="15"/>
-        <UsageCount Value="35"/>
+        <UsageCount Value="175"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
@@ -127,7 +130,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="223"/>
         <CursorPos X="38" Y="224"/>
-        <UsageCount Value="97"/>
+        <UsageCount Value="83"/>
       </Unit10>
       <Unit11>
         <Filename Value="Components\resizeablepanel.pas"/>
@@ -135,214 +138,147 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="139"/>
         <CursorPos X="27" Y="151"/>
-        <UsageCount Value="19"/>
+        <UsageCount Value="5"/>
       </Unit11>
       <Unit12>
-        <Filename Value="..\..\Libs\kcontrols\source\kmemortf.pas"/>
-        <UnitName Value="KMemoRTF"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="4015"/>
-        <CursorPos X="14" Y="4030"/>
-        <UsageCount Value="6"/>
-      </Unit12>
-      <Unit13>
-        <Filename Value="..\..\Libs\kcontrols\source\kmemo.pas"/>
-        <UnitName Value="KMemo"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="6851"/>
-        <CursorPos X="27" Y="6862"/>
-        <UsageCount Value="6"/>
-      </Unit13>
-      <Unit14>
-        <Filename Value="..\..\Libs\kcontrols\source\kfunctions.pas"/>
-        <UnitName Value="KFunctions"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="2553"/>
-        <CursorPos X="17" Y="2565"/>
-        <UsageCount Value="6"/>
-      </Unit14>
-      <Unit15>
-        <Filename Value="src\forms\unitpastasprojetos.lfm"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="53"/>
-        <CursorPos X="27" Y="68"/>
-        <UsageCount Value="6"/>
-        <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit15>
-      <Unit16>
-        <Filename Value="..\..\..\..\usr\share\fpcsrc\3.0.4\rtl\inc\typshrdh.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="119"/>
-        <CursorPos X="25" Y="132"/>
-        <UsageCount Value="8"/>
-      </Unit16>
-      <Unit17>
-        <Filename Value="..\..\..\..\usr\share\fpcsrc\3.0.4\rtl\inc\typshrd.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="295"/>
-        <CursorPos X="3" Y="297"/>
-        <UsageCount Value="8"/>
-      </Unit17>
-      <Unit18>
-        <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\include\canvas.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1530"/>
-        <CursorPos Y="1354"/>
-        <UsageCount Value="9"/>
-      </Unit18>
-      <Unit19>
-        <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\customdrawncontrols.pas"/>
-        <UnitName Value="CustomDrawnControls"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="714"/>
-        <CursorPos X="3" Y="726"/>
-        <UsageCount Value="8"/>
-      </Unit19>
-      <Unit20>
-        <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\customdrawn_android.pas"/>
-        <UnitName Value="CustomDrawn_Android"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="683"/>
-        <UsageCount Value="8"/>
-      </Unit20>
-      <Unit21>
-        <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\graphics.pp"/>
-        <UnitName Value="Graphics"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="55"/>
-        <CursorPos X="3" Y="66"/>
-        <UsageCount Value="8"/>
-      </Unit21>
-      <Unit22>
         <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\components\lazutils\textstrings.pas"/>
         <UnitName Value="TextStrings"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="838"/>
         <CursorPos Y="851"/>
+        <UsageCount Value="81"/>
+        <Loaded Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\customtimer.pas"/>
+        <UnitName Value="CustomTimer"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="139"/>
+        <CursorPos Y="151"/>
         <UsageCount Value="11"/>
         <Loaded Value="True"/>
-      </Unit22>
+      </Unit13>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="152" Column="37" TopLine="142"/>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="58" TopLine="47"/>
       </Position1>
       <Position2>
-        <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="76" Column="20" TopLine="66"/>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="60" TopLine="47"/>
       </Position2>
       <Position3>
-        <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="128" Column="3" TopLine="123"/>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="63" TopLine="47"/>
       </Position3>
       <Position4>
-        <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="77" Column="15" TopLine="65"/>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="64" TopLine="47"/>
       </Position4>
       <Position5>
-        <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="152" Column="41" TopLine="142"/>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="65" TopLine="47"/>
       </Position5>
       <Position6>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="26" Column="15" TopLine="14"/>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="67" TopLine="47"/>
       </Position6>
       <Position7>
-        <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="152" Column="41" TopLine="142"/>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="58" TopLine="47"/>
       </Position7>
       <Position8>
-        <Filename Value="src\forms\unitdesktop.pas"/>
-        <Caret Line="76" Column="15" TopLine="66"/>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="63" TopLine="47"/>
       </Position8>
       <Position9>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="45" Column="16" TopLine="31"/>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="64" TopLine="47"/>
       </Position9>
       <Position10>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="37" Column="15" TopLine="26"/>
+        <Caret Line="65" TopLine="47"/>
       </Position10>
       <Position11>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="237" Column="36" TopLine="220"/>
+        <Caret Line="67" TopLine="47"/>
       </Position11>
       <Position12>
-        <Filename Value="src\units\unitloveobjs.pas"/>
-        <Caret Line="15" Column="19"/>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="58" TopLine="47"/>
       </Position12>
       <Position13>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="238" Column="4" TopLine="220"/>
+        <Caret Line="63" TopLine="47"/>
       </Position13>
       <Position14>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="237" Column="36" TopLine="220"/>
+        <Caret Line="64" TopLine="47"/>
       </Position14>
       <Position15>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="41" Column="6" TopLine="31"/>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="65" TopLine="47"/>
       </Position15>
       <Position16>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="237" Column="37" TopLine="220"/>
+        <Caret Line="67" TopLine="47"/>
       </Position16>
       <Position17>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="35" Column="28" TopLine="29"/>
+        <Caret Line="58" TopLine="47"/>
       </Position17>
       <Position18>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="239" TopLine="220"/>
+        <Caret Line="60" TopLine="47"/>
       </Position18>
       <Position19>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="225" Column="14" TopLine="220"/>
+        <Caret Line="63" TopLine="47"/>
       </Position19>
       <Position20>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="226" Column="37" TopLine="220"/>
+        <Caret Line="64" TopLine="47"/>
       </Position20>
       <Position21>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="225" Column="18" TopLine="220"/>
+        <Caret Line="65" TopLine="47"/>
       </Position21>
       <Position22>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="239" TopLine="220"/>
+        <Caret Line="67" TopLine="47"/>
       </Position22>
       <Position23>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="237" Column="36" TopLine="220"/>
+        <Caret Line="58" TopLine="47"/>
       </Position23>
       <Position24>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="225" TopLine="220"/>
+        <Caret Line="60" TopLine="47"/>
       </Position24>
       <Position25>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="226" TopLine="220"/>
+        <Caret Line="58" TopLine="47"/>
       </Position25>
       <Position26>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="228" Column="18" TopLine="220"/>
+        <Caret Line="63" TopLine="47"/>
       </Position26>
       <Position27>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="230" Column="33" TopLine="220"/>
+        <Caret Line="64" TopLine="47"/>
       </Position27>
       <Position28>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="229" Column="38" TopLine="220"/>
+        <Caret Line="65" TopLine="47"/>
       </Position28>
       <Position29>
         <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="228" Column="18" TopLine="214"/>
+        <Caret Line="130" Column="16" TopLine="110"/>
       </Position29>
       <Position30>
-        <Filename Value="src\forms\unitluaeditor.pas"/>
-        <Caret Line="139" Column="24" TopLine="145"/>
+        <Filename Value="src\units\unitvariaveisglobais.pas"/>
+        <Caret Line="48" Column="5" TopLine="35"/>
       </Position30>
     </JumpHistory>
     <RunParams>
@@ -351,6 +287,15 @@
     </RunParams>
   </ProjectSession>
   <Debugging>
+    <BreakPoints Count="1">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="src\forms\unitstart.pas"/>
+        <Line Value="86"/>
+      </Item1>
+    </BreakPoints>
     <Watches Count="1">
       <Item1>
         <Expression Value="debug"/>

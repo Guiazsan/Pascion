@@ -30,6 +30,7 @@ type
     procedure ColorirNumeros(cor : TColor);
     procedure ColorirComentarios(cor : TColor);
     procedure ColorirStrings(cor : TColor);
+    procedure LiberarMemoria;
 
   public
     procedure CarregarArquivo;
@@ -126,7 +127,6 @@ begin
        [fsBold], []);
 
     texto := texto.Substring(PosEx(palavra, texto) + palavra.Length);
-
   end;
 end;
 
@@ -237,6 +237,12 @@ end;
 procedure TLuaEditor.SetCaminho(caminho: String);
 begin
   FCaminho := IIF(separadorPasta = '/', caminho, ReplaceStr(caminho,'/','\'));
+end;
+
+procedure TLuaEditor.LiberarMemoria;
+var
+begin
+
 end;
 
 end.

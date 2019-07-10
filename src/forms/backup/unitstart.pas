@@ -67,7 +67,7 @@ type
     procedure SetPainelAtual(Painel : TPanel; animacao : Boolean = False);
     procedure abrirIDE;
   public
-    procedure CriarProjeto();
+    procedure CriarProjeto;
   end;
 
 var
@@ -79,17 +79,17 @@ implementation
 
 { TStartForm }
 
-procedure TStartForm.CriarProjeto();
+procedure TStartForm.CriarProjeto;
 begin
   if SelectDirectoryDialog1.Execute then
   begin
     PathFile := TIniFile.Create(GetCurrentDir + separadorPasta +'Config.ini');
     PathFile.WriteString('Project','Path', SelectDirectoryDialog1.FileName);
     PgpFile := TIniFile.Create(SelectDirectoryDialog1.FileName);
-    {FileCreate(SaveDialog1.GetNamePath + '\conf\conf.lua');
-    FileCreate(SaveDialog1.GetNamePath + '\src\main.lua');
-    FileCreate(SaveDialog1.GetNamePath + '\src\class\');
-    FileCreate(SaveDialog1.GetNamePath + '\src\scenes\');}
+    FileCreate(SelectDirectoryDialog1.GetNamePath + '\conf\conf.lua');
+    FileCreate(SelectDirectoryDialog1.GetNamePath + '\src\main.lua');
+    FileCreate(SelectDirectoryDialog1.GetNamePath + '\src\classes\');
+    FileCreate(SelectDirectoryDialog1.GetNamePath + '\src\cenas\');
     PgpFile.WriteString('Properties','Name',InputBox('NovoProjeto','Dê um nome ao seu Projeto',''));
   end;
 end;

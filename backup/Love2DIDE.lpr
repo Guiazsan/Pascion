@@ -8,7 +8,8 @@ uses
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, memdslaz, UnitDesktop, UnitSplash, UnitStart, UnitLuaEditor,
-  UnitVariaveisGlobais, UnitFuncoes, UnitPastasProjetos, UnitCenaEditor;
+  UnitVariaveisGlobais, UnitFuncoes, UnitPastasProjetos, UnitCenaEditor,
+  unitLoveObjs, unit1;
 
 {$R *.res}
 
@@ -17,6 +18,6 @@ begin
   RequireDerivedFormResource := True;
   Application.Initialize;
   Application.CreateForm(TSplashForm, SplashForm);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TCenaEditor, CenaEditor);
   Application.Run;
 end.

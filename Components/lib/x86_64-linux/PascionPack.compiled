@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CONFIG>
-  <Compiler Value="/usr/bin/fpc" Date="1540814642"/>
-  <Params Value=" -MObjFPC -Scghi -Cg -O1 -g -gl -l -vewnhibq -Fu/usr/share/lazarus/2.0.0/packager/units/x86_64-linux -Fu/usr/share/lazarus/2.0.0/components/lazutils/lib/x86_64-linux -Fu/usr/share/lazarus/2.0.0/lcl/units/x86_64-linux &quot;-Fu/home/guiazsan/Meus Projetos/Pascion/Components/&quot; &quot;-FU/home/guiazsan/Meus Projetos/Pascion/Components/lib/x86_64-linux/&quot; pascionpack.pas"/>
-</CONFIG>
