@@ -11,7 +11,7 @@ object StartForm: TStartForm
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
-  Visible = False
+  LCLVersion = '2.0.0.4'
   object Panel1: TPanel
     Left = 0
     Height = 524

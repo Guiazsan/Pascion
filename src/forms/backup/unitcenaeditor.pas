@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  CustomDrawnControls, ComCtrls, UnitLuaEditor, KPageControl;
+  CustomDrawnControls, ComCtrls, UnitLuaEditor;
 
 type
 
@@ -42,7 +42,7 @@ begin
   FCaminho                    := Caminho;
   FNome                       := Nome;
   LuaTela                     := TLuaEditor.Create(nil);
-  LuaTela.SetCaminho(Caminho + Nome);
+  LuaTela.SetCaminho(Caminho);
   LuaTela.CarregarArquivo;
   //LuaTela.GridLinhas.RowCount := LuaTela.RMEditor.Lines.Count;
   LuaTela.BorderStyle         := bsNone;

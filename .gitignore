@@ -30,3 +30,5 @@ lib/
 *.app/
 
 Config\.ini
+
+*.obj

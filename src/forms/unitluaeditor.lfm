@@ -20,7 +20,7 @@ object LuaEditor: TLuaEditor
     Align = alClient
     BorderStyle = bsNone
     ClientHeight = 449
-    ClientWidth = 790
+    ClientWidth = 786
     Color = 2039583
     ParentColor = False
     TabOrder = 0
@@ -30,7 +30,6 @@ object LuaEditor: TLuaEditor
       Top = 0
       Width = 755
       BorderStyle = bsNone
-      Color = 2039583
       Font.CharSet = ANSI_CHARSET
       Font.Color = clWhite
       Font.Height = -12
@@ -54,7 +53,7 @@ object LuaEditor: TLuaEditor
       Top = 0
       Width = 40
       BorderStyle = bsNone
-      Color = 2039583
+      Color = clDefault
       ColCount = 1
       DefaultColWidth = 40
       DefaultRowHeight = 30

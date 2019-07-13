@@ -1,64 +1,75 @@
 object LuaEditor: TLuaEditor
   Left = 324
-  Height = 579
+  Height = 449
   Top = 48
   Width = 803
-  ActiveControl = RMEditor
   Caption = 'LuaEditor'
-  ClientHeight = 579
+  ClientHeight = 449
   ClientWidth = 803
   OnCreate = FormCreate
-  LCLVersion = '1.8.4.0'
-  Visible = False
-  object RMEditor: TRichMemo
-    Left = 40
-    Height = 579
+  OnResize = FormResize
+  OnShow = FormResize
+  object ScrollBox1: TScrollBox
+    Left = 0
+    Height = 449
     Top = 0
-    Width = 763
+    Width = 803
+    HorzScrollBar.Page = 1
+    HorzScrollBar.Visible = False
+    VertScrollBar.Page = 449
     Align = alClient
     BorderStyle = bsNone
-    Color = clBlack
-    Font.CharSet = ANSI_CHARSET
-    Font.Color = clWhite
-    Font.Height = -12
-    Font.Name = 'Consolas'
-    Font.Pitch = fpFixed
-    Font.Quality = fqDraft
-    HideSelection = False
-    Lines.Strings = (
-      ''
-    )
-    OnChange = RMEditorChange
-    OnMouseWheel = RMEditorMouseWheel
-    ParentFont = False
-    ScrollBars = ssAutoBoth
+    ClientHeight = 449
+    ClientWidth = 786
+    Color = 2039583
+    ParentColor = False
     TabOrder = 0
-    WantTabs = True
-    WordWrap = False
-    ZoomFactor = 1
-  end
-  object GridLinhas: TDrawGrid
-    Left = 0
-    Height = 579
-    Top = 0
-    Width = 40
-    Align = alLeft
-    BorderStyle = bsNone
-    Color = clWindowText
-    ColCount = 1
-    DefaultColWidth = 40
-    DefaultRowHeight = 17
-    ExtendedSelect = False
-    FixedColor = clWindowText
-    Font.Color = clWhite
-    ParentFont = False
-    RowCount = 1
-    ScrollBars = ssNone
-    TabAdvance = aaNone
-    TabOrder = 1
-    TitleFont.Color = clWhite
-    OnDblClick = GridLinhasDblClick
-    OnDrawCell = GridLinhasDrawCell
+    object RMEditor: TRichMemo
+      Left = 40
+      Height = 700
+      Top = 0
+      Width = 755
+      BorderStyle = bsNone
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -12
+      Font.Name = 'Consolas'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      HideSelection = False
+      Lines.Strings = (
+        ''
+      )
+      OnChange = RMEditorChange
+      ParentFont = False
+      TabOrder = 0
+      WantTabs = True
+      WordWrap = False
+      ZoomFactor = 1
+    end
+    object GridLinhas: TDrawGrid
+      Left = 0
+      Height = 700
+      Top = 0
+      Width = 40
+      BorderStyle = bsNone
+      Color = clDefault
+      ColCount = 1
+      DefaultColWidth = 40
+      DefaultRowHeight = 30
+      ExtendedSelect = False
+      FixedColor = clWindowText
+      Flat = True
+      Font.Color = clWhite
+      ParentFont = False
+      RowCount = 1
+      ScrollBars = ssNone
+      TabAdvance = aaNone
+      TabOrder = 1
+      TitleFont.Color = clWhite
+      OnDblClick = GridLinhasDblClick
+      OnDrawCell = GridLinhasDrawCell
+    end
   end
   object Timer1: TTimer
     Enabled = False

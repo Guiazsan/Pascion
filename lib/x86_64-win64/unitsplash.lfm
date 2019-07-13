@@ -8,12 +8,9 @@ object SplashForm: TSplashForm
   Caption = 'SplashForm'
   ClientHeight = 401
   ClientWidth = 600
-  Color = clNone
-  DefaultMonitor = dmDesktop
+  FormStyle = fsSplash
   OnActivate = FormActivate
   Position = poDesktopCenter
-  LCLVersion = '1.8.4.0'
-  Visible = False
   object Image1: TImage
     Left = 0
     Height = 401
@@ -1673,9 +1670,9 @@ object SplashForm: TSplashForm
   end
   object LbStatus: TLabel
     Left = 8
-    Height = 18
+    Height = 15
     Top = 0
-    Width = 102
+    Width = 116
     Caption = 'Teste TESTE teste'
     Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite

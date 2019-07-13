@@ -1,146 +1,158 @@
 object Desktop: TDesktop
-  Left = 275
-  Height = 466
-  Top = 146
-  Width = 833
+  Left = -8
+  Height = 492
+  Top = -8
+  Width = 839
   ActiveControl = PageControl1
   Caption = 'Pasciön v1.0'
-  ClientHeight = 466
-  ClientWidth = 833
+  ClientHeight = 469
+  ClientWidth = 839
   DefaultMonitor = dmDesktop
   FormStyle = fsMDIForm
   Menu = MainMenu1
   OnClose = FormClose
   OnCreate = FormCreate
-  Visible = False
+  WindowState = wsMaximized
   object ToolBar1: TToolBar
     Left = 0
     Height = 26
     Top = 0
-    Width = 833
+    Width = 839
     Caption = 'ToolBar1'
+    EdgeInner = esNone
+    EdgeOuter = esNone
     Images = ImageList1
+    ParentColor = False
     TabOrder = 0
     object BtnNovo: TToolButton
       Left = 1
-      Top = 2
+      Top = 0
       Action = ActNovo
     end
     object ToolButton2: TToolButton
       Left = 24
-      Top = 2
+      Top = 0
       Action = ActAbrir
     end
     object ToolButton1: TToolButton
       Left = 47
-      Top = 2
+      Top = 0
       Action = ActSalvar
     end
     object ToolButton3: TToolButton
       Left = 70
-      Top = 2
+      Top = 0
       Action = ActSalvarTudo
     end
     object ToolButton4: TToolButton
       Left = 93
       Height = 22
-      Top = 2
+      Top = 0
       Caption = 'ToolButton4'
       Style = tbsSeparator
     end
     object ToolButton5: TToolButton
       Left = 101
-      Top = 2
+      Top = 0
       Action = ActPlay
     end
     object ToolButton6: TToolButton
       Left = 124
-      Top = 2
+      Top = 0
       Action = ActParar
     end
   end
-  object PageControl1: TPageControl
+  object PageControl1: TCDPageControl
     Left = 170
-    Height = 326
+    Height = 329
     Top = 26
-    Width = 663
+    Width = 669
     Align = alClient
-    TabOrder = 1
+    DrawStyle = dsDefault
+    Font.Color = clHighlightText
+    PageIndex = 0
+    Options = [nboShowCloseButtons]
+    ParentFont = False
+    TabIndex = 0
   end
   object CtrlLeftPanel: TResizeablePanel
     Left = 0
-    Height = 326
+    Height = 329
     Top = 26
     Width = 170
     Align = alLeft
+    BevelColor = 4539717
     BevelOuter = bvNone
-    ClientHeight = 326
+    ClientHeight = 329
     ClientWidth = 170
+    ParentColor = False
     TabOrder = 2
     LeftResize = True
     RightResize = False
     TopResize = False
     BottomResize = False
-    object GBProjeto: TGroupBox
-      Left = 2
-      Height = 322
-      Top = 2
-      Width = 166
-      Align = alClient
-      Caption = 'Projeto'
-      ClientHeight = 302
-      ClientWidth = 162
-      TabOrder = 0
-      object ProjetoTree: TTreeView
-        Left = 0
-        Height = 302
-        Top = 0
-        Width = 162
-        Align = alClient
-        ReadOnly = True
-        ScrollBars = ssAutoBoth
-        TabOrder = 0
-        OnDblClick = ProjetoTreeDblClick
-        Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
-      end
-    end
   end
   object PnBottom: TResizeablePanel
     Left = 0
     Height = 114
-    Top = 352
-    Width = 833
+    Top = 355
+    Width = 839
     Align = alBottom
     BevelOuter = bvNone
     ClientHeight = 114
-    ClientWidth = 833
+    ClientWidth = 839
+    Font.Color = clHighlightText
+    ParentFont = False
     TabOrder = 3
     LeftResize = False
     RightResize = False
     TopResize = False
     BottomResize = False
-    object PcSaidas: TPageControl
+    object PcSaidas: TCDPageControl
       Left = 2
       Height = 110
       Top = 2
-      Width = 829
-      ActivePage = TsMensagens
+      Width = 835
       Align = alClient
+      ActivePage = TsConsole
+      DrawStyle = dsDefault
+      PageIndex = 1
+      Options = []
+      ParentFont = False
       TabIndex = 1
-      TabOrder = 0
-      object TsConsole: TTabSheet
-        Caption = 'Console'
-      end
-      object TsMensagens: TTabSheet
+      object TsMensagens: TCDTabSheet
+        Left = 2
+        Height = 81
+        Top = 27
+        Width = 831
         Caption = 'Mensagens'
-        ClientHeight = 82
-        ClientWidth = 821
+        TabVisible = False
         object MemoMensagens: TMemo
           Left = 0
-          Height = 82
+          Height = 81
           Top = 0
-          Width = 821
+          Width = 831
           Align = alClient
+          BorderStyle = bsNone
+          Color = clWindow
+          ReadOnly = True
+          TabOrder = 0
+        end
+      end
+      object TsConsole: TCDTabSheet
+        Left = 2
+        Height = 81
+        Top = 27
+        Width = 831
+        Caption = '>_ Console'
+        TabVisible = False
+        object Memo1: TMemo
+          Left = 0
+          Height = 81
+          Top = 0
+          Width = 831
+          Align = alClient
+          ParentFont = False
           ReadOnly = True
           TabOrder = 0
         end
@@ -163,7 +175,6 @@ object Desktop: TDesktop
     end
     object ActSair: TAction
       Caption = 'Sair'
-      OnExecute = ActSairExecute
     end
     object ActSalvar: TAction
       Category = 'Arquivo'

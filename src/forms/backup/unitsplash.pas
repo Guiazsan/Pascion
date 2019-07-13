@@ -37,19 +37,15 @@ uses
 
 procedure TSplashForm.FormActivate(Sender: TObject);
 var INIPath : TINIFile;
-    Drawner : TCDDrawer;
 begin
-  Drawner := TCDDrawer.Create;
-  Drawner.PaletteKind := palFallback;
   LbStatus.Caption := 'Carregando Config';
-
   if FileExists(GetCurrentDir + separadorPasta + 'Config.ini') then
   begin
     INIPath := TIniFile.Create(GetCurrentDir + separadorPasta + 'Config.ini');
     try
       if (INIPath.ReadString('Project','Path','') <> '') and
         (INIPath.ReadString('Love2d','Path','') <> '') and
-        FileExists(INIPath.ReadString('Project', 'Path', '')) then
+        FileExists(INIPath.ReadString('Project', 'Path', '') + 'main.lua') then
       begin
         Application.CreateForm(TDesktop,Desktop);
         try

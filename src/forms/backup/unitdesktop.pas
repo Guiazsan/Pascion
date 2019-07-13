@@ -149,7 +149,7 @@ begin
     newTab                := PageControl1.AddPage(Nome);
 
     CenaTela := TCenaEditor.Create(nil);
-    CenaTela.AbrirEditor(ProjetoPath, ProjetoNome);
+    CenaTela.AbrirEditor(Caminho, Nome);
     CenaTela.BorderStyle := bsNone;
     CenaTela.Parent      := newTab;
     CenaTela.Align       := alClient;

@@ -7,7 +7,6 @@ object PastasProjetos: TPastasProjetos
   Caption = 'Pastas'
   ClientHeight = 377
   ClientWidth = 369
-  Color = 2039583
   OnShow = FormShow
   object GBProjeto: TGroupBox
     Left = 0
@@ -16,9 +15,8 @@ object PastasProjetos: TPastasProjetos
     Width = 369
     Align = alClient
     Caption = 'Projeto'
-    ClientHeight = 359
-    ClientWidth = 367
-    Color = 4539717
+    ClientHeight = 357
+    ClientWidth = 365
     Font.Color = clHighlightText
     ParentBidiMode = False
     ParentColor = False
@@ -28,12 +26,11 @@ object PastasProjetos: TPastasProjetos
       Left = 0
       Height = 34
       Top = 0
-      Width = 367
+      Width = 365
       Align = alTop
       BevelOuter = bvNone
       ClientHeight = 34
-      ClientWidth = 367
-      Color = 4539717
+      ClientWidth = 365
       ParentColor = False
       TabOrder = 0
       object BtnNewFolder: TSpeedButton
@@ -69,57 +66,33 @@ object PastasProjetos: TPastasProjetos
     end
     object CDPageControl1: TCDPageControl
       Left = 0
-      Height = 325
+      Height = 323
       Top = 34
-      Width = 367
+      Width = 365
       Align = alClient
-      ActivePage = CDTabSheet1
+      ActivePage = CDTabSheet2
       DrawStyle = dsKDEPlastique
       Caption = 'CDPageControl1'
-      PageIndex = 1
+      PageIndex = 0
       Options = []
-      TabIndex = 1
-      object CDTabSheet2: TCDTabSheet
-        Left = 2
-        Height = 294
-        Top = 29
-        Width = 363
-        Caption = 'Cenas'
-        TabVisible = False
-        object DBGrid1: TDBGrid
-          Left = 0
-          Height = 294
-          Top = 0
-          Width = 363
-          Align = alClient
-          AutoEdit = False
-          AutoFillColumns = True
-          BorderStyle = bsNone
-          Color = 4539717
-          Columns = <>
-          DataSource = DSCenas
-          FixedCols = 0
-          Options = [dgEditing, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
-          TabOrder = 0
-          TitleFont.Color = clHighlightText
-          OnDblClick = DBGrid1DblClick
-        end
-      end
+      ParentColor = False
+      ParentFont = False
+      TabIndex = 0
       object CDTabSheet1: TCDTabSheet
         Left = 2
         Height = 294
-        Top = 29
-        Width = 363
+        Top = 27
+        Width = 361
         Caption = 'Pastas'
         TabVisible = False
         object ProjetoTree: TTreeView
           Left = 0
           Height = 294
           Top = 0
-          Width = 363
+          Width = 361
           Align = alClient
-          BackgroundColor = 4539717
-          Color = 4539717
+          BackgroundColor = clDefault
+          Color = clDefault
           Images = ImageList1
           ReadOnly = True
           ScrollBars = ssAutoBoth
@@ -127,6 +100,33 @@ object PastasProjetos: TPastasProjetos
           OnCustomDrawItem = ProjetoTreeCustomDrawItem
           OnDblClick = ProjetoTreeDblClick
           Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips, tvoThemedDraw]
+        end
+      end
+      object CDTabSheet2: TCDTabSheet
+        Left = 2
+        Height = 294
+        Top = 27
+        Width = 361
+        Caption = 'Cenas'
+        TabVisible = False
+        object DBGrid1: TDBGrid
+          Left = 0
+          Height = 294
+          Top = 0
+          Width = 361
+          Align = alClient
+          AutoEdit = False
+          AutoFillColumns = True
+          BorderStyle = bsNone
+          Columns = <>
+          DataSource = DSCenas
+          FixedColor = clDefault
+          FixedCols = 0
+          FixedHotColor = clDefault
+          Options = [dgEditing, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+          TabOrder = 0
+          TitleFont.Color = clHighlightText
+          OnDblClick = DBGrid1DblClick
         end
       end
     end

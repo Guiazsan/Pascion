@@ -9,7 +9,7 @@ uses
   Interfaces, // this includes the LCL widgetset
   Forms, memdslaz, UnitDesktop, UnitSplash, UnitStart, UnitLuaEditor,
   UnitVariaveisGlobais, UnitFuncoes, UnitPastasProjetos, UnitCenaEditor,
-  unitLoveObjs, unit1;
+  unitLoveObjs;
 
 {$R *.res}
 
