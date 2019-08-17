@@ -21,7 +21,7 @@ object LuaEditor: TLuaEditor
     BorderStyle = bsNone
     ClientHeight = 449
     ClientWidth = 786
-    Color = 2039583
+    Color = clDefault
     ParentColor = False
     TabOrder = 0
     object RMEditor: TRichMemo
@@ -52,21 +52,18 @@ object LuaEditor: TLuaEditor
       Height = 700
       Top = 0
       Width = 40
-      BorderStyle = bsNone
       Color = clDefault
       ColCount = 1
       DefaultColWidth = 40
       DefaultRowHeight = 30
       ExtendedSelect = False
-      FixedColor = clWindowText
+      FixedColor = clDefault
       Flat = True
-      Font.Color = clWhite
       ParentFont = False
       RowCount = 1
       ScrollBars = ssNone
       TabAdvance = aaNone
       TabOrder = 1
-      TitleFont.Color = clWhite
       OnDblClick = GridLinhasDblClick
       OnDrawCell = GridLinhasDrawCell
     end

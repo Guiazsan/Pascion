@@ -1,14 +1,13 @@
 object Desktop: TDesktop
   Left = -8
-  Height = 492
+  Height = 570
   Top = -8
-  Width = 839
+  Width = 871
   ActiveControl = PageControl1
   Caption = 'Pasciön v1.0'
-  ClientHeight = 469
-  ClientWidth = 839
+  ClientHeight = 547
+  ClientWidth = 871
   DefaultMonitor = dmDesktop
-  FormStyle = fsMDIForm
   Menu = MainMenu1
   OnClose = FormClose
   OnCreate = FormCreate
@@ -17,7 +16,7 @@ object Desktop: TDesktop
     Left = 0
     Height = 26
     Top = 0
-    Width = 839
+    Width = 871
     Caption = 'ToolBar1'
     EdgeInner = esNone
     EdgeOuter = esNone
@@ -64,12 +63,11 @@ object Desktop: TDesktop
   end
   object PageControl1: TCDPageControl
     Left = 170
-    Height = 329
+    Height = 407
     Top = 26
-    Width = 669
+    Width = 701
     Align = alClient
     DrawStyle = dsDefault
-    Font.Color = clHighlightText
     PageIndex = 0
     Options = [nboShowCloseButtons]
     ParentFont = False
@@ -77,13 +75,13 @@ object Desktop: TDesktop
   end
   object CtrlLeftPanel: TResizeablePanel
     Left = 0
-    Height = 329
+    Height = 407
     Top = 26
     Width = 170
     Align = alLeft
     BevelColor = 4539717
     BevelOuter = bvNone
-    ClientHeight = 329
+    ClientHeight = 407
     ClientWidth = 170
     ParentColor = False
     TabOrder = 2
@@ -95,12 +93,12 @@ object Desktop: TDesktop
   object PnBottom: TResizeablePanel
     Left = 0
     Height = 114
-    Top = 355
-    Width = 839
+    Top = 433
+    Width = 871
     Align = alBottom
     BevelOuter = bvNone
     ClientHeight = 114
-    ClientWidth = 839
+    ClientWidth = 871
     Font.Color = clHighlightText
     ParentFont = False
     TabOrder = 3
@@ -112,7 +110,7 @@ object Desktop: TDesktop
       Left = 2
       Height = 110
       Top = 2
-      Width = 835
+      Width = 867
       Align = alClient
       ActivePage = TsConsole
       DrawStyle = dsDefault
@@ -124,14 +122,14 @@ object Desktop: TDesktop
         Left = 2
         Height = 81
         Top = 27
-        Width = 831
+        Width = 863
         Caption = 'Mensagens'
         TabVisible = False
         object MemoMensagens: TMemo
           Left = 0
           Height = 81
           Top = 0
-          Width = 831
+          Width = 863
           Align = alClient
           BorderStyle = bsNone
           Color = clWindow
@@ -143,14 +141,14 @@ object Desktop: TDesktop
         Left = 2
         Height = 81
         Top = 27
-        Width = 831
+        Width = 863
         Caption = '>_ Console'
         TabVisible = False
         object Memo1: TMemo
           Left = 0
           Height = 81
           Top = 0
-          Width = 831
+          Width = 863
           Align = alClient
           ParentFont = False
           ReadOnly = True

@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="21">
+    <Units Count="22">
       <Unit0>
         <Filename Value="Love2DIDE.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -19,9 +19,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitDesktop"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="124"/>
-        <CursorPos X="23" Y="149"/>
+        <TopLine Value="197"/>
+        <CursorPos X="9" Y="229"/>
         <ComponentState Value="2"/>
         <UsageCount Value="221"/>
         <Loaded Value="True"/>
@@ -62,10 +63,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitLuaEditor"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="74"/>
-        <CursorPos X="28" Y="76"/>
+        <TopLine Value="87"/>
+        <CursorPos X="18" Y="94"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -96,7 +96,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitPastasProjetos"/>
-        <TopLine Value="49"/>
+        <TopLine Value="47"/>
         <CursorPos Y="61"/>
         <UsageCount Value="213"/>
         <Loaded Value="True"/>
@@ -112,7 +112,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="12"/>
         <CursorPos X="6" Y="41"/>
-        <UsageCount Value="184"/>
+        <UsageCount Value="186"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit8>
@@ -122,7 +122,7 @@
         <UnitName Value="unitLoveObjs"/>
         <EditorIndex Value="2"/>
         <CursorPos X="19" Y="15"/>
-        <UsageCount Value="181"/>
+        <UsageCount Value="183"/>
         <Loaded Value="True"/>
       </Unit9>
       <Unit10>
@@ -208,8 +208,16 @@
         <CursorPos Y="461"/>
         <UsageCount Value="11"/>
       </Unit20>
+      <Unit21>
+        <Filename Value="C:\lazarus\lcl\lclmessageglue.pas"/>
+        <UnitName Value="LCLMessageGlue"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="96"/>
+        <CursorPos Y="116"/>
+        <UsageCount Value="10"/>
+      </Unit21>
     </Units>
-    <JumpHistory Count="11" HistoryIndex="10">
+    <JumpHistory Count="21" HistoryIndex="20">
       <Position1>
         <Filename Value="src\forms\unitsplash.pas"/>
         <Caret Line="24" Column="7" TopLine="19"/>
@@ -254,6 +262,46 @@
         <Filename Value="src\forms\unitsplash.pas"/>
         <Caret Line="42" Column="26" TopLine="22"/>
       </Position11>
+      <Position12>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="125" Column="24" TopLine="110"/>
+      </Position12>
+      <Position13>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="32" Column="22" TopLine="13"/>
+      </Position13>
+      <Position14>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="77" Column="22" TopLine="41"/>
+      </Position14>
+      <Position15>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="102" Column="41" TopLine="69"/>
+      </Position15>
+      <Position16>
+        <Filename Value="src\forms\unitluaeditor.pas"/>
+        <Caret Line="77" Column="22" TopLine="69"/>
+      </Position16>
+      <Position17>
+        <Filename Value="src\forms\unitpastasprojetos.pas"/>
+        <Caret Line="61" TopLine="47"/>
+      </Position17>
+      <Position18>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="76" Column="23" TopLine="54"/>
+      </Position18>
+      <Position19>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="135" TopLine="123"/>
+      </Position19>
+      <Position20>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="137" Column="20" TopLine="123"/>
+      </Position20>
+      <Position21>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="235" Column="29" TopLine="194"/>
+      </Position21>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

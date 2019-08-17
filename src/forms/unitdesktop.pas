@@ -132,7 +132,7 @@ begin
     LuaTela := TLuaEditor.Create(nil);
     LuaTela.SetCaminho(ProjetoPath + StringReplace(Caminho, ProjetoNome , '', []));
     LuaTela.CarregarArquivo;
-    LuaTela.GridLinhas.RowCount := LuaTela.RMEditor.Lines.Count;
+    //LuaTela.GridLinhas.RowCount := LuaTela.RMEditor.Lines.Count;
     LuaTela.BorderStyle := bsNone;
     LuaTela.Parent      := newTab;
     LuaTela.Align       := alClient;
@@ -146,8 +146,7 @@ var newTab: TCDTabSheet;
 begin
   if PosEx('.lcn',Nome) > 0 then
   begin
-    newTab                := PageControl1.AddPage(Nome);
-
+    newTab               := PageControl1.AddPage(Nome);
     CenaTela := TCenaEditor.Create(nil);
     CenaTela.AbrirEditor(Caminho, Nome);
     CenaTela.BorderStyle := bsNone;
@@ -220,12 +219,21 @@ end;
 
 procedure TDesktop.ActAbrirExecute(Sender: TObject);
 var caminho : String;
+    Processo : TProcess;
 begin
   if AbrirProjeto.Execute then
   begin
     caminho := AbrirProjeto.InitialDir.Substring(0, Length(AbrirProjeto.InitialDir) - 1);
     IniConfig.WriteString('Project', 'Path', caminho);
     IniConfig.WriteString('Project','Name', ReverseString(ReverseString(caminho).Substring(0, PosEx('\',ReverseString(caminho)) -1 )));
+    Processo := TProcess.Create(nil);
+    try
+      Processo.CommandLine := Application.ExeName;
+      Processo.Execute;
+    finally
+      FreeAndNil(Processo);
+      Application.Terminate;
+    end;
   end;
 end;
 end.
