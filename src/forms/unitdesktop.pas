@@ -198,7 +198,7 @@ procedure TDesktop.ActPlayExecute(Sender: TObject);
 begin
   MemoMensagens.Lines.Add('Iniciando ' + ProjetoNome);
   love := TProcess.Create(nil);
-  love.CommandLine := LovePath + ' "'+ProjetoPath+'"';
+  love.CommandLine :='"'+ LovePath + '" "'+ProjetoPath+'"';
   love.Options := love.Options + [poUsePipes, poStderrToOutPut];
   love.Active := True;
 
