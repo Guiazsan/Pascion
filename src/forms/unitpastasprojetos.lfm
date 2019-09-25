@@ -15,8 +15,8 @@ object PastasProjetos: TPastasProjetos
     Width = 369
     Align = alClient
     Caption = 'Projeto'
-    ClientHeight = 357
-    ClientWidth = 365
+    ClientHeight = 359
+    ClientWidth = 367
     Font.Color = clHighlightText
     ParentBidiMode = False
     ParentColor = False
@@ -26,11 +26,11 @@ object PastasProjetos: TPastasProjetos
       Left = 0
       Height = 34
       Top = 0
-      Width = 365
+      Width = 367
       Align = alTop
       BevelOuter = bvNone
       ClientHeight = 34
-      ClientWidth = 365
+      ClientWidth = 367
       ParentColor = False
       TabOrder = 0
       object BtnNewFolder: TSpeedButton
@@ -66,30 +66,30 @@ object PastasProjetos: TPastasProjetos
     end
     object CDPageControl1: TCDPageControl
       Left = 0
-      Height = 323
+      Height = 325
       Top = 34
-      Width = 365
+      Width = 367
       Align = alClient
       ActivePage = CDTabSheet2
       DrawStyle = dsKDEPlastique
       Caption = 'CDPageControl1'
-      PageIndex = 0
+      PageIndex = 1
       Options = []
       ParentColor = False
       ParentFont = False
-      TabIndex = 0
+      TabIndex = 1
       object CDTabSheet1: TCDTabSheet
         Left = 2
         Height = 294
-        Top = 27
-        Width = 361
+        Top = 29
+        Width = 363
         Caption = 'Pastas'
         TabVisible = False
         object ProjetoTree: TTreeView
           Left = 0
           Height = 294
           Top = 0
-          Width = 361
+          Width = 363
           Align = alClient
           BackgroundColor = clDefault
           Color = clDefault
@@ -105,19 +105,20 @@ object PastasProjetos: TPastasProjetos
       object CDTabSheet2: TCDTabSheet
         Left = 2
         Height = 294
-        Top = 27
-        Width = 361
+        Top = 29
+        Width = 363
         Caption = 'Cenas'
         TabVisible = False
         object DBGrid1: TDBGrid
           Left = 0
           Height = 294
           Top = 0
-          Width = 361
+          Width = 363
           Align = alClient
           AutoEdit = False
           AutoFillColumns = True
           BorderStyle = bsNone
+          Color = clWindow
           Columns = <>
           DataSource = DSCenas
           FixedColor = clDefault
@@ -281,7 +282,6 @@ object PastasProjetos: TPastasProjetos
     object ActAddFile: TAction
       Caption = 'AddFile'
       ImageIndex = 3
-      OnExecute = ActAddFileExecute
     end
   end
   object MDSCenas: TMemDataset

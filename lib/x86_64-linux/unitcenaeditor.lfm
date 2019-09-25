@@ -6,41 +6,95 @@ object CenaEditor: TCenaEditor
   Caption = 'CenaEditor'
   ClientHeight = 404
   ClientWidth = 657
-  Color = 4539717
-  LCLVersion = '2.0.0.4'
+  OnCreate = FormCreate
   object PageControl1: TPageControl
     Left = 0
     Height = 404
     Top = 0
     Width = 657
-    ActivePage = TabCodigo
+    ActivePage = TabSheet1
     Align = alClient
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 0
     TabPosition = tpBottom
     object TabSheet1: TTabSheet
       Caption = 'Editor'
-      ClientHeight = 370
+      ClientHeight = 373
       ClientWidth = 647
       object ScrollBox1: TScrollBox
         Left = 0
         Height = 373
         Top = 0
         Width = 462
-        HorzScrollBar.Page = 1
-        VertScrollBar.Page = 1
+        HorzScrollBar.Page = 32
+        VertScrollBar.Page = 95
         Align = alClient
+        ClientHeight = 371
+        ClientWidth = 460
         TabOrder = 0
+        object PnTools: TPanel
+          Left = 0
+          Height = 371
+          Top = 0
+          Width = 32
+          Align = alLeft
+          ClientHeight = 371
+          ClientWidth = 32
+          TabOrder = 0
+          object BtnRect: TToggleBox
+            Left = 1
+            Height = 31
+            Top = 1
+            Width = 30
+            Align = alTop
+            Caption = '⬜'
+            Font.Height = -20
+            OnClick = BtnRectClick
+            ParentFont = False
+            TabOrder = 0
+          end
+          object BtnImage: TToggleBox
+            Left = 1
+            Height = 31
+            Top = 63
+            Width = 30
+            Align = alTop
+            Caption = '🏞'
+            Font.Height = -20
+            OnClick = BtnRectClick
+            ParentFont = False
+            TabOrder = 1
+          end
+          object BtnText: TToggleBox
+            Left = 1
+            Height = 31
+            Top = 32
+            Width = 30
+            Align = alTop
+            Caption = 'T'
+            Font.CharSet = ANSI_CHARSET
+            Font.Color = clBlack
+            Font.Height = -20
+            Font.Name = 'Times New Roman'
+            Font.Pitch = fpVariable
+            Font.Quality = fqDraft
+            Font.Style = [fsBold]
+            OnClick = BtnRectClick
+            ParentFont = False
+            TabOrder = 2
+          end
+        end
       end
-      object Panel1: TPanel
-        Left = 8
+      object PnScreen: TPanel
+        Left = 39
         Height = 80
-        Top = 8
+        Top = 7
         Width = 104
         BevelOuter = bvNone
         Color = clBlack
         ParentColor = False
         TabOrder = 1
+        OnMouseDown = PnScreenMouseDown
       end
       object GroupBox1: TGroupBox
         Left = 462
@@ -56,6 +110,19 @@ object CenaEditor: TCenaEditor
     end
     object TabCodigo: TTabSheet
       Caption = 'Código'
+    end
+  end
+  object ActionList1: TActionList
+    left = 320
+    top = 72
+    object ActRetangulo: TAction
+      Caption = '⬜'
+    end
+    object ActTexto: TAction
+      Caption = 'T'
+    end
+    object ActImagem: TAction
+      Caption = '🏞'
     end
   end
 end

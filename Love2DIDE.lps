@@ -19,12 +19,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitDesktop"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="185"/>
         <CursorPos X="34" Y="197"/>
         <UsageCount Value="221"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="src\forms\unitsplash.pas"/>
@@ -33,12 +31,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitSplash"/>
-        <EditorIndex Value="10"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="22"/>
         <CursorPos X="79" Y="48"/>
         <UsageCount Value="221"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="src\forms\unitstart.pas"/>
@@ -47,12 +43,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitStart"/>
-        <EditorIndex Value="9"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="47"/>
         <CursorPos X="22" Y="190"/>
         <UsageCount Value="221"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="src\forms\unitluaeditor.pas"/>
@@ -61,8 +55,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitLuaEditor"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="147"/>
+        <TopLine Value="49"/>
         <CursorPos X="18" Y="94"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
@@ -72,20 +65,18 @@
         <Filename Value="src\units\unitvariaveisglobais.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnitVariaveisGlobais"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="28"/>
         <CursorPos X="37" Y="60"/>
         <UsageCount Value="316"/>
-        <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="src\units\unitfuncoes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnitFuncoes"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="-1"/>
         <CursorPos Y="26"/>
         <UsageCount Value="216"/>
-        <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="src\forms\unitpastasprojetos.pas"/>
@@ -94,8 +85,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitPastasProjetos"/>
-        <TopLine Value="95"/>
-        <CursorPos X="30" Y="93"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="96"/>
+        <CursorPos Y="118"/>
         <UsageCount Value="213"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -109,9 +101,9 @@
         <UnitName Value="UnitCenaEditor"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="54"/>
-        <CursorPos X="54" Y="78"/>
-        <UsageCount Value="189"/>
+        <TopLine Value="50"/>
+        <CursorPos X="24" Y="66"/>
+        <UsageCount Value="220"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit8>
@@ -119,11 +111,10 @@
         <Filename Value="src\units\unitloveobjs.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="unitLoveObjs"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="9"/>
         <CursorPos X="19" Y="15"/>
-        <UsageCount Value="186"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="217"/>
       </Unit9>
       <Unit10>
         <Filename Value="D:\Libs\richmemo\richmemo.pas"/>
@@ -131,7 +122,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="223"/>
         <CursorPos X="38" Y="224"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="80"/>
       </Unit10>
       <Unit11>
         <Filename Value="Components\resizeablepanel.pas"/>
@@ -139,7 +130,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="139"/>
         <CursorPos X="27" Y="151"/>
-        <UsageCount Value="5"/>
+        <UsageCount Value="2"/>
       </Unit11>
       <Unit12>
         <Filename Value="D:\usr\share\lazarus\2.0.0\components\lazutils\textstrings.pas"/>
@@ -147,7 +138,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="838"/>
         <CursorPos Y="851"/>
-        <UsageCount Value="81"/>
+        <UsageCount Value="78"/>
       </Unit12>
       <Unit13>
         <Filename Value="D:\usr\share\lazarus\2.0.0\lcl\customtimer.pas"/>
@@ -155,14 +146,14 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="139"/>
         <CursorPos Y="151"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="8"/>
       </Unit13>
       <Unit14>
         <Filename Value="C:\lazarus\lcl\include\application.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="2214"/>
         <CursorPos X="16" Y="2227"/>
-        <UsageCount Value="12"/>
+        <UsageCount Value="9"/>
       </Unit14>
       <Unit15>
         <Filename Value="C:\lazarus\lcl\forms.pp"/>
@@ -170,7 +161,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="1458"/>
         <CursorPos X="19" Y="1480"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="8"/>
       </Unit15>
       <Unit16>
         <Filename Value="C:\lazarus\lcl\lclclasses.pp"/>
@@ -178,35 +169,35 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="116"/>
         <CursorPos X="30" Y="137"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="8"/>
       </Unit16>
       <Unit17>
         <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\inc\objpash.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="170"/>
         <CursorPos X="33" Y="197"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="8"/>
       </Unit17>
       <Unit18>
         <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\inc\objpas.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="340"/>
         <CursorPos Y="355"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="8"/>
       </Unit18>
       <Unit19>
         <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\objpas\classes\classesh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1754"/>
         <CursorPos X="3" Y="1770"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="7"/>
       </Unit19>
       <Unit20>
         <Filename Value="C:\lazarus\fpc\3.0.4\source\rtl\objpas\classes\compon.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="443"/>
         <CursorPos Y="461"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="8"/>
       </Unit20>
       <Unit21>
         <Filename Value="C:\lazarus\lcl\lclmessageglue.pas"/>
@@ -214,146 +205,52 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="96"/>
         <CursorPos Y="116"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="7"/>
       </Unit21>
       <Unit22>
         <Filename Value="C:\lazarus\lcl\include\control.inc"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="2895"/>
         <CursorPos Y="2917"/>
-        <UsageCount Value="11"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="8"/>
       </Unit22>
       <Unit23>
         <Filename Value="C:\lazarus\lcl\include\buttoncontrol.inc"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="35"/>
         <CursorPos Y="56"/>
-        <UsageCount Value="11"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="8"/>
       </Unit23>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="7" HistoryIndex="6">
       <Position1>
         <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="52" TopLine="29"/>
+        <Caret Line="78" Column="54" TopLine="54"/>
       </Position1>
       <Position2>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="53" TopLine="29"/>
+        <Filename Value="src\forms\unitpastasprojetos.pas"/>
+        <Caret Line="93" Column="30" TopLine="87"/>
       </Position2>
       <Position3>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="51" TopLine="29"/>
+        <Filename Value="src\forms\unitpastasprojetos.pas"/>
+        <Caret Line="104" Column="14" TopLine="85"/>
       </Position3>
       <Position4>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="54" TopLine="29"/>
+        <Filename Value="src\forms\unitpastasprojetos.pas"/>
+        <Caret Line="122" Column="3" TopLine="120"/>
       </Position4>
       <Position5>
-        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
-        <Caret Line="2915" TopLine="2895"/>
+        <Filename Value="src\forms\unitpastasprojetos.pas"/>
+        <Caret Line="114" Column="45" TopLine="99"/>
       </Position5>
       <Position6>
         <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="51" TopLine="29"/>
+        <Caret Line="66" TopLine="57"/>
       </Position6>
       <Position7>
         <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="52" TopLine="29"/>
+        <Caret Line="69" TopLine="50"/>
       </Position7>
-      <Position8>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="53" TopLine="29"/>
-      </Position8>
-      <Position9>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="51" TopLine="29"/>
-      </Position9>
-      <Position10>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="52" TopLine="29"/>
-      </Position10>
-      <Position11>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="53" TopLine="29"/>
-      </Position11>
-      <Position12>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="51" TopLine="29"/>
-      </Position12>
-      <Position13>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="52" TopLine="29"/>
-      </Position13>
-      <Position14>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="51" TopLine="29"/>
-      </Position14>
-      <Position15>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="54" TopLine="29"/>
-      </Position15>
-      <Position16>
-        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
-        <Caret Line="2915" TopLine="2895"/>
-      </Position16>
-      <Position17>
-        <Filename Value="C:\lazarus\lcl\include\control.inc"/>
-        <Caret Line="2917" TopLine="2895"/>
-      </Position17>
-      <Position18>
-        <Filename Value="C:\lazarus\lcl\include\buttoncontrol.inc"/>
-        <Caret Line="56" TopLine="35"/>
-      </Position18>
-      <Position19>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="51" Column="24" TopLine="29"/>
-      </Position19>
-      <Position20>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="50" Column="24" TopLine="29"/>
-      </Position20>
-      <Position21>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="49" Column="24" TopLine="28"/>
-      </Position21>
-      <Position22>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="48" Column="24" TopLine="27"/>
-      </Position22>
-      <Position23>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="47" Column="24" TopLine="26"/>
-      </Position23>
-      <Position24>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="51" Column="24" TopLine="30"/>
-      </Position24>
-      <Position25>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="50" Column="24" TopLine="29"/>
-      </Position25>
-      <Position26>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="49" Column="24" TopLine="28"/>
-      </Position26>
-      <Position27>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="48" Column="24" TopLine="27"/>
-      </Position27>
-      <Position28>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="47" Column="24" TopLine="26"/>
-      </Position28>
-      <Position29>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="80" Column="25" TopLine="52"/>
-      </Position29>
-      <Position30>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="78" Column="26" TopLine="54"/>
-      </Position30>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>

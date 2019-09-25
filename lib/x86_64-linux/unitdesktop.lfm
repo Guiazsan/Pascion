@@ -1,27 +1,23 @@
 object Desktop: TDesktop
-  Left = 275
-  Height = 414
-  Top = 146
-  Width = 807
+  Left = -8
+  Height = 570
+  Top = -8
+  Width = 871
   ActiveControl = PageControl1
   Caption = 'Pasciön v1.0'
-  ClientHeight = 414
-  ClientWidth = 807
-  Color = 4539717
+  ClientHeight = 547
+  ClientWidth = 871
   DefaultMonitor = dmDesktop
-  FormStyle = fsMDIForm
   Menu = MainMenu1
   OnClose = FormClose
   OnCreate = FormCreate
-  LCLVersion = '2.0.0.4'
   WindowState = wsMaximized
   object ToolBar1: TToolBar
     Left = 0
     Height = 26
     Top = 0
-    Width = 807
+    Width = 871
     Caption = 'ToolBar1'
-    Color = 4539717
     EdgeInner = esNone
     EdgeOuter = esNone
     Images = ImageList1
@@ -49,7 +45,7 @@ object Desktop: TDesktop
     end
     object ToolButton4: TToolButton
       Left = 93
-      Height = 8
+      Height = 22
       Top = 0
       Caption = 'ToolButton4'
       Style = tbsSeparator
@@ -67,12 +63,11 @@ object Desktop: TDesktop
   end
   object PageControl1: TCDPageControl
     Left = 170
-    Height = 274
+    Height = 407
     Top = 26
-    Width = 637
+    Width = 701
     Align = alClient
     DrawStyle = dsDefault
-    Font.Color = clHighlightText
     PageIndex = 0
     Options = [nboShowCloseButtons]
     ParentFont = False
@@ -80,15 +75,14 @@ object Desktop: TDesktop
   end
   object CtrlLeftPanel: TResizeablePanel
     Left = 0
-    Height = 274
+    Height = 407
     Top = 26
     Width = 170
     Align = alLeft
     BevelColor = 4539717
     BevelOuter = bvNone
-    ClientHeight = 274
+    ClientHeight = 407
     ClientWidth = 170
-    Color = 4539717
     ParentColor = False
     TabOrder = 2
     LeftResize = True
@@ -99,12 +93,12 @@ object Desktop: TDesktop
   object PnBottom: TResizeablePanel
     Left = 0
     Height = 114
-    Top = 300
-    Width = 807
+    Top = 433
+    Width = 871
     Align = alBottom
     BevelOuter = bvNone
-    ClientHeight = 110
-    ClientWidth = 803
+    ClientHeight = 114
+    ClientWidth = 871
     Font.Color = clHighlightText
     ParentFont = False
     TabOrder = 3
@@ -116,25 +110,26 @@ object Desktop: TDesktop
       Left = 2
       Height = 110
       Top = 2
-      Width = 803
+      Width = 867
       Align = alClient
       ActivePage = TsConsole
       DrawStyle = dsDefault
       PageIndex = 1
       Options = []
+      ParentFont = False
       TabIndex = 1
       object TsMensagens: TCDTabSheet
         Left = 2
-        Height = 79
-        Top = 29
-        Width = 799
+        Height = 81
+        Top = 27
+        Width = 863
         Caption = 'Mensagens'
         TabVisible = False
         object MemoMensagens: TMemo
           Left = 0
-          Height = 79
+          Height = 81
           Top = 0
-          Width = 799
+          Width = 863
           Align = alClient
           BorderStyle = bsNone
           Color = clWindow
@@ -144,19 +139,17 @@ object Desktop: TDesktop
       end
       object TsConsole: TCDTabSheet
         Left = 2
-        Height = 79
-        Top = 29
-        Width = 799
+        Height = 81
+        Top = 27
+        Width = 863
         Caption = '>_ Console'
         TabVisible = False
         object Memo1: TMemo
           Left = 0
-          Height = 79
+          Height = 81
           Top = 0
-          Width = 799
+          Width = 863
           Align = alClient
-          Color = 2039583
-          Font.Color = clWhite
           ParentFont = False
           ReadOnly = True
           TabOrder = 0

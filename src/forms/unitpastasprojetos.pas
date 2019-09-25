@@ -109,7 +109,7 @@ begin
     cena.Add('');
     cena.Add('end');
     cena.SaveToFile(Desktop.ProjetoPath + separadorPasta + 'Cenas'
-      + separadorPasta + cenaNome + '.lcn');
+      + separadorPasta + cenaNome + '.lua');
     CarregarCenas;
   finally
     FreeAndNil(cena);

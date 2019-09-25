@@ -54,7 +54,7 @@ var
   i : Integer;
 begin
   try
-    RMEditor.SetRangeColor(0,Length(RMEditor.Text),TColor(clWhite));
+    RMEditor.SetRangeColor(0,Length(RMEditor.Text),TColor(clBlack));
     for i := 0 to VariaveisGlobais.getPalavrasReservadas.Count - 1 do
     begin
       ColorirPalavrasReservadas(VariaveisGlobais.getPalavrasReservadas[i],

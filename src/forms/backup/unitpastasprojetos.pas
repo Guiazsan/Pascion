@@ -35,7 +35,8 @@ type
     Panel1 : TPanel;
     ProjetoTree : TTreeView;
     BtnNewFolder : TSpeedButton;
-    procedure ActAddFileExecute(Sender : TObject);
+    procedure BtnAddFileMouseDown(Sender : TObject; Button : TMouseButton;
+      Shift : TShiftState; X, Y : Integer);
     procedure DBGrid1DblClick(Sender : TObject);
     procedure FormShow(Sender : TObject);
     procedure ProjetoTreeCustomDrawItem(Sender : TCustomTreeView;
@@ -94,7 +95,8 @@ begin
       FindClose(arquivo);
 end;
 
-procedure TPastasProjetos.ActAddFileExecute(Sender : TObject);
+procedure TPastasProjetos.BtnAddFileMouseDown(Sender : TObject;
+  Button : TMouseButton; Shift : TShiftState; X, Y : Integer);
 var
   cenaNome : String;
   cena : TStringList;
@@ -109,7 +111,7 @@ begin
     cena.Add('');
     cena.Add('end');
     cena.SaveToFile(Desktop.ProjetoPath + separadorPasta + 'Cenas'
-      + separadorPasta + cenaNome + '.lcn');
+      + separadorPasta + cenaNome + '.lua');
     CarregarCenas;
   finally
     FreeAndNil(cena);

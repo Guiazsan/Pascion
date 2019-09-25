@@ -28,10 +28,12 @@ type
     TabSheet1 : TTabSheet;
     TabCodigo : TTabSheet;
     procedure BtnRectClick(Sender: TObject);
-    procedure PnScreenClick(Sender: TObject);
+    procedure FormCreate(Sender : TObject);
+    procedure PnScreenMouseDown(Sender : TObject; Button : TMouseButton;
+      Shift : TShiftState; X, Y : Integer);
   private
-    FCaminho, FNome, Objetos : String;
-
+    FCaminho, FNome : String;
+    Objetos : TStringList;
   public
     procedure AbrirEditor(Caminho, Nome : String);
     procedure LerObjetos;
@@ -60,12 +62,25 @@ begin
   //TToggleBox(Sender).Checked := True;
 end;
 
-procedure TCenaEditor.PnScreenClick(Sender: TObject);
-var TextPrint : TLabel;
+procedure TCenaEditor.FormCreate(Sender : TObject);
 begin
-  //
-  if BtnText.Checked then
+  Objetos := TStringList.Create;
+  //Objetos.LoadFromFile(FCaminho);
+end;
 
+procedure TCenaEditor.PnScreenMouseDown(Sender : TObject;
+  Button : TMouseButton; Shift : TShiftState; X, Y : Integer);
+begin
+  if BtnText.Checked then
+    Objetos.Add(
+      'objeto['+ IntToStr(Objetos.Count) +'] = {};'+
+      'objeto['+ IntToStr(Objetos.Count) +'].tipo = '+ QuotedStr('text') + ';'+
+      'objeto['+ IntToStr(Objetos.Count) +'].x = ' + IntTostr(X) + ';'+
+      'objeto['+ IntToStr(Objetos.Count) +'].y = '+ IntToStr(Y) + ';'+
+      'objeto['+ IntToStr(Objetos.Count) +'].texto = '+ QuotedStr(InputBox('Texto', 'Texto', '')) + ';'
+      );
+  Objetos.SaveToFile(FCaminho);
+  //LerObjetos;
 end;
 
 procedure TCenaEditor.AbrirEditor(Caminho, Nome : String);
@@ -107,16 +122,16 @@ procedure TCenaEditor.LerObjetos;
 var codigo      : TStringList;
     qtde_objeto : Integer;
 begin
-  codigo := TStringList.Create(nil);
+  codigo := TStringList.Create;
   try
-    codigo.LoadFromFile(Caminho);
-    Objetos := Copy(codigo.Text, Pos('objeto[', codigo.Text), Pos('function' ,codigo.Text) - Pos('objeto[', codigo.Text));
+    codigo.LoadFromFile(FCaminho);
+    Objetos.Text := Copy(codigo.Text, Pos('objeto[', codigo.Text), Pos('function' ,codigo.Text) - Pos('objeto[', codigo.Text));
   finally
     FreeAndNil(codigo);
   end;
 
-  if Objetos <> '' then
-    qtde_objeto := StrToInt(Copy(Objetos, RPos('objeto[', Objetos)+ 7, 1));
+  if Objetos.Text <> '' then
+    qtde_objeto := StrToInt(Copy(Objetos.Text, RPos('objeto[', Objetos.Text)+ 7, 1));
 end;
 
 end.
