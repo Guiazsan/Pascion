@@ -282,6 +282,7 @@ object PastasProjetos: TPastasProjetos
     object ActAddFile: TAction
       Caption = 'AddFile'
       ImageIndex = 3
+      OnExecute = ActAddFileExecute
     end
   end
   object MDSCenas: TMemDataset

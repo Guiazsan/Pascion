@@ -144,7 +144,7 @@ procedure TDesktop.AbrirCena(Caminho, Nome : String);
 var newTab: TCDTabSheet;
     CenaTela : TCenaEditor;
 begin
-  if PosEx('.lcn',Nome) > 0 then
+  if PosEx('.lua',Nome) > 0 then
   begin
     newTab               := PageControl1.AddPage(Nome);
     CenaTela := TCenaEditor.Create(nil);
@@ -170,7 +170,7 @@ begin
     TmExecutor.Enabled := False;
     if Assigned(love) then
     begin
-      //Memo1.Lines.LoadFromStream(love.Output);
+      Memo1.Lines.LoadFromStream(love.Output);
       FreeAndNil(love);
     end;
 

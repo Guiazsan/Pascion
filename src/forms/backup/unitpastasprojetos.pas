@@ -35,8 +35,7 @@ type
     Panel1 : TPanel;
     ProjetoTree : TTreeView;
     BtnNewFolder : TSpeedButton;
-    procedure BtnAddFileMouseDown(Sender : TObject; Button : TMouseButton;
-      Shift : TShiftState; X, Y : Integer);
+    procedure ActAddFileExecute(Sender : TObject);
     procedure DBGrid1DblClick(Sender : TObject);
     procedure FormShow(Sender : TObject);
     procedure ProjetoTreeCustomDrawItem(Sender : TCustomTreeView;
@@ -82,7 +81,7 @@ begin
     repeat
       if (arquivo.Name <> '.') and (arquivo.Name <> '..') then
       begin
-        if PosEx('.lcn', arquivo.Name) > 0 then
+        if PosEx('.lua', arquivo.Name) > 0 then
         begin
           BDSCenas.Append;
           BDSCenas.FieldByName('Nome').AsString := arquivo.Name;
@@ -95,8 +94,7 @@ begin
       FindClose(arquivo);
 end;
 
-procedure TPastasProjetos.BtnAddFileMouseDown(Sender : TObject;
-  Button : TMouseButton; Shift : TShiftState; X, Y : Integer);
+procedure TPastasProjetos.ActAddFileExecute(Sender : TObject);
 var
   cenaNome : String;
   cena : TStringList;

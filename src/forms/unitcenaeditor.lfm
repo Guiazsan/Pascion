@@ -7,6 +7,7 @@ object CenaEditor: TCenaEditor
   ClientHeight = 404
   ClientWidth = 657
   OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
   object PageControl1: TPageControl
     Left = 0
     Height = 404
@@ -27,7 +28,7 @@ object CenaEditor: TCenaEditor
         Top = 0
         Width = 462
         HorzScrollBar.Page = 32
-        VertScrollBar.Page = 95
+        VertScrollBar.Page = 157
         Align = alClient
         ClientHeight = 371
         ClientWidth = 460
@@ -44,31 +45,38 @@ object CenaEditor: TCenaEditor
           object BtnRect: TToggleBox
             Left = 1
             Height = 31
-            Top = 1
+            Hint = 'Quadrado'
+            Top = 94
             Width = 30
             Align = alTop
             Caption = '⬜'
             Font.Height = -20
             OnClick = BtnRectClick
             ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
             TabOrder = 0
           end
           object BtnImage: TToggleBox
             Left = 1
             Height = 31
-            Top = 63
+            Hint = 'Imagem'
+            Top = 125
             Width = 30
             Align = alTop
             Caption = '🏞'
             Font.Height = -20
             OnClick = BtnRectClick
             ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
             TabOrder = 1
           end
           object BtnText: TToggleBox
             Left = 1
             Height = 31
-            Top = 32
+            Hint = 'Texto'
+            Top = 63
             Width = 30
             Align = alTop
             Caption = 'T'
@@ -81,7 +89,39 @@ object CenaEditor: TCenaEditor
             Font.Style = [fsBold]
             OnClick = BtnRectClick
             ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
             TabOrder = 2
+          end
+          object BtnMover: TToggleBox
+            Left = 1
+            Height = 31
+            Hint = 'Mover'
+            Top = 32
+            Width = 30
+            Align = alTop
+            Caption = '✛'
+            Font.Height = -27
+            OnClick = BtnRectClick
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 3
+          end
+          object BtnMouse: TToggleBox
+            Left = 1
+            Height = 31
+            Hint = 'Selecionar'
+            Top = 1
+            Width = 30
+            Align = alTop
+            Caption = '⬁'
+            Font.Height = -20
+            OnClick = BtnRectClick
+            ParentFont = False
+            ParentShowHint = False
+            ShowHint = True
+            TabOrder = 4
           end
         end
       end
@@ -94,6 +134,7 @@ object CenaEditor: TCenaEditor
         Color = clBlack
         ParentColor = False
         TabOrder = 1
+        OnClick = PnScreenClick
         OnMouseDown = PnScreenMouseDown
       end
       object GroupBox1: TGroupBox
@@ -103,9 +144,47 @@ object CenaEditor: TCenaEditor
         Width = 185
         Align = alRight
         Caption = 'Inspetor'
-        Font.Color = clHighlightText
+        ClientHeight = 355
+        ClientWidth = 183
+        ParentColor = False
         ParentFont = False
         TabOrder = 2
+        object GridInspetor: TDBGrid
+          Left = 0
+          Height = 338
+          Top = 17
+          Width = 183
+          Align = alClient
+          AutoFillColumns = True
+          Color = clWindow
+          Columns = <          
+            item
+              ReadOnly = True
+              Title.Caption = 'Atributo'
+              Width = 84
+              FieldName = 'Atributo'
+            end          
+            item
+              Title.Caption = 'Valor'
+              Width = 84
+              FieldName = 'Valor'
+            end>
+          DataSource = DsInspetor
+          FixedCols = 0
+          Options = [dgEditing, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
+          TabOrder = 0
+          OnEditingDone = GridInspetorEditingDone
+        end
+        object lbObjeto: TLabel
+          Left = 0
+          Height = 17
+          Top = 0
+          Width = 183
+          Align = alTop
+          Alignment = taCenter
+          Caption = 'lbObjeto'
+          ParentColor = False
+        end
       end
     end
     object TabCodigo: TTabSheet
@@ -123,6 +202,36 @@ object CenaEditor: TCenaEditor
     end
     object ActImagem: TAction
       Caption = '🏞'
+    end
+  end
+  object DsInspetor: TDataSource
+    DataSet = BDSInspetor
+    left = 304
+    top = 192
+  end
+  object BDSInspetor: TBufDataset
+    FieldDefs = <>
+    left = 304
+    top = 280
+    object BDSInspetorAtributo: TStringField
+      FieldKind = fkData
+      FieldName = 'Atributo'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object BDSInspetorValor: TStringField
+      FieldKind = fkData
+      FieldName = 'Valor'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 255
     end
   end
 end

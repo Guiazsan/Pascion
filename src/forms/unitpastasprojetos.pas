@@ -81,7 +81,7 @@ begin
     repeat
       if (arquivo.Name <> '.') and (arquivo.Name <> '..') then
       begin
-        if PosEx('.lcn', arquivo.Name) > 0 then
+        if PosEx('.lua', arquivo.Name) > 0 then
         begin
           BDSCenas.Append;
           BDSCenas.FieldByName('Nome').AsString := arquivo.Name;
