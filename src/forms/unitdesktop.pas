@@ -162,11 +162,13 @@ begin
   begin
     ActParar.Enabled := True;
     ActPlay.Enabled := False;
+    Caption := 'Pasciön - Em Execução';
   end
   else
   begin
     ActParar.Enabled := False;
     ActPlay.Enabled := True;
+    Caption := 'Pasciön';
     TmExecutor.Enabled := False;
     if Assigned(love) then
     begin

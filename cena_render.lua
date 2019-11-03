@@ -1,4 +1,4 @@
-objeto = {x, y, r = 0, w, h, tipo, caminho, imagem, quad, texto}
+objeto = {x, y, r = 0, w = 10, h = 10, tipo, caminho, imagem, quad, texto}
 
 function love.load()
     for i in ipairs(objeto) do

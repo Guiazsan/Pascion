@@ -16,19 +16,20 @@ object LuaEditor: TLuaEditor
     Width = 803
     HorzScrollBar.Page = 1
     HorzScrollBar.Visible = False
-    VertScrollBar.Page = 449
+    VertScrollBar.Page = 50
     Align = alClient
     BorderStyle = bsNone
     ClientHeight = 449
-    ClientWidth = 790
+    ClientWidth = 803
     Color = clDefault
     ParentColor = False
     TabOrder = 0
     object RMEditor: TRichMemo
       Left = 40
-      Height = 700
+      Height = 449
       Top = 0
-      Width = 755
+      Width = 763
+      Align = alClient
       BorderStyle = bsNone
       Color = clWhite
       Font.CharSet = ANSI_CHARSET
@@ -50,9 +51,10 @@ object LuaEditor: TLuaEditor
     end
     object GridLinhas: TDrawGrid
       Left = 0
-      Height = 700
+      Height = 449
       Top = 0
       Width = 40
+      Align = alLeft
       Color = clDefault
       ColCount = 1
       DefaultColWidth = 40

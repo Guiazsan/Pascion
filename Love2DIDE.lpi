@@ -26,25 +26,28 @@
         <Mode0 Name="default"/>
       </Modes>
     </RunParams>
-    <RequiredPackages Count="6">
+    <RequiredPackages Count="7">
       <Item1>
-        <PackageName Value="KControlsLaz"/>
+        <PackageName Value="SynEdit"/>
       </Item1>
       <Item2>
-        <PackageName Value="FCL"/>
+        <PackageName Value="KControlsLaz"/>
       </Item2>
       <Item3>
-        <PackageName Value="MemDSLaz"/>
+        <PackageName Value="FCL"/>
       </Item3>
       <Item4>
-        <PackageName Value="PascionPack"/>
+        <PackageName Value="MemDSLaz"/>
       </Item4>
       <Item5>
-        <PackageName Value="richmemopackage"/>
+        <PackageName Value="PascionPack"/>
       </Item5>
       <Item6>
-        <PackageName Value="LCL"/>
+        <PackageName Value="richmemopackage"/>
       </Item6>
+      <Item7>
+        <PackageName Value="LCL"/>
+      </Item7>
     </RequiredPackages>
     <Units Count="10">
       <Unit0>

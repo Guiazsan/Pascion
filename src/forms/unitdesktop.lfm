@@ -4,7 +4,7 @@ object Desktop: TDesktop
   Top = -8
   Width = 822
   ActiveControl = PageControl1
-  Caption = 'Pasciön v1.0'
+  Caption = 'Pasciön'
   ClientHeight = 570
   ClientWidth = 822
   DefaultMonitor = dmDesktop

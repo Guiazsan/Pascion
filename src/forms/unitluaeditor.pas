@@ -74,7 +74,7 @@ begin
   Timer1.Enabled := False;
   Timer1.Enabled := True;
   Desktop.AlterarCodigo(nil);
-  GridLinhas.RowCount := RMEditor.Lines.Count;
+  GridLinhas.RowCount := IIF(RMEditor.Lines.Count > 0, RMEditor.Lines.Count,1);
   RMEditor.Height := (RMEditor.Lines.Count + 1) * (RMEditor.Font.Size + 6);
 end;
 
@@ -217,6 +217,20 @@ begin
 
     RMEditor.SetRangeColor((PosEx(texto, RMEditor.Text) - 2), indexFinal + 1, cor);
     texto := texto.Substring(PosEx('"',Texto));
+  end;
+
+  texto := RMEditor.Text;
+  while PosEx('''', texto) > 0 do
+  begin
+    texto := texto.Substring(PosEx('''',Texto));
+
+    if PosEx('''', texto) = 0 then
+      indexFinal := Length(texto) - 1
+    else
+      indexFinal := PosEx('''', texto);
+
+    RMEditor.SetRangeColor((PosEx(texto, RMEditor.Text) - 2), indexFinal + 1, cor);
+    texto := texto.Substring(PosEx('''',Texto));
   end;
 end;
 
