@@ -11,6 +11,7 @@ object SplashForm: TSplashForm
   FormStyle = fsSplash
   OnActivate = FormActivate
   Position = poDesktopCenter
+  LCLVersion = '2.0.0.4'
   object Image1: TImage
     Left = 0
     Height = 401

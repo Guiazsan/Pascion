@@ -11,6 +11,7 @@ object Desktop: TDesktop
   Menu = MainMenu1
   OnClose = FormClose
   OnCreate = FormCreate
+  LCLVersion = '2.0.0.4'
   WindowState = wsMaximized
   object ToolBar1: TToolBar
     Left = 0
@@ -45,7 +46,7 @@ object Desktop: TDesktop
     end
     object ToolButton4: TToolButton
       Left = 93
-      Height = 22
+      Height = 8
       Top = 0
       Caption = 'ToolButton4'
       Style = tbsSeparator
@@ -97,8 +98,8 @@ object Desktop: TDesktop
     Width = 822
     Align = alBottom
     BevelOuter = bvNone
-    ClientHeight = 114
-    ClientWidth = 822
+    ClientHeight = 110
+    ClientWidth = 818
     Font.Color = clHighlightText
     ParentFont = False
     TabOrder = 3
@@ -203,6 +204,11 @@ object Desktop: TDesktop
       Hint = 'Parar Aplicação'
       ImageIndex = 5
       OnExecute = ActPararExecute
+    end
+    object ActProjConfig: TAction
+      Category = 'Projeto'
+      Caption = 'Configurações'
+      OnExecute = ActProjConfigExecute
     end
   end
   object ImageList1: TImageList
@@ -434,6 +440,12 @@ object Desktop: TDesktop
       end
       object ItemStop: TMenuItem
         Action = ActParar
+      end
+    end
+    object MenuItem1: TMenuItem
+      Caption = 'Projeto'
+      object MenuItem2: TMenuItem
+        Action = ActProjConfig
       end
     end
   end

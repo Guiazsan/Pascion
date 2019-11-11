@@ -1,5 +1,3 @@
-objeto = {x, y, r = 0, w = 10, h = 10, tipo, caminho, imagem, quad, texto}
-
 function love.load()
     for i in ipairs(objeto) do
         if objeto[i].tipo == 'img' then
@@ -8,13 +6,6 @@ function love.load()
     end;   
 
 end;
-
-function Objeto:new ()
-    objeto = objeto or {}
-    setmetatable(objeto, self)
-    self.__index = self
-    return objeto
-  end
 
 function love.draw()
     for i in ipairs(objeto) do

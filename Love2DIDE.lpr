@@ -9,7 +9,7 @@ uses
   cmem, Interfaces, // this includes the LCL widgetset
   Forms, memdslaz, UnitDesktop, UnitSplash, UnitStart, UnitLuaEditor,
   UnitVariaveisGlobais, UnitFuncoes, UnitPastasProjetos, UnitCenaEditor,
-  unitLoveObjs;
+  unitLoveObjs, UnitProjConfig;
 
 {$R *.res}
 

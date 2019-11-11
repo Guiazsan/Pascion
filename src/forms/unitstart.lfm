@@ -4,13 +4,14 @@ object StartForm: TStartForm
   Top = 140
   Width = 1331
   ActiveControl = EdtCaminho
-  BorderStyle = bsNone
+  BorderIcons = []
+  BorderStyle = bsSizeToolWin
   ClientHeight = 524
   ClientWidth = 1331
   Color = 11251751
   OnCreate = FormCreate
   OnShow = FormShow
-  Position = poDesktopCenter
+  Position = poWorkAreaCenter
   LCLVersion = '2.0.0.4'
   object Panel1: TPanel
     Left = 0

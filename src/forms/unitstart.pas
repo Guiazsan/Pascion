@@ -156,7 +156,7 @@ begin
 end;
 
 procedure TStartForm.PnCriarProjetoClick(Sender: TObject);
-var MainFile : TStringList;
+var MainFile, ConfFile : TStringList;
 begin
   if EdtNome.Text = '' then
   begin
@@ -169,21 +169,49 @@ begin
     Exit;
   end;
 
-  PathFile.WriteString('Project','Path', EdtCaminho.Text);
+  PathFile.WriteString('Project','Path', EdtCaminho.Text + separadorPasta + EdtNome.Text);
   PathFile.WriteString('Project','Name', EdtNome.Text);
   MainFile := TStringList.Create;
   try
-    If Not DirectoryExists(EdtCaminho.Text + separadorPasta + EdtNome.Text) then
-      CreateDir(EdtCaminho.Text + separadorPasta + EdtNome.Text);
-
+    ForceDirectories(EdtCaminho.Text + separadorPasta + EdtNome.Text);
+    MainFile.Add('objeto = {x, y, r = 0, w, h, tipo, caminho, imagem, quad, texto}');
+    MainFile.Add('');
+    MainFile.Add('require('+ QuotedStr('Lib/cena_render') +')');
     MainFile.SaveToFile(EdtCaminho.Text + separadorPasta +
-        EdtNome.Text + separadorPasta +'Main.lua');
+        EdtNome.Text + separadorPasta +'main.lua');
+
+    ConfFile := TStringList.Create;
+    try
+      ConfFile.Add('function love.conf(t)');
+      ConfFile.Add('  t.title = "'+ EdtNome.Text +'"');
+      ConfFile.Add('  t.window.width = 800;');
+      ConfFile.Add('  t.window.height = 600;');
+      ConfFile.Add('end');
+      ConfFile.SaveToFile(EdtCaminho.Text + separadorPasta +
+        EdtNome.Text + separadorPasta +'conf.lua');
+    finally
+      FreeAndNil(ConfFile);
+    end;
+
+    ForceDirectories(
+      EdtCaminho.Text + separadorPasta +
+      EdtNome.Text + separadorPasta + 'Cenas');
+
+    ForceDirectories(
+      EdtCaminho.Text + separadorPasta +
+      EdtNome.Text + separadorPasta + 'Lib');
+
+    CopyFile(
+      GetCurrentDir + separadorPasta +
+      'lua files' + separadorPasta +
+      'cena_render.lua' ,EdtCaminho.Text + separadorPasta +
+      EdtNome.Text + separadorPasta +
+      'Lib' + separadorPasta + 'cena_render.lua')
   finally
     FreeAndNil(MainFile);
   end;
 
   abrirIDE;
-  //PgpFile := TIniFile.Create(EdtCaminho.Text + '\' + EdtNome.Text + '.pgp');
 end;
 
 procedure TStartForm.PnOpenProjectClick(Sender: TObject);

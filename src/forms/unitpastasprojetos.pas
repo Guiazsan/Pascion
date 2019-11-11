@@ -105,9 +105,6 @@ begin
   cenaNome := InputBox('Nome da Cena', 'Nome', '');
   cena := TStringList.Create;
   try
-    cena.Add('function love.draw()');
-    cena.Add('');
-    cena.Add('end');
     cena.SaveToFile(Desktop.ProjetoPath + separadorPasta + 'Cenas'
       + separadorPasta + cenaNome + '.lua');
     CarregarCenas;

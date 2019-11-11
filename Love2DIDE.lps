@@ -4,13 +4,14 @@
     <PathDelim Value="\"/>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="19">
+    <Units Count="22">
       <Unit0>
         <Filename Value="Love2DIDE.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="9" Y="9"/>
+        <EditorIndex Value="1"/>
+        <CursorPos Y="13"/>
         <UsageCount Value="221"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="src\forms\unitdesktop.pas"/>
@@ -19,9 +20,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitDesktop"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="156"/>
-        <CursorPos X="23" Y="163"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="51"/>
+        <CursorPos X="43" Y="135"/>
         <UsageCount Value="221"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -33,10 +34,12 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitSplash"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="22"/>
-        <CursorPos X="79" Y="48"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="34"/>
+        <CursorPos X="81" Y="48"/>
         <UsageCount Value="221"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="src\forms\unitstart.pas"/>
@@ -45,10 +48,13 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitStart"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="47"/>
-        <CursorPos X="22" Y="190"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="162"/>
+        <CursorPos X="65" Y="179"/>
         <UsageCount Value="221"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="src\forms\unitluaeditor.pas"/>
@@ -57,9 +63,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitLuaEditor"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="215"/>
-        <CursorPos X="41" Y="240"/>
+        <TopLine Value="91"/>
+        <CursorPos X="22" Y="105"/>
         <UsageCount Value="208"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -77,9 +82,9 @@
         <Filename Value="src\units\unitfuncoes.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="UnitFuncoes"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="8"/>
-        <CursorPos X="33" Y="40"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="28"/>
+        <CursorPos X="18" Y="55"/>
         <UsageCount Value="216"/>
         <Loaded Value="True"/>
       </Unit6>
@@ -90,9 +95,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitPastasProjetos"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="119"/>
-        <CursorPos X="6" Y="120"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="97"/>
+        <CursorPos X="6" Y="101"/>
         <UsageCount Value="213"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -104,9 +109,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UnitCenaEditor"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="386"/>
-        <CursorPos X="38" Y="401"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="346"/>
+        <CursorPos X="20" Y="350"/>
         <UsageCount Value="220"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -126,7 +131,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="223"/>
         <CursorPos X="38" Y="224"/>
-        <UsageCount Value="59"/>
+        <UsageCount Value="53"/>
       </Unit10>
       <Unit11>
         <Filename Value="D:\usr\share\lazarus\2.0.0\components\lazutils\textstrings.pas"/>
@@ -134,183 +139,211 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="838"/>
         <CursorPos Y="851"/>
-        <UsageCount Value="57"/>
+        <UsageCount Value="51"/>
       </Unit11>
       <Unit12>
-        <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\stdctrls.pp"/>
-        <UnitName Value="StdCtrls"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1498"/>
-        <CursorPos X="3" Y="1511"/>
-        <UsageCount Value="4"/>
-      </Unit12>
-      <Unit13>
         <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\controls.pp"/>
         <UnitName Value="Controls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="1448"/>
         <CursorPos X="21" Y="1500"/>
-        <UsageCount Value="39"/>
-      </Unit13>
-      <Unit14>
+        <UsageCount Value="33"/>
+      </Unit12>
+      <Unit13>
         <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\graphics.pp"/>
         <UnitName Value="Graphics"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="142"/>
         <CursorPos X="7" Y="157"/>
-        <UsageCount Value="36"/>
-      </Unit14>
-      <Unit15>
+        <UsageCount Value="30"/>
+      </Unit13>
+      <Unit14>
         <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\dbctrls.pp"/>
         <UnitName Value="DBCtrls"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="751"/>
         <CursorPos X="3" Y="764"/>
-        <UsageCount Value="10"/>
-      </Unit15>
-      <Unit16>
+        <UsageCount Value="4"/>
+      </Unit14>
+      <Unit15>
         <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\include\customform.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="1908"/>
-        <CursorPos X="15" Y="1922"/>
-        <UsageCount Value="10"/>
-      </Unit16>
-      <Unit17>
+        <TopLine Value="1744"/>
+        <CursorPos Y="1765"/>
+        <UsageCount Value="5"/>
+      </Unit15>
+      <Unit16>
         <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\include\customcheckbox.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="129"/>
         <CursorPos Y="143"/>
+        <UsageCount Value="4"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\include\control.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2902"/>
+        <CursorPos Y="2915"/>
         <UsageCount Value="10"/>
       </Unit17>
       <Unit18>
-        <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\include\control.inc"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="2902"/>
-        <CursorPos Y="2915"/>
-        <UsageCount Value="11"/>
-        <Loaded Value="True"/>
+        <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\interfaces\gtk2\interfaces.pas"/>
+        <UnitName Value="Interfaces"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="9"/>
       </Unit18>
+      <Unit19>
+        <Filename Value="..\..\..\..\usr\share\lazarus\2.0.0\lcl\interfaces\gtk2\gtk2disableliboverlay.pas"/>
+        <UnitName Value="gtk2DisableLibOverlay"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos Y="22"/>
+        <UsageCount Value="5"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="unit1.pas"/>
+        <ComponentName Value="UnitProjConfig"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitProjConfig"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="60"/>
+        <CursorPos Y="72"/>
+        <UsageCount Value="28"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="src\forms\unitprojconfig.pas"/>
+        <ComponentName Value="ProjConfig"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitProjConfig"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="65"/>
+        <CursorPos X="72" Y="81"/>
+        <UsageCount Value="32"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit21>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="167" TopLine="77"/>
+        <Filename Value="src\forms\unitstart.pas"/>
+        <Caret Line="181" Column="98" TopLine="151"/>
       </Position1>
       <Position2>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="163" Column="13" TopLine="150"/>
+        <Filename Value="src\forms\unitstart.pas"/>
+        <Caret Line="188" Column="9" TopLine="161"/>
       </Position2>
       <Position3>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="559" Column="15" TopLine="547"/>
+        <Filename Value="src\forms\unitstart.pas"/>
+        <Caret Line="68" Column="20" TopLine="49"/>
       </Position3>
       <Position4>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="66" Column="19" TopLine="53"/>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="163" Column="23" TopLine="156"/>
       </Position4>
       <Position5>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="444" Column="27" TopLine="423"/>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="164" Column="23" TopLine="157"/>
       </Position5>
       <Position6>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="67" Column="45" TopLine="50"/>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="165" Column="23" TopLine="158"/>
       </Position6>
       <Position7>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="453" Column="19" TopLine="440"/>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="172" Column="23" TopLine="165"/>
       </Position7>
       <Position8>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="65" Column="22" TopLine="53"/>
+        <Filename Value="src\units\unitfuncoes.pas"/>
+        <Caret Line="55" Column="18" TopLine="28"/>
       </Position8>
       <Position9>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="398" Column="9" TopLine="383"/>
+        <Filename Value="Love2DIDE.lpr"/>
+        <Caret Line="12" Column="19"/>
       </Position9>
       <Position10>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="226" Column="19" TopLine="222"/>
+        <Filename Value="src\forms\unitstart.pas"/>
+        <Caret Line="189" Column="42" TopLine="167"/>
       </Position10>
       <Position11>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="396" Column="41" TopLine="376"/>
+        <Filename Value="src\forms\unitprojconfig.pas"/>
+        <Caret Line="41" Column="3" TopLine="21"/>
       </Position11>
       <Position12>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="397" TopLine="376"/>
+        <Filename Value="src\forms\unitprojconfig.pas"/>
+        <Caret Line="42" TopLine="21"/>
       </Position12>
       <Position13>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="398" TopLine="377"/>
+        <Filename Value="Love2DIDE.lpr"/>
+        <Caret Line="13"/>
       </Position13>
       <Position14>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="399" TopLine="378"/>
+        <Filename Value="src\forms\unitprojconfig.pas"/>
+        <Caret Line="41" Column="9" TopLine="16"/>
       </Position14>
       <Position15>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="401" TopLine="380"/>
+        <Filename Value="src\forms\unitprojconfig.pas"/>
+        <Caret Line="40" Column="4" TopLine="21"/>
       </Position15>
       <Position16>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="392" TopLine="380"/>
+        <Filename Value="src\forms\unitprojconfig.pas"/>
+        <Caret Line="41" Column="27" TopLine="21"/>
       </Position16>
       <Position17>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="393" TopLine="380"/>
+        <Filename Value="src\forms\unitprojconfig.pas"/>
+        <Caret Line="40" Column="4" TopLine="21"/>
       </Position17>
       <Position18>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="394" TopLine="380"/>
+        <Filename Value="src\forms\unitprojconfig.pas"/>
+        <Caret Column="10"/>
       </Position18>
       <Position19>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="393" TopLine="380"/>
+        <Filename Value="src\forms\unitprojconfig.pas"/>
+        <Caret Line="71" Column="17" TopLine="52"/>
       </Position19>
       <Position20>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="394" TopLine="380"/>
+        <Filename Value="src\forms\unitprojconfig.pas"/>
+        <Caret Line="74" Column="21" TopLine="63"/>
       </Position20>
       <Position21>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="393" TopLine="380"/>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="102" Column="5" TopLine="88"/>
       </Position21>
       <Position22>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="394" TopLine="380"/>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="105" Column="16" TopLine="85"/>
       </Position22>
       <Position23>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="396" TopLine="380"/>
+        <Filename Value="src\forms\unitsplash.pas"/>
+        <Caret Line="48" Column="81" TopLine="34"/>
       </Position23>
       <Position24>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="397" TopLine="380"/>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="106" Column="25" TopLine="139"/>
       </Position24>
       <Position25>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="398" TopLine="380"/>
+        <Filename Value="src\forms\unitstart.pas"/>
+        <Caret Line="159" Column="5" TopLine="146"/>
       </Position25>
       <Position26>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="399" TopLine="380"/>
+        <Filename Value="src\forms\unitdesktop.pas"/>
+        <Caret Line="79" Column="20" TopLine="56"/>
       </Position26>
       <Position27>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="401" TopLine="371"/>
+        <Filename Value="src\forms\unitstart.pas"/>
+        <Caret Line="206" Column="32" TopLine="197"/>
       </Position27>
       <Position28>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="65" Column="19" TopLine="44"/>
+        <Filename Value="src\forms\unitstart.pas"/>
+        <Caret Line="212" Column="49" TopLine="197"/>
       </Position28>
       <Position29>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="380" Column="27" TopLine="379"/>
+        <Filename Value="src\forms\unitpastasprojetos.pas"/>
+        <Caret Line="54" TopLine="28"/>
       </Position29>
       <Position30>
-        <Filename Value="src\forms\unitcenaeditor.pas"/>
-        <Caret Line="396" Column="69" TopLine="376"/>
+        <Filename Value="src\forms\unitstart.pas"/>
+        <Caret Line="178" Column="22" TopLine="156"/>
       </Position30>
     </JumpHistory>
     <RunParams>

@@ -8,7 +8,6 @@ object PastasProjetos: TPastasProjetos
   ClientHeight = 377
   ClientWidth = 369
   OnShow = FormShow
-  LCLVersion = '2.0.0.4'
   object GBProjeto: TGroupBox
     Left = 0
     Height = 377
@@ -16,8 +15,8 @@ object PastasProjetos: TPastasProjetos
     Width = 369
     Align = alClient
     Caption = 'Projeto'
-    ClientHeight = 373
-    ClientWidth = 365
+    ClientHeight = 359
+    ClientWidth = 367
     Font.Color = clHighlightText
     ParentBidiMode = False
     ParentColor = False
@@ -30,8 +29,8 @@ object PastasProjetos: TPastasProjetos
       Width = 367
       Align = alTop
       BevelOuter = bvNone
-      ClientHeight = 30
-      ClientWidth = 363
+      ClientHeight = 34
+      ClientWidth = 367
       ParentColor = False
       TabOrder = 0
       object BtnNewFolder: TSpeedButton

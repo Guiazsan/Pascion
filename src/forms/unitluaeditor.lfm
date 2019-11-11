@@ -55,6 +55,7 @@ object LuaEditor: TLuaEditor
       Top = 0
       Width = 40
       Align = alLeft
+      BorderStyle = bsNone
       Color = clDefault
       ColCount = 1
       DefaultColWidth = 40
@@ -62,6 +63,7 @@ object LuaEditor: TLuaEditor
       ExtendedSelect = False
       FixedColor = clDefault
       Flat = True
+      Options = [goVertLine, goHorzLine, goRangeSelect, goSmoothScroll]
       ParentFont = False
       RowCount = 1
       ScrollBars = ssNone

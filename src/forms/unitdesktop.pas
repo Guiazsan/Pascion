@@ -18,6 +18,7 @@ type
 
   TDesktop = class(TForm)
     ActAbrir: TAction;
+    ActProjConfig : TAction;
     ActParar: TAction;
     ActPlay: TAction;
     ActSalvarTudo: TAction;
@@ -40,6 +41,8 @@ type
     ItemStop : TMenuItem;
     Memo1 : TMemo;
     MemoMensagens: TMemo;
+    MenuItem1 : TMenuItem;
+    MenuItem2 : TMenuItem;
     PageControl1: TCDPageControl;
     CtrlLeftPanel: TResizeablePanel;
     PcSaidas: TCDPageControl;
@@ -55,6 +58,7 @@ type
     ToolButton4: TToolButton;
     ToolButton5: TToolButton;
     ToolButton6: TToolButton;
+    procedure ActProjConfigExecute(Sender : TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure ActAbrirExecute(Sender : TObject);
@@ -83,6 +87,7 @@ var
 
 implementation
 
+uses UnitProjConfig;
 
 {$R *.lfm}
 
@@ -91,6 +96,17 @@ implementation
 procedure TDesktop.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   Application.Terminate;
+end;
+
+procedure TDesktop.ActProjConfigExecute(Sender : TObject);
+begin
+  //
+  Application.CreateForm(TProjConfig, ProjConfig);
+  try
+    ProjConfig.ShowModal;
+  finally
+    FreeAndNil(ProjConfig);
+  end;
 end;
 
 procedure TDesktop.FormCreate(Sender: TObject);

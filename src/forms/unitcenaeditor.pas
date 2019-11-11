@@ -348,19 +348,6 @@ end;
 
 procedure TCenaEditor.ReescreverObjeto(Objeto : TObjetoCena);
 var texto : String;
-  function ReplaceBetween(Src, sub, inicio, fim : String) : String;
-  var tempText : String;
-  begin
-    if not(AnsiContainsStr(Src, inicio)) or not(AnsiContainsStr(Src, fim)) then
-    begin
-      Result := Src;
-      Exit;
-    end;
-    tempText := Src.Substring(Pos(inicio, Src) + Length(inicio));
-    tempText := tempText.Substring(Pos(fim, tempText) - 1);
-    Result   :=
-      Src.Substring(0, Pos(inicio, Src) + Length(inicio)) + sub + tempText;
-  end;
 begin
   texto := Objeto.linha;
   texto := ReplaceBetween(texto, IntToStr(Objeto.x), '].x =', ';');
